@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Somia Asim — Portfolio</title>
+  <meta name="description" content="Professional portfolio of Somia Asim — projects, experience, publications, and contact." />
+  <meta property="og:title" content="Somia Asim — Portfolio" />
+  <meta property="og:description" content="Projects, experience, publications, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og.jpg" />
+  <link rel="icon" href="/assets/favicon.png" />
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --card: #121723;
+      --text: #eaf2ff;
+      --muted: #9fb2d1;
+      --brand: #6ea8fe;
+      --accent: #b994ff;
+      --success: #7ee787;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1050px; margin: 0 auto; padding: 28px 20px 80px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0 8px; position: sticky; top: 0; backdrop-filter: blur(8px); background: linear-gradient(180deg, rgba(11,13,18,0.9), rgba(11,13,18,0.7) 60%, rgba(11,13,18,0)); z-index: 10; }
+    .brand { display: flex; gap: 14px; align-items: center; }
+    .avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--brand), var(--accent)); display: grid; place-items: center; font-weight: 800; color: #0b0d12; }
+    nav a { margin-left: 18px; font-weight: 600; color: var(--muted); }
+    nav a:hover { color: var(--text); }
+
+    .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; margin-top: 32px; align-items: center; }
+    .hero h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.05; margin: 0 0 10px; }
+    .hero p.lead { font-size: clamp(16px, 2.2vw, 20px); color: var(--muted); margin: 0 0 16px; }
+    .hero .badges { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0 0; }
+    .badge { padding: 6px 12px; border: 1px solid #263247; border-radius: 999px; color: var(--muted); font-size: 13px; }
+    .cta { display: inline-block; margin-top: 16px; padding: 12px 16px; border-radius: 12px; background: linear-gradient(135deg, var(--brand), var(--accent)); color: #0b0d12; font-weight: 800; }
+
+    .panel { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); border: 1px solid #1e2636; border-radius: 18px; padding: 18px; }
+    h2 { font-size: 20px; letter-spacing: 0.3px; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+
+    .grid { display: grid; gap: 16px; }
+    .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .card { background: var(--card); border: 1px solid #1c2333; border-radius: 16px; padding: 16px; transition: transform .2s ease, border-color .2s ease; }
+    .card:hover { transform: translateY(-2px); border-color: #2b3954; }
+    .meta { color: var(--muted); font-size: 13px; }
+    .title { font-weight: 700; margin: 8px 0 6px; font-size: 18px; }
+    .pill { font-size: 12px; padding: 4px 8px; border-radius: 999px; border: 1px solid #2a3752; color: var(--muted); }
+    .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .row.wrap { flex-wrap: wrap; }
+
+    .footer { margin-top: 36px; padding-top: 20px; border-top: 1px solid #1c2333; color: var(--muted); font-size: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid.cols-3 { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      nav { display: none; }
+      .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="avatar">Y</div>
+        <div>
+          <div style="font-weight:800; font-size:18px;">Somia Asim</div>
+          <div class="meta">GIS/RS Analyst — Lahore, Pakistan</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Building data-driven products for impact.</h1>
+        <p class="lead">I’m <strong>Somia Asim</strong>, a <em>GIS/Remote Sensing Analyst</em> focusing on geospatial data analysis, environmental studies, and urban/regional planning. I combine Python, ArcGIS, and Google Earth Engine with domain expertise to deliver policy‑ready, evidence‑based outputs.</p>
+        <div class="badges">
+          <span class="badge">GIS / Remote Sensing</span>
+          <span class="badge">ArcGIS • QGIS</span>
+          <span class="badge">Google Earth Engine</span>
+          <span class="badge">Python • R</span>
+          <span class="badge">Streamlit • PostgreSQL</span>
+          <span class="badge">Data Viz & Dashboards</span>
+        </div>
+        <a class="cta" href="/resume.pdf" target="_blank" rel="noopener">Download Résumé</a>
+      </div>
+      <div class="panel">
+        <h2>Highlights</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <div class="meta">12/2024 → Present</div>
+            <div class="title">Research Associate, MHRC (LUMS)</div>
+            <div class="meta">Big-data GIS & ML for tax compliance; clustering 15k+ Lahore restaurants; Streamlit + PostgreSQL dashboards.</div>
+          </div>
+          <div class="card">
+            <div class="meta">04/2024 → Present</div>
+            <div class="title">Research Assistant, MHRC (LUMS)</div>
+            <div class="meta">Spatial analysis using ESRI, GEE, Mapbox APIs, and flood models for decision support.</div>
+          </div>
+          <div class="card">
+            <div class="meta">07/2023 → 03/2024</div>
+            <div class="title">GIS Officer, WWF Pakistan</div>
+            <div class="meta">LULC for Lahore (1990–2020); viral urban growth animations covered by media; story maps and web maps.</div>
+          </div>
+          <div class="card">
+            <div class="meta">Talk / StoryMap</div>
+            <div class="title">Reviving the Indus Bhulan</div>
+            <div class="meta"><a href="https://storymaps.arcgis.com/stories/8de9b967600d46c3aa882c7f4a9f3a85" target="_blank" rel="noopener">View StoryMap</a></div>
+          </div>
+        </div>
+            <div class="title">Research Assistant, LUMS</div>
+            <div class="meta">Spatial analytics on 10k+ POIs; dashboarding with Streamlit + Supabase.</div>
+          </div>
+          <div class="card">
+            <div class="meta">2023</div>
+            <div class="title">GIS Officer, WWF Pakistan</div>
+            <div class="meta">Led geospatial monitoring; authored technical SOPs.</div>
+          </div>
+          <div class="card">
+            <div class="meta">Talk</div>
+            <div class="title">Youth & Low-Carbon Dev. (IYC11, UCLA)</div>
+            <div class="meta">Designed civic-action framework for climate resilience.</div>
+          </div>
+          <div class="card">
+            <div class="meta">Paper</div>
+            <div class="title">Dasymetric Mapping of Pakistan</div>
+            <div class="meta">GEE + Random Forest methods; preprint coming soon.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" style="margin-top: 36px;">
+      <div class="panel">
+        <h2>About</h2>
+        <p>Short bio (2–4 lines). Mention what you do now, what you’re great at, and what you’re looking for. Keep it specific and outcomes-focused.</p>
+      </div>
+    </section>
+
+    <section id="experience" style="margin-top: 20px;">
+      <div class="panel">
+        <h2>Experience</h2>
+        <div class="grid cols-3">
+          <article class="card">
+            <div class="row"><div class="title">Research Associate</div><span class="pill">12/2024–Now</span></div>
+            <div class="meta">Mahbub ul Haq Research Centre (LUMS)</div>
+            <ul>
+              <li>Provided big-data GIS & ML support to strengthen organizational effectiveness and tax compliance in Punjab.</li>
+              <li>Developed clustering over 15k Lahore restaurants (HDBSCAN, OPTICS, Random Forest) for targeted enforcement.</li>
+              <li>Built an interactive Streamlit dashboard connected to PostgreSQL for real-time compliance tracking.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="row"><div class="title">Research Assistant</div><span class="pill">04/2024–Now</span></div>
+            <div class="meta">Mahbub ul Haq Research Centre (LUMS)</div>
+            <ul>
+              <li>Applied ESRI, Google Earth Engine, Mapbox APIs, and flood models to generate policy-relevant insights.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="row"><div class="title">GIS Officer</div><span class="pill">07/2023–03/2024</span></div>
+            <div class="meta">Richard Garstang Conservation GIS Lab — WWF Pakistan</div>
+            <ul>
+              <li>Produced LULC for Lahore (1990–2020) and animations of urban growth cited by media outlets.</li>
+              <li>Built interactive ArcGIS web map for plantation drive across multiple districts.</li>
+              <li>Created the StoryMap “Reviving the Indus Bhulan”.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" style="margin-top: 20px;">
+      <div class="panel">
+        <h2>Selected Work</h2>
+        <div class="grid cols-3">
+          <article class="card">
+            <div class="title">Urban Growth of Lahore (1990–2020)</div>
+            <div class="meta">GEE • ArcGIS • Media Coverage</div>
+            <p>Time-series classification and animation of Lahore’s urban sprawl.
+              <br/>
+              <a href="https://www.samaa.tv/208732079-urban-sprawl-is-eating-into-lahore-s-greenery-wwf#google_vignette" target="_blank" rel="noopener">SAMAA News</a> ·
+              <a href="https://twitter.com/zarahatkay_dawn/status/1709298334744363392?s=48&t=TmCsC_7cYyWDGaPry9Bkcg" target="_blank" rel="noopener">DAWN</a> ·
+              <a href="https://twitter.com/wwfpak/status/1709080690447548425?s=48&t=TmCsC_7cYyWDGaPry9Bkcg" target="_blank" rel="noopener">WWF Tweet</a></p>
+          </article>
+          <article class="card">
+            <div class="title">Reviving the Indus Bhulan</div>
+            <div class="meta">Esri StoryMap</div>
+            <p>Conservation storytelling for Indus River Dolphin.
+              <br/>
+              <a href="https://storymaps.arcgis.com/stories/8de9b967600d46c3aa882c7f4a9f3a85" target="_blank" rel="noopener">Open StoryMap</a></p>
+          </article>
+          <article class="card">
+            <div class="title">Tax Compliance Dashboard</div>
+            <div class="meta">Streamlit • PostgreSQL</div>
+            <p>Real-time monitoring and analytics for restaurant compliance.
+              <br/>
+              <a href="#" target="_blank" rel="noopener">Demo (private)</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" style="margin-top: 20px;">
+      <div class="panel">
+        <h2>Publications & Media</h2>
+        <ul>
+          <li>Blog: <strong>From Farms to Buildings: Three Decades of Lahore’s Urbanization</strong> — WWF-Pakistan website. <a href="https://www.wwfpak.org/knowledge_hub_/wwf_blog/" target="_blank" rel="noopener">Read</a></li>
+          <li>StoryMap: <strong>Reviving the Indus Bhulan</strong> — <a href="https://storymaps.arcgis.com/stories/8de9b967600d46c3aa882c7f4a9f3a85" target="_blank" rel="noopener">View</a></li>
+          <li>Media: Coverage on DAWN & SAMAA News for Lahore urban growth animation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="hobbies" style="margin-top: 20px;">
+      <div class="panel">
+        <h2>Hobbies</h2>
+        <div class="grid cols-3">
+          <article class="card">
+            <div class="title">Community Volunteering</div>
+            <div class="meta">Alkhidmat Foundation, Citizens' Climate Lobby, Acquaint Global</div>
+            <p>Disaster relief, climate advocacy, and cross‑cultural mentoring.</p>
+          </article>
+          <article class="card">
+            <div class="title">Cartography Experiments</div>
+            <div class="meta">Personal</div>
+            <p>Handmade maps and experimental projections.</p>
+          </article>
+          <article class="card">
+            <div class="title">Learning & Workshops</div>
+            <div class="meta">Talks & short trainings</div>
+            <p>Workshops on DGPS, wetlands, drone GIS, and more.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" style="margin-top: 20px;">
+      <div class="panel">
+        <h2>Gallery</h2>
+        <div class="grid cols-3">
+          <figure class="card"><img src="/assets/gallery/urban-growth.jpg" alt="Lahore urban growth animation frame" style="width:100%; border-radius:12px;"><figcaption class="meta">Lahore Urban Growth (1990–2020)</figcaption></figure>
+          <figure class="card"><img src="/assets/gallery/plantation-map.jpg" alt="Plantation drive web map" style="width:100%; border-radius:12px;"><figcaption class="meta">Plantation Drive Web Map</figcaption></figure>
+          <figure class="card"><img src="/assets/gallery/dolphin-storymap.jpg" alt="Indus Dolphin StoryMap cover" style="width:100%; border-radius:12px;"><figcaption class="meta">Indus Dolphin StoryMap</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="visuals" style="margin-top: 20px;">
+      <div class="panel">
+        <h2>Data Visuals</h2>
+        <div class="grid cols-2">
+          <figure class="card"><img src="/assets/visuals/lulc_lahore_1990_2020.png" alt="LULC change charts" style="width:100%; border-radius:12px;"><figcaption class="meta">LULC change (1990–2020)</figcaption></figure>
+          <figure class="card"><img src="/assets/visuals/restaurant_clusters.png" alt="Market clusters map" style="width:100%; border-radius:12px;"><figcaption class="meta">Market cluster classification</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="media" style="margin-top: 20px;">
+      <div class="panel">
+        <h2>Videos</h2>
+        <div class="grid cols-2">
+          <div class="card" style="padding:0; overflow:hidden;">
+            <div style="position:relative; padding-bottom:56.25%; height:0;">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" frameborder="0" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%;"></iframe>
+            </div>
+            <div class="meta" style="padding:12px;">Project explainer (replace VIDEO_ID)</div>
+          </div>
+          <div class="card" style="padding:0; overflow:hidden;">
+            <div style="position:relative; padding-bottom:56.25%; height:0;">
+              <iframe src="https://storymaps.arcgis.com/stories/8de9b967600d46c3aa882c7f4a9f3a85?header" title="StoryMap" frameborder="0" style="position:absolute; inset:0; width:100%; height:100%;"></iframe>
+            </div>
+            <div class="meta" style="padding:12px;">Embedded StoryMap</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top: 20px;">
+      <div class="panel">
+        <h2>Contact</h2>
+        <p>Reach me at <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a> ·
+          <a href="https://github.com/YOURUSERNAME" target="_blank" rel="noopener">GitHub</a> ·
+          <a href="https://www.linkedin.com/in/YOURHANDLE" target="_blank" rel="noopener">LinkedIn</a> ·
+          <a href="https://twitter.com/wwfpak/status/1709080690447548425?s=48&t=TmCsC_7cYyWDGaPry9Bkcg" target="_blank" rel="noopener">Twitter</a></p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Somia Asim</div>
+      <div class="meta">Built with GitHub Pages</div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
