@@ -159,6 +159,78 @@
     @media (max-width: 560px) {
       .section-wrap { padding: 20px; }
     }
+    /* ------------------------------
+   Global background (one image everywhere)
+---------------------------------*/
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("assets/Background_1.jpg") center/cover no-repeat fixed;
+  z-index: -2;              /* behind everything */
+  filter: none;             /* keep crisp */
+}
+
+/* Soft dark overlay for readability */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+      rgba(8, 12, 18, 0.55),
+      rgba(8, 12, 18, 0.55)
+  );
+  z-index: -1;
+}
+
+/* Layout: left-aligned, airy */
+.section { padding: 56px 0 72px; }
+.hero, .about-copy { max-width: 980px; margin-left: 2rem; margin-right: 2rem; }
+.section-title { margin: 0 0 1rem; }
+
+/* Headline + subtitle */
+.hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  font-weight: 800;
+  color: #e8eef7;
+  margin: 0 0 .25rem;
+}
+.hero-subtitle {
+  color: #b6c3d6;
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+
+/* Chips */
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip {
+  display: inline-block;
+  padding: .35rem .7rem;
+  border-radius: 999px;
+  background: rgba(150, 185, 255, .12);
+  color: #cfe1ff;
+  border: 1px solid rgba(150, 185, 255, .22);
+  font-size: .85rem;
+}
+
+/* Panels should look like simple text on the bg (no boxes) */
+.panel {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  color: #dfe6ef;
+}
+.panel p { color: #d3deee; }
+.panel a { color: #9ec5ff; }
+
+/* Remove any old eyebrow/badge if it existed */
+.eyebrow, .hero-badge { display: none !important; }
+
+/* Footer minimal */
+.footer { background: transparent; color: #9db1c7; }
+
   </style>
 </head>
 
@@ -193,36 +265,63 @@
     </div>
   </div>
 
+  
+
   <!-- About -->
-  <section id="about" class="active">
-    <div class="section-wrap">
-      <h2>About Me</h2>
-      <p>
-        I’m a GIS/RS &amp; Data Analyst passionate about <strong>Geospatial Analytics</strong> — turning satellite imagery,
-        geospatial data, and environmental indicators into insights that guide conservation, planning, and policy.  
-        My work at <strong>WWF-Pakistan</strong> and <strong>LUMS</strong> has focused on urban growth analysis, flood mapping,
-        and environmental risk assessment.
-      </p>
+  <section id="about" class="section">
+  <header class="hero">
+    <h1 class="hero-title">GIS/RS &amp; Data Analyst</h1>
+    <p class="hero-subtitle">
+      ESRI Package • QGIS • Python/HTML/CSS/JS • Google Earth Engine • R • ENVI
+    </p>
 
-      <div class="pills">
-        <span class="pill">ESRI Package</span>
-        <span class="pill">QGIS</span>
-        <span class="pill">Python</span>
-        <span class="pill">HTML</span>
-        <span class="pill">CSS</span>
-        <span class="pill">JavaScript</span>
-        <span class="pill">Google Earth Engine</span>
-        <span class="pill">R</span>
-        <span class="pill">ENVI</span>
-      </div>
+    <!-- keep ONE set of skill chips (remove the duplicates below) -->
+    <div class="chips">
+      <span class="chip">Urban Change</span>
+      <span class="chip">Flood Analysis</span>
+      <span class="chip">Risk Mapping</span>
+      <span class="chip">Cartography</span>
+      <span class="chip">Automation / Dashboards</span>
+    </div>
+  </header>
 
+  <div class="about-copy panel">
+    <h2 class="section-title">About Me</h2>
+
+    <p>
+      I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My journey into geospatial research
+      began during my undergraduate studies at the University of the Punjab, where I developed an interest in spatial
+      analysis, cartography, and environmental data interpretation.
+    </p>
+    <p>
+      I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS
+      Officer, where I gained hands-on experience in geospatial analysis, remote sensing, and environmental mapping.
+      Currently, I’m part of the Lahore University of Management Sciences (LUMS), where I first served as a Research
+      Assistant and now work as a Research Associate, contributing to data-driven projects at the intersection of
+      environment, policy, and urban systems.
+    </p>
+    <p>
+      My expertise lies in spatial data management, statistical and geospatial analysis, and machine learning
+      applications. I’m skilled in tools such as ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL, and have
+      a keen interest in automating analytical workflows, developing dashboards, and visualizing complex datasets.
+    </p>
+    <p>
+      I’m passionate about exploring how geospatial intelligence and data analytics can be used to support sustainable
+      development, environmental planning, and informed decision-making.
+    </p>
+
+    <!-- Contact -->
+    <div class="contact">
       <h3>Contact</h3>
-      <p class="soft">
-        <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a> &nbsp;•&nbsp;
-        <a href="https://www.linkedin.com/in/somia-asim" target="_blank">LinkedIn</a>
+      <p>
+        <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a>
+        &nbsp;•&nbsp;
+        <a href="https://www.linkedin.com/in/somia-asim/" target="_blank" rel="noopener">LinkedIn</a>
       </p>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <footer>© Somia Asim</footer>
 
