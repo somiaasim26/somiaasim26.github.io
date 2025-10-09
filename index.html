@@ -4,134 +4,104 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Somia Asim • Portfolio</title>
-  <meta name="description" content="Somia Asim — GIS/Remote Sensing & Data Analyst" />
+  <title>Somia Asim – GIS/RS & Data Analyst</title>
+  <meta name="description" content="Somia Asim — GIS/RS & Data Analyst" />
   <link rel="icon" href="assets/favicon.png" />
 
-  <!-- Minimal, modern look -->
   <style>
     :root{
-      /* Tones inspired by Background_1.jpg */
-      --bg-deep: #0e1318;
-      --glass: rgba(14,19,24,.55);
-      --text: #eaf1f8;
-      --muted: #b8c6d8;
-      --accent: #9cc8ff;
+      --bg-deep:#0d1217;
+      --glass:rgba(14,19,24,.55);
+      --text:#eaf1f8;
+      --muted:#b8c6d8;
+      --accent:#9cc8ff;
       --accent-2:#9fb7d6;
-      --link: #bfe1ff;
-      --maxw: 1200px;
+      --link:#bfe1ff;
+      --maxw:1200px;
     }
 
-    /* Reset-ish */
     *,*::before,*::after{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
       color:var(--text);
-      font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      background: var(--bg-deep) url("assets/Background_1.jpg") center/cover fixed no-repeat;
+      font:16px/1.65 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:var(--bg-deep) url("assets/Background_1.jpg") center/cover fixed no-repeat;
     }
-
-    /* A subtle overall overlay for readability */
     body::before{
-      content:"";
-      position:fixed; inset:0;
-      background: linear-gradient(to bottom, rgba(8,12,16,.55), rgba(8,12,16,.35));
-      pointer-events:none;
-      z-index:0;
+      content:"";position:fixed;inset:0;
+      background:linear-gradient(to bottom,rgba(8,12,16,.55),rgba(8,12,16,.35));
+      pointer-events:none;z-index:0;
     }
 
-    /* Top bar */
     .topbar{
-      position:sticky; top:0; z-index:10;
-      background: linear-gradient(to bottom, rgba(10,14,18,.8), rgba(10,14,18,.6));
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      position:sticky;top:0;z-index:10;
+      background:linear-gradient(to bottom,rgba(10,14,18,.8),rgba(10,14,18,.6));
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
     .topbar .wrap{
-      max-width:var(--maxw); margin:0 auto; padding:14px 20px;
-      display:flex; align-items:center; gap:24px;
+      max-width:var(--maxw);margin:0 auto;padding:14px 20px;
+      display:flex;align-items:center;gap:24px;
     }
-    .brand{
-      font-weight:800; letter-spacing:.4px; font-size:18px;
-    }
-    nav{display:flex; gap:16px; margin-left:auto; flex-wrap:wrap}
+    .brand{font-weight:800;letter-spacing:.4px;font-size:18px}
+    nav{display:flex;gap:16px;margin-left:auto;flex-wrap:wrap}
     nav a{
-      color:var(--muted); text-decoration:none; padding:6px 10px; border-radius:8px;
+      color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;
     }
-    nav a.active{ color:var(--text); background:rgba(255,255,255,.08) }
-    nav a:hover{ color:var(--link) }
+    nav a.active{color:var(--text);background:rgba(255,255,255,.08)}
+    nav a:hover{color:var(--link)}
 
-    /* Page Title / hero block (open, no boxes) */
     .hero{
-      max-width:var(--maxw); margin:48px auto 22px; padding:0 20px;
+      max-width:var(--maxw);margin:48px auto 22px;padding:0 20px;
     }
-    .kicker{ color:var(--accent-2); font-weight:600; letter-spacing:.08em; text-transform:uppercase; font-size:12px; }
+    .kicker{color:var(--accent-2);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
     h1{
       margin:.35rem 0 .25rem;
-      font-size: clamp(28px, 5vw, 56px);
-      line-height:1.08; font-weight:900;
-      text-shadow: 0 2px 30px rgba(0,0,0,.35);
+      font-size:clamp(28px,5vw,56px);
+      line-height:1.08;font-weight:900;
+      text-shadow:0 2px 30px rgba(0,0,0,.35);
     }
-    .subline{ color:var(--muted); font-size: clamp(14px, 2vw, 18px); max-width:900px }
+    .subline{color:var(--muted);font-size:clamp(14px,2vw,18px);max-width:900px}
 
-    /* Sections */
-    section{ display:none; position:relative; z-index:1 }
-    section.active{ display:block }
-    .section-wrap{
-      max-width:var(--maxw); margin:22px auto 72px; padding:0 20px;
-    }
-    h2{ font-size: clamp(22px, 3vw, 32px); margin:28px 0 10px }
-    p{ margin:.4rem 0 1rem; text-wrap:balance }
+    section{display:none;position:relative;z-index:1}
+    section.active{display:block}
+    .section-wrap{max-width:var(--maxw);margin:22px auto 72px;padding:0 20px}
+    h2{font-size:clamp(22px,3vw,32px);margin:28px 0 10px}
+    p{margin:.4rem 0 1rem;text-wrap:balance}
 
-    /* Simple pills for skills/areas */
-    .pills{ display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 6px }
+    .pills{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 6px}
     .pill{
-      padding:6px 10px; border-radius:999px;
-      background: rgba(255,255,255,.08);
+      padding:6px 10px;border-radius:999px;
+      background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.08);
-      color: var(--text); font-size:13px
+      color:var(--text);font-size:13px;
     }
 
-    /* Experience list */
-    .item{ margin:18px 0; }
-    .item h3{ margin:0 0 4px; font-size:20px }
-    .item .meta{ color:var(--muted); font-size:14px }
+    .item{margin:18px 0}
+    .item h3{margin:0 0 4px;font-size:20px}
+    .item .meta{color:var(--muted);font-size:14px}
 
-    /* Gallery grids */
     .grid{
       display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap:14px;
-      margin:10px 0 26px;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;margin:10px 0 26px;
     }
     .grid img{
-      width:100%; height:180px; object-fit:cover; border-radius:10px;
+      width:100%;height:180px;object-fit:cover;border-radius:10px;
       border:1px solid rgba(255,255,255,.08);
       background:rgba(255,255,255,.03);
-      transition: transform .2s ease;
+      transition:transform .2s ease;
     }
-    .grid img:hover{ transform: scale(1.02) }
-
-    /* Links */
-    a{ color:var(--link) }
-    .soft{ color:var(--muted) }
-
-    /* Footer */
-    footer{
-      text-align:left; max-width:var(--maxw); margin:30px auto 60px; padding:0 20px; color:var(--muted);
-    }
-
-    /* Small screens */
-    @media (max-width:560px){
-      nav{ gap:10px }
-      .grid img{ height:160px }
-    }
+    .grid img:hover{transform:scale(1.02)}
+    a{color:var(--link)}
+    .soft{color:var(--muted)}
+    footer{text-align:left;max-width:var(--maxw);margin:30px auto 60px;padding:0 20px;color:var(--muted)}
+    @media(max-width:560px){nav{gap:10px}.grid img{height:160px}}
   </style>
 </head>
 <body>
 
-  <!-- Top Nav -->
   <header class="topbar">
     <div class="wrap">
       <div class="brand">SOMIA ASIM</div>
@@ -145,12 +115,11 @@
     </div>
   </header>
 
-  <!-- Open hero (no boxes) -->
   <div class="hero">
-    <div class="kicker">Research Associate</div>
+    <div class="kicker">GIS/RS &amp; Data Analyst</div>
     <h1>Geospatial &amp; Data Analytics</h1>
     <p class="subline">
-      ESRI Package • QGIS • Python/HTML/CSS/JS • R • Google Earth Engine
+      ESRI/ArcGIS • QGIS • Python • R • HTML • CSS • JS
     </p>
     <div class="pills">
       <span class="pill">Urban Change</span>
@@ -166,23 +135,27 @@
     <div class="section-wrap">
       <h2>About Me</h2>
       <p>
-        I’m a Research Associate focused on <strong>Geospatial &amp; Data Analytics</strong> — turning satellite
-        imagery and spatial datasets into clear, decision-ready products. I’ve contributed to projects with
-        <strong>WWF-Pakistan</strong> and <strong>LUMS</strong> on urban change, flood analysis, and risk mapping.
+        I’m a GIS/RS &amp; Data Analyst passionate about <strong>Geospatial Analytics</strong> —
+        turning satellite imagery, geospatial data, and environmental indicators into insights
+        that guide conservation, planning, and policy.  
+        My work at <strong>WWF-Pakistan</strong> and <strong>LUMS</strong> has focused on
+        urban growth analysis, flood mapping, and environmental risk assessment.
       </p>
-      <div class="pills" aria-label="stack">
+      <div class="pills">
         <span class="pill">ESRI/ArcGIS</span>
         <span class="pill">QGIS</span>
         <span class="pill">Python</span>
         <span class="pill">R</span>
+        <span class="pill">HTML</span>
+        <span class="pill">CSS</span>
+        <span class="pill">JavaScript</span>
         <span class="pill">Google Earth Engine</span>
-        <span class="pill">Stata</span>
       </div>
 
       <h3>Contact</h3>
       <p class="soft">
         <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a> &nbsp;•&nbsp;
-        <a href="https://www.linkedin.com/in/somia-asim" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/somia-asim" target="_blank">LinkedIn</a>
       </p>
     </div>
   </section>
@@ -191,31 +164,30 @@
   <section id="experience">
     <div class="section-wrap">
       <h2>Experience</h2>
-
       <div class="item">
         <h3>WWF-Pakistan — Geospatial Analysis</h3>
-        <div class="meta">Urbanisation &amp; Land-Use Change • NDVI • Cartography</div>
+        <div class="meta">Urbanisation • Land Use Change • NDVI • Cartography</div>
         <p>
-          Produced LULC and growth assessments (1990–2020) for Islamabad &amp; Lahore, mapped hotspots and NDVI trends,
-          and designed communication-ready maps.
+          Produced multi-decade LULC and growth assessments for Islamabad & Lahore (1990–2020),
+          mapped hotspots and NDVI trends, and designed communication-ready GIS visuals.
         </p>
       </div>
 
       <div class="item">
-        <h3>LUMS — Flood Analysis &amp; Risk Mapping</h3>
-        <div class="meta">2022 Floods • Water Extent • Hazard Index • Policy Support</div>
+        <h3>LUMS — Flood & Risk Mapping</h3>
+        <div class="meta">2022 Floods • Hazard Index • Policy Support</div>
         <p>
-          Built multi-temporal flood water fraction maps and Pakistan flood hazard layers at tehsil level to support
-          PDMA and policy conversations.
+          Created multi-temporal flood extent analyses and Pakistan-wide flood hazard maps using
+          satellite data and spatial modelling to support PDMA and policy decisions.
         </p>
       </div>
 
       <h3>Selected Visuals</h3>
       <div class="grid">
-        <a href="assets/visuals/islamabad-change-analysis.jpeg"><img src="assets/visuals/islamabad-change-analysis.jpeg" alt="Islamabad change analysis"></a>
-        <a href="assets/visuals/lahore-change-analysis.jpg"><img src="assets/visuals/lahore-change-analysis.jpg" alt="Lahore urbanisation"></a>
-        <a href="assets/visuals/lake-manchar-analysis.jpg"><img src="assets/visuals/lake-manchar-analysis.jpg" alt="Lake Manchar change"></a>
-        <a href="assets/visuals/pakistan-flood-risk-map.jpg"><img src="assets/visuals/pakistan-flood-risk-map.jpg" alt="Flood hazard map"></a>
+        <a href="assets/visuals/islamabad-change-analysis.jpeg"><img src="assets/visuals/islamabad-change-analysis.jpeg" alt="Islamabad Change"></a>
+        <a href="assets/visuals/lahore-change-analysis.jpg"><img src="assets/visuals/lahore-change-analysis.jpg" alt="Lahore Urbanisation"></a>
+        <a href="assets/visuals/lake-manchar-analysis.jpg"><img src="assets/visuals/lake-manchar-analysis.jpg" alt="Lake Manchar Change"></a>
+        <a href="assets/visuals/pakistan-flood-risk-map.jpg"><img src="assets/visuals/pakistan-flood-risk-map.jpg" alt="Flood Risk Map"></a>
       </div>
     </div>
   </section>
@@ -226,21 +198,16 @@
       <h2>CV</h2>
       <p>Download my latest résumé:</p>
       <p><a href="assets/data/Somia_Asim_CV.pdf" download>Download CV (PDF)</a></p>
-      <p class="soft">If your browser blocks downloads from GitHub Pages, right-click &amp; “Open link in new tab”.</p>
     </div>
   </section>
 
-  <!-- Blogs / Publications -->
+  <!-- Blogs -->
   <section id="blogs">
     <div class="section-wrap">
       <h2>Blogs / Publications</h2>
       <ul>
-        <li>
-          WWF Pakistan blog: <em>Urban Change &amp; Landscape Visualisation</em> — coming soon.
-        </li>
-        <li>
-          Notes on the Indus River dolphin (Bhulan) — field mapping &amp; conservation layers (summary write-up in progress).
-        </li>
+        <li>WWF-Pakistan blog on <em>Urban Change & Landscape Visualization</em> — coming soon.</li>
+        <li>Indus River Dolphin (Bhulan) Conservation insights — under publication.</li>
       </ul>
     </div>
   </section>
@@ -249,66 +216,44 @@
   <section id="gallery">
     <div class="section-wrap">
       <h2>Gallery</h2>
-
-      <h3>Hobbies — Art</h3>
-      <div class="grid">
-        <a href="assets/gallery/with-sir-adeel.jpg"><img src="assets/gallery/with-sir-adeel.jpg" alt="Sketch/Art placeholder (replace with art when ready)"></a>
-      </div>
-
       <h3>Community — Plantation Drive</h3>
       <div class="grid">
-        <a href="assets/visuals/plantation-drive.jpg"><img src="assets/visuals/plantation-drive.jpg" alt="Plantation photos"></a>
-        <a href="assets/visuals/plantation-driv.mp4"><img src="assets/visuals/plantation-driv.mp4" alt="Plantation video" /></a>
-        <a href="assets/visuals/plantation-driv.mp4"><img src="assets/visuals/plantation-driv.mp4" alt="Plantation video duplicate" /></a>
+        <img src="assets/visuals/plantation-drive.jpg" alt="Plantation">
+        <video src="assets/visuals/plantation-driv.mp4" controls></video>
       </div>
-
       <h3>LUMS Journey</h3>
       <div class="grid">
-        <a href="assets/gallery/pdma-meeting-1.jpg"><img src="assets/gallery/pdma-meeting-1.jpg" alt="PDMA meeting"></a>
-        <a href="assets/gallery/pdma-meeting-2.jpg"><img src="assets/gallery/pdma-meeting-2.jpg" alt="PDMA meeting"></a>
-        <a href="assets/gallery/pdma-meeting-3.jpg"><img src="assets/gallery/pdma-meeting-3.jpg" alt="PDMA meeting"></a>
-        <a href="assets/gallery/chief-economist-meeting.jpg"><img src="assets/gallery/chief-economist-meeting.jpg" alt="With Dr. Adnan, Chief Economist"></a>
-        <a href="assets/gallery/pra-meeting-2.jpg"><img src="assets/gallery/pra-meeting-2.jpg" alt="PRA meeting"></a>
+        <img src="assets/gallery/pdma-meeting-1.jpg" alt="PDMA 1">
+        <img src="assets/gallery/pdma-meeting-2.jpg" alt="PDMA 2">
+        <img src="assets/gallery/chief-economist-meeting.jpg" alt="Chief Economist">
       </div>
-
       <h3>PU Journey</h3>
       <div class="grid">
-        <a href="assets/gallery/batch-2018-2022.jpg"><img src="assets/gallery/batch-2018-2022.jpg" alt="Batch 2018–2022"></a>
-        <a href="assets/gallery/gis-day-pu-1.jpg"><img src="assets/gallery/gis-day-pu-1.jpg" alt="GIS Day PU"></a>
-        <a href="assets/gallery/gis-day-pu-2.jpg"><img src="assets/gallery/gis-day-pu-2.jpg" alt="GIS Day PU"></a>
-        <a href="assets/gallery/trip-salt-mines-1.jpg"><img src="assets/gallery/trip-salt-mines-1.jpg" alt="Trip to salt mines"></a>
-        <a href="assets/gallery/trip-salt-mines-2.jpg"><img src="assets/gallery/trip-salt-mines-2.jpg" alt="Trip to salt mines"></a>
-        <a href="assets/gallery/trip-salt-mines-3.jpg"><img src="assets/gallery/trip-salt-mines-3.jpg" alt="Trip to salt mines"></a>
-        <a href="assets/gallery/trip-jahangirs-fort.jpg"><img src="assets/gallery/trip-jahangirs-fort.jpg" alt="Jahangir’s Fort"></a>
-        <a href="assets/gallery/with-sir-adeel.jpg"><img src="assets/gallery/with-sir-adeel.jpg" alt="With Sir Adeel"></a>
+        <img src="assets/gallery/batch-2018-2022.jpg" alt="Batch">
+        <img src="assets/gallery/gis-day-pu-1.jpg" alt="GIS Day PU">
+        <img src="assets/gallery/trip-salt-mines-1.jpg" alt="Salt Mines">
+        <img src="assets/gallery/with-sir-adeel.jpg" alt="Sir Adeel">
       </div>
-
       <h3>WWF Journey</h3>
       <div class="grid">
-        <a href="assets/gallery/lahore-science-mela.jpg"><img src="assets/gallery/lahore-science-mela.jpg" alt="Volunteer at Lahore Science Mela"></a>
-        <a href="assets/gallery/gis-day-wwf-1.jpg"><img src="assets/gallery/gis-day-wwf-1.jpg" alt="GIS Day at WWF"></a>
-        <a href="assets/gallery/wwf-team.jpg"><img src="assets/gallery/wwf-team.jpg" alt="WWF team dinner"></a>
-        <a href="assets/gallery/wwf-team-2.jpg"><img src="assets/gallery/wwf-team-2.jpg" alt="WWF colleagues"></a>
+        <img src="assets/gallery/lahore-science-mela.jpg" alt="Science Mela">
+        <img src="assets/gallery/wwf-team.jpg" alt="WWF Team">
       </div>
-
     </div>
   </section>
 
-  <footer>
-    © Somia Asim
-  </footer>
+  <footer>© Somia Asim</footer>
 
-  <!-- Tiny hash router for tabs -->
   <script>
     (function(){
-      const tabs = document.querySelectorAll('#tabs a');
-      const sections = [...document.querySelectorAll('section')];
+      const tabs=document.querySelectorAll('#tabs a');
+      const sections=[...document.querySelectorAll('section')];
       function show(hash){
-        const id = (hash || location.hash || '#about').replace('#','');
-        sections.forEach(s => s.classList.toggle('active', s.id === id));
-        tabs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+id));
+        const id=(hash||location.hash||'#about').replace('#','');
+        sections.forEach(s=>s.classList.toggle('active',s.id===id));
+        tabs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
       }
-      window.addEventListener('hashchange',() => show());
+      window.addEventListener('hashchange',()=>show());
       show();
     })();
   </script>
