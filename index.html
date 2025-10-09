@@ -5,103 +5,165 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Somia Asim – GIS/RS & Data Analyst</title>
-  <meta name="description" content="Somia Asim — GIS/RS & Data Analyst" />
+  <meta name="description" content="Somia Asim — GIS/RS & Data Analyst | Geospatial Analytics" />
   <link rel="icon" href="assets/favicon.png" />
 
   <style>
-    :root{
-      --bg-deep:#0d1217;
-      --glass:rgba(14,19,24,.55);
-      --text:#eaf1f8;
-      --muted:#b8c6d8;
-      --accent:#9cc8ff;
-      --accent-2:#9fb7d6;
-      --link:#bfe1ff;
-      --maxw:1200px;
+    :root {
+      --bg-deep: #0d1217;
+      --glass: rgba(10, 14, 18, 0.55);
+      --text: #f2f6fa;
+      --muted: #c1ccda;
+      --accent: #a3d4ff;
+      --accent-2: #b3cdee;
+      --link: #a9d9ff;
+      --maxw: 1200px;
     }
 
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      color:var(--text);
-      font:16px/1.65 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background:var(--bg-deep) url("assets/Background_1.jpg") center/cover fixed no-repeat;
-    }
-    body::before{
-      content:"";position:fixed;inset:0;
-      background:linear-gradient(to bottom,rgba(8,12,16,.55),rgba(8,12,16,.35));
-      pointer-events:none;z-index:0;
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+
+    body {
+      color: var(--text);
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg-deep) url("assets/Background_1.jpg") center/cover fixed no-repeat;
     }
 
-    .topbar{
-      position:sticky;top:0;z-index:10;
-      background:linear-gradient(to bottom,rgba(10,14,18,.8),rgba(10,14,18,.6));
-      backdrop-filter:blur(6px);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .topbar .wrap{
-      max-width:var(--maxw);margin:0 auto;padding:14px 20px;
-      display:flex;align-items:center;gap:24px;
-    }
-    .brand{font-weight:800;letter-spacing:.4px;font-size:18px}
-    nav{display:flex;gap:16px;margin-left:auto;flex-wrap:wrap}
-    nav a{
-      color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;
-    }
-    nav a.active{color:var(--text);background:rgba(255,255,255,.08)}
-    nav a:hover{color:var(--link)}
-
-    .hero{
-      max-width:var(--maxw);margin:48px auto 22px;padding:0 20px;
-    }
-    .kicker{color:var(--accent-2);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
-    h1{
-      margin:.35rem 0 .25rem;
-      font-size:clamp(28px,5vw,56px);
-      line-height:1.08;font-weight:900;
-      text-shadow:0 2px 30px rgba(0,0,0,.35);
-    }
-    .subline{color:var(--muted);font-size:clamp(14px,2vw,18px);max-width:900px}
-
-    section{display:none;position:relative;z-index:1}
-    section.active{display:block}
-    .section-wrap{max-width:var(--maxw);margin:22px auto 72px;padding:0 20px}
-    h2{font-size:clamp(22px,3vw,32px);margin:28px 0 10px}
-    p{margin:.4rem 0 1rem;text-wrap:balance}
-
-    .pills{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 6px}
-    .pill{
-      padding:6px 10px;border-radius:999px;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.08);
-      color:var(--text);font-size:13px;
+    /* Subtle dark overlay for visibility */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(6, 10, 14, 0.75), rgba(10, 15, 18, 0.6));
+      z-index: 0;
     }
 
-    .item{margin:18px 0}
-    .item h3{margin:0 0 4px;font-size:20px}
-    .item .meta{color:var(--muted);font-size:14px}
+    /* Top Navigation */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(6, 10, 14, 0.8);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:14px;margin:10px 0 26px;
+    .topbar .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
     }
-    .grid img{
-      width:100%;height:180px;object-fit:cover;border-radius:10px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.03);
-      transition:transform .2s ease;
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      font-size: 18px;
     }
-    .grid img:hover{transform:scale(1.02)}
-    a{color:var(--link)}
-    .soft{color:var(--muted)}
-    footer{text-align:left;max-width:var(--maxw);margin:30px auto 60px;padding:0 20px;color:var(--muted)}
-    @media(max-width:560px){nav{gap:10px}.grid img{height:160px}}
+
+    nav { display: flex; gap: 16px; margin-left: auto; flex-wrap: wrap; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+    nav a.active { color: var(--text); background: rgba(255, 255, 255, 0.08); }
+    nav a:hover { color: var(--link); }
+
+    /* Hero section */
+    .hero {
+      max-width: var(--maxw);
+      margin: 60px auto 22px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -20px;
+      background: rgba(8, 12, 16, 0.55);
+      border-radius: 16px;
+      z-index: -1;
+    }
+
+    .kicker {
+      color: var(--accent-2);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    h1 {
+      margin: 0.4rem 0 0.3rem;
+      font-size: clamp(30px, 5vw, 58px);
+      line-height: 1.08;
+      font-weight: 900;
+      color: #ffffff;
+      text-shadow: 0 3px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .subline {
+      color: var(--accent);
+      font-size: clamp(15px, 2vw, 18px);
+      max-width: 900px;
+      margin-bottom: 12px;
+    }
+
+    section { display: none; position: relative; z-index: 1; }
+    section.active { display: block; }
+
+    .section-wrap {
+      max-width: var(--maxw);
+      margin: 24px auto 80px;
+      padding: 0 20px;
+      background: rgba(8, 12, 16, 0.55);
+      border-radius: 12px;
+      padding: 28px 24px;
+    }
+
+    h2 { font-size: clamp(22px, 3vw, 32px); margin: 16px 0 10px; }
+    p { margin: 0.5rem 0 1.2rem; }
+
+    .pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 12px 0 8px;
+    }
+
+    .pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 13px;
+    }
+
+    .soft { color: var(--muted); }
+
+    footer {
+      text-align: left;
+      max-width: var(--maxw);
+      margin: 30px auto 60px;
+      padding: 0 20px;
+      color: var(--muted);
+    }
+
+    a { color: var(--link); }
+    @media (max-width: 560px) {
+      .section-wrap { padding: 20px; }
+    }
   </style>
 </head>
-<body>
 
+<body>
+  <!-- Top Bar -->
   <header class="topbar">
     <div class="wrap">
       <div class="brand">SOMIA ASIM</div>
@@ -115,11 +177,12 @@
     </div>
   </header>
 
+  <!-- Hero -->
   <div class="hero">
     <div class="kicker">GIS/RS &amp; Data Analyst</div>
-    <h1>Geospatial &amp; Data Analytics</h1>
+    <h1>GIS/RS &amp; Data Analyst</h1>
     <p class="subline">
-      ESRI/ArcGIS • QGIS • Python • R • HTML • CSS • JS
+      ESRI Package • QGIS • Python/HTML/CSS/JS • Google Earth Engine • R • ENVI
     </p>
     <div class="pills">
       <span class="pill">Urban Change</span>
@@ -135,21 +198,22 @@
     <div class="section-wrap">
       <h2>About Me</h2>
       <p>
-        I’m a GIS/RS &amp; Data Analyst passionate about <strong>Geospatial Analytics</strong> —
-        turning satellite imagery, geospatial data, and environmental indicators into insights
-        that guide conservation, planning, and policy.  
-        My work at <strong>WWF-Pakistan</strong> and <strong>LUMS</strong> has focused on
-        urban growth analysis, flood mapping, and environmental risk assessment.
+        I’m a GIS/RS &amp; Data Analyst passionate about <strong>Geospatial Analytics</strong> — turning satellite imagery,
+        geospatial data, and environmental indicators into insights that guide conservation, planning, and policy.  
+        My work at <strong>WWF-Pakistan</strong> and <strong>LUMS</strong> has focused on urban growth analysis, flood mapping,
+        and environmental risk assessment.
       </p>
+
       <div class="pills">
-        <span class="pill">ESRI/ArcGIS</span>
+        <span class="pill">ESRI Package</span>
         <span class="pill">QGIS</span>
         <span class="pill">Python</span>
-        <span class="pill">R</span>
         <span class="pill">HTML</span>
         <span class="pill">CSS</span>
         <span class="pill">JavaScript</span>
         <span class="pill">Google Earth Engine</span>
+        <span class="pill">R</span>
+        <span class="pill">ENVI</span>
       </div>
 
       <h3>Contact</h3>
@@ -157,88 +221,6 @@
         <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a> &nbsp;•&nbsp;
         <a href="https://www.linkedin.com/in/somia-asim" target="_blank">LinkedIn</a>
       </p>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience">
-    <div class="section-wrap">
-      <h2>Experience</h2>
-      <div class="item">
-        <h3>WWF-Pakistan — Geospatial Analysis</h3>
-        <div class="meta">Urbanisation • Land Use Change • NDVI • Cartography</div>
-        <p>
-          Produced multi-decade LULC and growth assessments for Islamabad & Lahore (1990–2020),
-          mapped hotspots and NDVI trends, and designed communication-ready GIS visuals.
-        </p>
-      </div>
-
-      <div class="item">
-        <h3>LUMS — Flood & Risk Mapping</h3>
-        <div class="meta">2022 Floods • Hazard Index • Policy Support</div>
-        <p>
-          Created multi-temporal flood extent analyses and Pakistan-wide flood hazard maps using
-          satellite data and spatial modelling to support PDMA and policy decisions.
-        </p>
-      </div>
-
-      <h3>Selected Visuals</h3>
-      <div class="grid">
-        <a href="assets/visuals/islamabad-change-analysis.jpeg"><img src="assets/visuals/islamabad-change-analysis.jpeg" alt="Islamabad Change"></a>
-        <a href="assets/visuals/lahore-change-analysis.jpg"><img src="assets/visuals/lahore-change-analysis.jpg" alt="Lahore Urbanisation"></a>
-        <a href="assets/visuals/lake-manchar-analysis.jpg"><img src="assets/visuals/lake-manchar-analysis.jpg" alt="Lake Manchar Change"></a>
-        <a href="assets/visuals/pakistan-flood-risk-map.jpg"><img src="assets/visuals/pakistan-flood-risk-map.jpg" alt="Flood Risk Map"></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CV -->
-  <section id="cv">
-    <div class="section-wrap">
-      <h2>CV</h2>
-      <p>Download my latest résumé:</p>
-      <p><a href="assets/data/Somia_Asim_CV.pdf" download>Download CV (PDF)</a></p>
-    </div>
-  </section>
-
-  <!-- Blogs -->
-  <section id="blogs">
-    <div class="section-wrap">
-      <h2>Blogs / Publications</h2>
-      <ul>
-        <li>WWF-Pakistan blog on <em>Urban Change & Landscape Visualization</em> — coming soon.</li>
-        <li>Indus River Dolphin (Bhulan) Conservation insights — under publication.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section id="gallery">
-    <div class="section-wrap">
-      <h2>Gallery</h2>
-      <h3>Community — Plantation Drive</h3>
-      <div class="grid">
-        <img src="assets/visuals/plantation-drive.jpg" alt="Plantation">
-        <video src="assets/visuals/plantation-driv.mp4" controls></video>
-      </div>
-      <h3>LUMS Journey</h3>
-      <div class="grid">
-        <img src="assets/gallery/pdma-meeting-1.jpg" alt="PDMA 1">
-        <img src="assets/gallery/pdma-meeting-2.jpg" alt="PDMA 2">
-        <img src="assets/gallery/chief-economist-meeting.jpg" alt="Chief Economist">
-      </div>
-      <h3>PU Journey</h3>
-      <div class="grid">
-        <img src="assets/gallery/batch-2018-2022.jpg" alt="Batch">
-        <img src="assets/gallery/gis-day-pu-1.jpg" alt="GIS Day PU">
-        <img src="assets/gallery/trip-salt-mines-1.jpg" alt="Salt Mines">
-        <img src="assets/gallery/with-sir-adeel.jpg" alt="Sir Adeel">
-      </div>
-      <h3>WWF Journey</h3>
-      <div class="grid">
-        <img src="assets/gallery/lahore-science-mela.jpg" alt="Science Mela">
-        <img src="assets/gallery/wwf-team.jpg" alt="WWF Team">
-      </div>
     </div>
   </section>
 
