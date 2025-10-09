@@ -8,136 +8,103 @@
   <link rel="icon" href="assets/favicon.png" />
 
   <style>
-    :root {
-      --bg-dark: #0c1116;
-      --text-main: #eaf1fa;
-      --text-muted: #b7c2d3;
-      --accent: #a3c7ff;
-      --accent-soft: rgba(120, 180, 255, 0.2);
-      --maxw: 1150px;
+    :root{
+      --bg:#0b1117;
+      --ink:#eaf1fa;
+      --muted:#b7c2d3;
+      --accent:#a7c7ff;
+      --accent-soft:rgba(120,180,255,.18);
+      --maxw:1150px;
+    }
+    html,body{margin:0;height:100%;font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial; color:var(--ink); background:var(--bg)}
+
+    /* MAP BACKGROUND */
+    body::before{
+      content:"";
+      position:fixed; inset:0;
+      background:url("assets/Background_1.jpg") center/cover fixed no-repeat;
+      z-index:-2;
+    }
+    body::after{
+      content:"";
+      position:fixed; inset:0;
+      /* subtle dark veil so text stays readable */
+      background:linear-gradient(to bottom, rgba(8,12,16,.62), rgba(8,12,16,.45) 45%, rgba(8,12,16,.55));
+      z-index:-1;
     }
 
-    html, body { margin: 0; padding: 0; height: 100%; font-family: "Segoe UI", Roboto, Arial, sans-serif; color: var(--text-main); background-color: var(--bg-dark); }
+    /* NAVBAR */
+    header{
+      position:sticky; top:0; z-index:5;
+      background:rgba(8,12,16,.65);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+    .nav-wrap{
+      max-width:var(--maxw); margin:0 auto; padding:12px 20px;
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .brand{font-weight:800; letter-spacing:.4px}
+    nav a{ color:var(--muted); text-decoration:none; margin-left:18px; transition:.2s}
+    nav a:hover, nav a.active{ color:var(--accent)}
 
-    /* Background */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: url("assets/Background_1.jpg") center/cover fixed no-repeat;
-      z-index: -2;
-    }
+    /* HERO */
+    .hero{ max-width:var(--maxw); margin:48px auto 24px; padding:0 20px; }
+    .hero h1{ margin:.25rem 0; font-size:clamp(2.2rem, 4.6vw, 3.4rem); font-weight:800; color:#fff}
+    .hero p.sub{ color:var(--accent); margin:.4rem 0 1rem; }
+    .pills{ display:flex; flex-wrap:wrap; gap:.5rem}
+    .pill{ border-radius:999px; padding:6px 12px; font-size:.86rem; background:var(--accent-soft); border:1px solid rgba(160,190,255,.22)}
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(8, 12, 16, 0.55);
-      z-index: -1;
-    }
-
-    /* Navbar */
-    header {
-      background: rgba(5, 10, 15, 0.85);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      position: sticky; top: 0; z-index: 5;
-    }
-    .nav-wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .brand { font-weight: 800; letter-spacing: .5px; font-size: 18px; }
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      margin-left: 18px;
-      transition: 0.2s;
-    }
-    nav a:hover, nav a.active { color: var(--accent); }
-
-    /* Hero */
-    .hero {
-      max-width: var(--maxw);
-      margin: 60px auto 40px;
-      padding: 0 20px;
-      text-align: left;
-    }
-    .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 3.6rem);
-      margin: 0.2rem 0;
-      font-weight: 800;
-      color: #ffffff;
-    }
-    .hero p.sub {
-      color: var(--accent);
-      font-size: 1.05rem;
-      margin-bottom: 1rem;
-    }
-    .pills { display: flex; flex-wrap: wrap; gap: .5rem; }
-    .pill {
-      background: var(--accent-soft);
-      border: 1px solid rgba(150, 185, 255, .2);
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: 0.85rem;
+    /* SECTIONS */
+    section{ display:none; }
+    section.active{ display:block; }
+    .content{
+      max-width:var(--maxw); margin:0 auto; padding:16px 20px 40px;
+      display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap;
     }
 
-    /* Sections */
-    section { display: none; position: relative; }
-    section.active { display: block; }
-
-    .content {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 20px;
-      display: flex;
-      align-items: flex-start;
-      gap: 40px;
-      flex-wrap: wrap;
+    /* “glassy” gradient panel behind text (not a heavy black box) */
+    .panel{
+      flex:1; min-width:280px; padding:24px 26px;
+      background:linear-gradient(135deg, rgba(12,16,22,.58), rgba(12,16,22,.34));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:18px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      line-height:1.75;
     }
 
-    .content img {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid rgba(255,255,255,0.2);
-      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    .panel h2{ margin-top:0; font-size:1.8rem }
+    .panel p{ color:var(--muted); margin:.85rem 0 }
+
+    /* PROFILE IMAGE — no extra white frame/circle from CSS */
+    .pfp-wrap{
+      flex:0 0 240px; min-width:220px; display:flex; justify-content:center;
+    }
+    .pfp{
+      width:220px; height:220px; object-fit:cover;
+      border-radius:16px; /* soft rounded rectangle */
+      border:0;
+      box-shadow:0 10px 26px rgba(0,0,0,.35);
+      /* soften the bright whites a bit over the map */
+      mix-blend-mode:multiply;
+      opacity:.97;
     }
 
-    .text-block {
-      flex: 1;
-      min-width: 280px;
-      line-height: 1.7;
-    }
-    .text-block h2 { margin-top: 0; font-size: 1.8rem; }
-    .text-block p { color: var(--text-muted); margin-bottom: 1rem; }
+    a{ color:var(--accent); text-decoration:none }
+    a:hover{ text-decoration:underline }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    footer{ max-width:var(--maxw); margin:30px auto 60px; padding:0 20px; color:var(--muted); font-size:.9rem }
 
-    footer {
-      max-width: var(--maxw);
-      margin: 40px auto 60px;
-      padding: 0 20px;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    @media (max-width: 720px) {
-      .content { flex-direction: column; align-items: center; text-align: center; }
-      .content img { margin-bottom: 20px; }
-      .text-block h2 { text-align: center; }
+    @media (max-width:780px){
+      .content{ flex-direction:column }
+      .pfp-wrap{ justify-content:flex-start }
+      .hero{ margin-top:36px }
     }
   </style>
 </head>
-
 <body>
+  <!-- NAV -->
   <header>
     <div class="nav-wrap">
       <div class="brand">SOMIA ASIM</div>
@@ -151,7 +118,7 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <div class="hero">
     <h1>GIS/RS &amp; Data Analyst</h1>
     <p class="sub">ESRI Package • QGIS • Python/HTML/CSS/JS • Google Earth Engine • R • ENVI</p>
@@ -164,44 +131,26 @@
     </div>
   </div>
 
-  <!-- About -->
+  <!-- ABOUT -->
   <section id="about" class="active">
     <div class="content">
-      <img src="assets/Somia.jpg" alt="Somia Asim portrait" />
+      <div class="pfp-wrap">
+        <img class="pfp" src="assets/Somia.jpg" alt="Somia Asim portrait" />
+      </div>
 
-      <div class="text-block">
+      <div class="panel">
         <h2>About Me</h2>
 
-        <p>
-          I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My journey into geospatial research
-          began during my undergraduate studies at the University of the Punjab, where I developed an interest in spatial
-          analysis, cartography, and environmental data interpretation.
-        </p>
+        <p>I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My journey into geospatial research began during my undergraduate studies at the University of the Punjab, where I developed an interest in spatial analysis, cartography, and environmental data interpretation.</p>
 
-        <p>
-          I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS
-          Officer, where I gained hands-on experience in geospatial analysis, remote sensing, and environmental mapping.
-          Currently, I’m part of the Lahore University of Management Sciences (LUMS), where I first served as a Research
-          Assistant and now work as a Research Associate, contributing to data-driven projects at the intersection of
-          environment, policy, and urban systems.
-        </p>
+        <p>I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS Officer, where I gained hands-on experience in geospatial analysis, remote sensing, and environmental mapping. Currently, I’m part of the Lahore University of Management Sciences (LUMS), where I first served as a Research Assistant and now work as a Research Associate, contributing to data-driven projects at the intersection of environment, policy, and urban systems.</p>
 
-        <p>
-          My expertise lies in spatial data management, statistical and geospatial analysis, and machine learning
-          applications. I’m skilled in tools such as ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL, and have
-          a keen interest in automating analytical workflows, developing dashboards, and visualizing complex datasets.
-        </p>
+        <p>My expertise lies in spatial data management, statistical and geospatial analysis, and machine learning applications. I’m skilled in tools such as ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL, and have a keen interest in automating analytical workflows, developing dashboards, and visualizing complex datasets.</p>
 
-        <p>
-          I’m passionate about exploring how geospatial intelligence and data analytics can be used to support sustainable
-          development, environmental planning, and informed decision-making.
-        </p>
+        <p>I’m passionate about exploring how geospatial intelligence and data analytics can be used to support sustainable development, environmental planning, and informed decision-making.</p>
 
         <h3>Contact</h3>
-        <p>
-          <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a> •
-          <a href="https://www.linkedin.com/in/somia-asim" target="_blank">LinkedIn</a>
-        </p>
+        <p><a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a> • <a href="https://www.linkedin.com/in/somia-asim" target="_blank">LinkedIn</a></p>
       </div>
     </div>
   </section>
@@ -209,16 +158,16 @@
   <footer>© Somia Asim</footer>
 
   <script>
-    // Navigation tab logic
-    const navLinks = document.querySelectorAll("#nav a");
-    const sections = document.querySelectorAll("section");
-    function showSection(hash) {
-      const id = (hash || location.hash || "#about").replace("#", "");
-      sections.forEach(s => s.classList.toggle("active", s.id === id));
-      navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + id));
-    }
-    window.addEventListener("hashchange", () => showSection());
-    showSection();
+    // Simple tab routing (kept for future sections)
+    const links = document.querySelectorAll("#nav a");
+    const secs  = document.querySelectorAll("section");
+    const show = (hash) => {
+      const id = (hash || location.hash || "#about").replace("#","");
+      secs.forEach(s => s.classList.toggle("active", s.id === id));
+      links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#"+id));
+    };
+    window.addEventListener("hashchange", () => show());
+    show();
   </script>
 </body>
 </html>
