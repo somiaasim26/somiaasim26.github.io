@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Somia Asim – GIS/RS & Data Analyst</title>
   <meta name="description" content="Somia Asim — GIS/RS & Data Analyst | Geospatial Analytics" />
@@ -10,236 +9,139 @@
 
   <style>
     :root {
-      --bg-deep: #0d1217;
-      --glass: rgba(10, 14, 18, 0.55);
-      --text: #f2f6fa;
-      --muted: #c1ccda;
-      --accent: #a3d4ff;
-      --accent-2: #b3cdee;
-      --link: #a9d9ff;
-      --maxw: 1200px;
+      --bg-dark: #0c1116;
+      --text-main: #eaf1fa;
+      --text-muted: #b7c2d3;
+      --accent: #a3c7ff;
+      --accent-soft: rgba(120, 180, 255, 0.2);
+      --maxw: 1150px;
     }
 
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; }
+    html, body { margin: 0; padding: 0; height: 100%; font-family: "Segoe UI", Roboto, Arial, sans-serif; color: var(--text-main); background-color: var(--bg-dark); }
 
-    body {
-      color: var(--text);
-      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--bg-deep) url("assets/Background_1.jpg") center/cover fixed no-repeat;
-    }
-
-    /* Subtle dark overlay for visibility */
+    /* Background */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(6, 10, 14, 0.75), rgba(10, 15, 18, 0.6));
-      z-index: 0;
+      background: url("assets/Background_1.jpg") center/cover fixed no-repeat;
+      z-index: -2;
     }
 
-    /* Top Navigation */
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(6, 10, 14, 0.8);
-      backdrop-filter: blur(6px);
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 12, 16, 0.55);
+      z-index: -1;
+    }
+
+    /* Navbar */
+    header {
+      background: rgba(5, 10, 15, 0.85);
+      backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: sticky; top: 0; z-index: 5;
     }
-
-    .topbar .wrap {
+    .nav-wrap {
       max-width: var(--maxw);
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
       align-items: center;
-      gap: 24px;
+      justify-content: space-between;
     }
-
-    .brand {
-      font-weight: 800;
-      letter-spacing: 0.4px;
-      font-size: 18px;
-    }
-
-    nav { display: flex; gap: 16px; margin-left: auto; flex-wrap: wrap; }
+    .brand { font-weight: 800; letter-spacing: .5px; font-size: 18px; }
     nav a {
-      color: var(--muted);
+      color: var(--text-muted);
       text-decoration: none;
-      padding: 6px 10px;
-      border-radius: 8px;
+      margin-left: 18px;
+      transition: 0.2s;
     }
-    nav a.active { color: var(--text); background: rgba(255, 255, 255, 0.08); }
-    nav a:hover { color: var(--link); }
+    nav a:hover, nav a.active { color: var(--accent); }
 
-    /* Hero section */
+    /* Hero */
     .hero {
       max-width: var(--maxw);
-      margin: 60px auto 22px;
+      margin: 60px auto 40px;
       padding: 0 20px;
-      position: relative;
-      z-index: 1;
+      text-align: left;
     }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: -20px;
-      background: rgba(8, 12, 16, 0.55);
-      border-radius: 16px;
-      z-index: -1;
-    }
-
-    .kicker {
-      color: var(--accent-2);
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 13px;
-    }
-
-    h1 {
-      margin: 0.4rem 0 0.3rem;
-      font-size: clamp(30px, 5vw, 58px);
-      line-height: 1.08;
-      font-weight: 900;
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.6rem);
+      margin: 0.2rem 0;
+      font-weight: 800;
       color: #ffffff;
-      text-shadow: 0 3px 30px rgba(0, 0, 0, 0.6);
     }
-
-    .subline {
+    .hero p.sub {
       color: var(--accent);
-      font-size: clamp(15px, 2vw, 18px);
-      max-width: 900px;
-      margin-bottom: 12px;
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+    .pills { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .pill {
+      background: var(--accent-soft);
+      border: 1px solid rgba(150, 185, 255, .2);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 0.85rem;
     }
 
-    section { display: none; position: relative; z-index: 1; }
+    /* Sections */
+    section { display: none; position: relative; }
     section.active { display: block; }
 
-    .section-wrap {
+    .content {
       max-width: var(--maxw);
-      margin: 24px auto 80px;
-      padding: 0 20px;
-      background: rgba(8, 12, 16, 0.55);
-      border-radius: 12px;
-      padding: 28px 24px;
-    }
-
-    h2 { font-size: clamp(22px, 3vw, 32px); margin: 16px 0 10px; }
-    p { margin: 0.5rem 0 1.2rem; }
-
-    .pills {
+      margin: 0 auto;
+      padding: 20px;
       display: flex;
-      gap: 8px;
+      align-items: flex-start;
+      gap: 40px;
       flex-wrap: wrap;
-      margin: 12px 0 8px;
     }
 
-    .pill {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 13px;
+    .content img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.2);
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
     }
 
-    .soft { color: var(--muted); }
+    .text-block {
+      flex: 1;
+      min-width: 280px;
+      line-height: 1.7;
+    }
+    .text-block h2 { margin-top: 0; font-size: 1.8rem; }
+    .text-block p { color: var(--text-muted); margin-bottom: 1rem; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     footer {
-      text-align: left;
       max-width: var(--maxw);
-      margin: 30px auto 60px;
+      margin: 40px auto 60px;
       padding: 0 20px;
-      color: var(--muted);
+      font-size: 0.9rem;
+      color: var(--text-muted);
     }
 
-    a { color: var(--link); }
-    @media (max-width: 560px) {
-      .section-wrap { padding: 20px; }
+    @media (max-width: 720px) {
+      .content { flex-direction: column; align-items: center; text-align: center; }
+      .content img { margin-bottom: 20px; }
+      .text-block h2 { text-align: center; }
     }
-    /* ------------------------------
-   Global background (one image everywhere)
----------------------------------*/
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url("assets/Background_1.jpg") center/cover no-repeat fixed;
-  z-index: -2;              /* behind everything */
-  filter: none;             /* keep crisp */
-}
-
-/* Soft dark overlay for readability */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(
-      rgba(8, 12, 18, 0.55),
-      rgba(8, 12, 18, 0.55)
-  );
-  z-index: -1;
-}
-
-/* Layout: left-aligned, airy */
-.section { padding: 56px 0 72px; }
-.hero, .about-copy { max-width: 980px; margin-left: 2rem; margin-right: 2rem; }
-.section-title { margin: 0 0 1rem; }
-
-/* Headline + subtitle */
-.hero-title {
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  line-height: 1.05;
-  font-weight: 800;
-  color: #e8eef7;
-  margin: 0 0 .25rem;
-}
-.hero-subtitle {
-  color: #b6c3d6;
-  font-weight: 500;
-  margin: 0 0 1rem;
-}
-
-/* Chips */
-.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
-.chip {
-  display: inline-block;
-  padding: .35rem .7rem;
-  border-radius: 999px;
-  background: rgba(150, 185, 255, .12);
-  color: #cfe1ff;
-  border: 1px solid rgba(150, 185, 255, .22);
-  font-size: .85rem;
-}
-
-/* Panels should look like simple text on the bg (no boxes) */
-.panel {
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  backdrop-filter: none;
-  color: #dfe6ef;
-}
-.panel p { color: #d3deee; }
-.panel a { color: #9ec5ff; }
-
-/* Remove any old eyebrow/badge if it existed */
-.eyebrow, .hero-badge { display: none !important; }
-
-/* Footer minimal */
-.footer { background: transparent; color: #9db1c7; }
-
   </style>
 </head>
 
 <body>
-  <!-- Top Bar -->
-  <header class="topbar">
-    <div class="wrap">
+  <header>
+    <div class="nav-wrap">
       <div class="brand">SOMIA ASIM</div>
-      <nav id="tabs">
+      <nav id="nav">
         <a href="#about" class="active">About</a>
         <a href="#experience">Experience</a>
         <a href="#cv">CV</a>
@@ -251,11 +153,8 @@ body::after {
 
   <!-- Hero -->
   <div class="hero">
-    <div class="kicker">GIS/RS &amp; Data Analyst</div>
     <h1>GIS/RS &amp; Data Analyst</h1>
-    <p class="subline">
-      ESRI Package • QGIS • Python/HTML/CSS/JS • Google Earth Engine • R • ENVI
-    </p>
+    <p class="sub">ESRI Package • QGIS • Python/HTML/CSS/JS • Google Earth Engine • R • ENVI</p>
     <div class="pills">
       <span class="pill">Urban Change</span>
       <span class="pill">Flood Analysis</span>
@@ -265,78 +164,61 @@ body::after {
     </div>
   </div>
 
-  
-
   <!-- About -->
-  <section id="about" class="section">
-  <header class="hero">
-    <h1 class="hero-title">GIS/RS &amp; Data Analyst</h1>
-    <p class="hero-subtitle">
-      ESRI Package • QGIS • Python/HTML/CSS/JS • Google Earth Engine • R • ENVI
-    </p>
+  <section id="about" class="active">
+    <div class="content">
+      <img src="assets/Somia.jpg" alt="Somia Asim portrait" />
 
-    <!-- keep ONE set of skill chips (remove the duplicates below) -->
-    <div class="chips">
-      <span class="chip">Urban Change</span>
-      <span class="chip">Flood Analysis</span>
-      <span class="chip">Risk Mapping</span>
-      <span class="chip">Cartography</span>
-      <span class="chip">Automation / Dashboards</span>
+      <div class="text-block">
+        <h2>About Me</h2>
+
+        <p>
+          I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My journey into geospatial research
+          began during my undergraduate studies at the University of the Punjab, where I developed an interest in spatial
+          analysis, cartography, and environmental data interpretation.
+        </p>
+
+        <p>
+          I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS
+          Officer, where I gained hands-on experience in geospatial analysis, remote sensing, and environmental mapping.
+          Currently, I’m part of the Lahore University of Management Sciences (LUMS), where I first served as a Research
+          Assistant and now work as a Research Associate, contributing to data-driven projects at the intersection of
+          environment, policy, and urban systems.
+        </p>
+
+        <p>
+          My expertise lies in spatial data management, statistical and geospatial analysis, and machine learning
+          applications. I’m skilled in tools such as ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL, and have
+          a keen interest in automating analytical workflows, developing dashboards, and visualizing complex datasets.
+        </p>
+
+        <p>
+          I’m passionate about exploring how geospatial intelligence and data analytics can be used to support sustainable
+          development, environmental planning, and informed decision-making.
+        </p>
+
+        <h3>Contact</h3>
+        <p>
+          <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a> •
+          <a href="https://www.linkedin.com/in/somia-asim" target="_blank">LinkedIn</a>
+        </p>
+      </div>
     </div>
-  </header>
-
-  <div class="about-copy panel">
-    <h2 class="section-title">About Me</h2>
-
-    <p>
-      I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My journey into geospatial research
-      began during my undergraduate studies at the University of the Punjab, where I developed an interest in spatial
-      analysis, cartography, and environmental data interpretation.
-    </p>
-    <p>
-      I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS
-      Officer, where I gained hands-on experience in geospatial analysis, remote sensing, and environmental mapping.
-      Currently, I’m part of the Lahore University of Management Sciences (LUMS), where I first served as a Research
-      Assistant and now work as a Research Associate, contributing to data-driven projects at the intersection of
-      environment, policy, and urban systems.
-    </p>
-    <p>
-      My expertise lies in spatial data management, statistical and geospatial analysis, and machine learning
-      applications. I’m skilled in tools such as ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL, and have
-      a keen interest in automating analytical workflows, developing dashboards, and visualizing complex datasets.
-    </p>
-    <p>
-      I’m passionate about exploring how geospatial intelligence and data analytics can be used to support sustainable
-      development, environmental planning, and informed decision-making.
-    </p>
-
-    <!-- Contact -->
-    <div class="contact">
-      <h3>Contact</h3>
-      <p>
-        <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a>
-        &nbsp;•&nbsp;
-        <a href="https://www.linkedin.com/in/somia-asim/" target="_blank" rel="noopener">LinkedIn</a>
-      </p>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <footer>© Somia Asim</footer>
 
   <script>
-    (function(){
-      const tabs=document.querySelectorAll('#tabs a');
-      const sections=[...document.querySelectorAll('section')];
-      function show(hash){
-        const id=(hash||location.hash||'#about').replace('#','');
-        sections.forEach(s=>s.classList.toggle('active',s.id===id));
-        tabs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
-      }
-      window.addEventListener('hashchange',()=>show());
-      show();
-    })();
+    // Navigation tab logic
+    const navLinks = document.querySelectorAll("#nav a");
+    const sections = document.querySelectorAll("section");
+    function showSection(hash) {
+      const id = (hash || location.hash || "#about").replace("#", "");
+      sections.forEach(s => s.classList.toggle("active", s.id === id));
+      navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + id));
+    }
+    window.addEventListener("hashchange", () => showSection());
+    showSection();
   </script>
 </body>
 </html>
