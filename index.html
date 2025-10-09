@@ -1,285 +1,199 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Somia Asim — Research Associate</title>
-  <meta name="description" content="Somia Asim — Research Associate specializing in Geospatial & Data Analytics. Tools: ESRI, QGIS, Python, R, Google Earth Engine, Stata." />
+  <head>
+    <!-- ===== Meta ===== -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Somia Asim — Research Associate • Geospatial & Data Analytics" />
+    <meta name="author" content="Somia Asim" />
+    <meta name="keywords"
+      content="Somia Asim, Research Associate, Geospatial, GIS, Remote Sensing, Data Analytics, ESRI, QGIS, Python, R, Google Earth Engine, Stata" />
 
-  <!-- Favicon + Social -->
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <meta property="og:title" content="Somia Asim — Research Associate" />
-  <meta property="og:description" content="Geospatial & Data Analytics — ESRI, QGIS, Python, R, Google Earth Engine, Stata." />
-  <meta property="og:image" content="/assets/og.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="/assets/og.jpg" />
-  <meta property="og:image:alt" content="Somia Asim — Research Associate. Geospatial & Data Analytics." />
+    <!-- Open Graph / Twitter (uses your designed OG image) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Somia Asim — Research Associate" />
+    <meta property="og:description" content="Geospatial & Data Analytics • ESRI • QGIS • Python • R • Google Earth Engine • Stata" />
+    <meta property="og:image" content="./assets/visuals/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Somia Asim — Research Associate" />
+    <meta name="twitter:description" content="Geospatial & Data Analytics • ESRI • QGIS • Python • R • Google Earth Engine • Stata" />
+    <meta name="twitter:image" content="./assets/visuals/og.jpg" />
 
-  <!-- Base styles (no frameworks) -->
-  <style>
-    :root{
-      --bg:#0b0d12; --bg2:#121824; --card:#0f1420; --ink:#eaf2ff; --muted:#9fb2d1;
-      --brand:#6ea8fe; --accent:#b994ff; --radius:14px; --gap:14px; --shadow:0 6px 18px rgba(0,0,0,.25);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
-    a{color:var(--brand);text-decoration:none}
-    header{position:sticky;top:0;z-index:3;background:rgba(11,13,18,.7);backdrop-filter:blur(8px);border-bottom:1px solid #1e2636}
-    nav{max-width:1040px;margin:auto;display:flex;align-items:center;gap:18px;padding:10px 16px}
-    nav .title{font-weight:700;letter-spacing:.4px}
-    nav a.small{opacity:.9}
-    .hero{max-width:1040px;margin:22px auto 0;padding:28px 16px}
-    .banner{border:1px solid #1c2537;border-radius:18px;padding:28px;background:
-      radial-gradient(800px 400px at -20% -40%, rgba(110,168,254,.18), transparent 60%),
-      radial-gradient(800px 420px at 120% 140%, rgba(185,148,255,.20), transparent 60%),
-      linear-gradient(180deg, #0e1420, #0b0f18);}
-    .hero h1{margin:0 0 6px 0;font-size:40px}
-    .sub{color:var(--muted);font-size:18px;margin:0}
-    .tools{margin-top:12px;color:var(--muted)}
-    .panel{max-width:1040px;margin:18px auto;padding:0 16px}
-    .panel h2{margin:8px 0 12px;font-size:24px}
-    .panel p{margin:0 0 12px}
-    .grid{display:grid;gap:var(--gap)}
-    .cols-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-    .cols-3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-    .card{background:var(--card);border:1px solid #182238;border-radius:var(--radius);box-shadow:var(--shadow);padding:10px}
-    .card img,.card video{display:block;width:100%;height:auto;border-radius:10px}
-    .meta{color:var(--muted);font-size:.92rem;margin-top:8px}
-    footer{max-width:1040px;margin:30px auto;padding:24px 16px;color:var(--muted);border-top:1px solid #1e2636}
-    .pill{display:inline-block;border:1px solid #273149;border-radius:999px;padding:6px 10px;margin:4px 6px 0 0;color:var(--muted);font-size:14px}
-    @media (prefers-reduced-motion:no-preference){
-      .fade{opacity:0;transform:translateY(8px);animation:fade .6s .05s both}
-      @keyframes fade{to{opacity:1;transform:none}}
-    }
-    /* tiny helper for section anchors spacing below sticky header */
-    section{scroll-margin-top:64px}
-  </style>
-</head>
-<body>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/visuals/favicon.jpg" />
 
-  <!-- Top Nav -->
-  <header>
-    <nav>
-      <div class="title">Somia Asim</div>
-      <a class="small" href="#cartography">Cartography</a>
-      <a class="small" href="#r-visuals">R Viz</a>
-      <a class="small" href="#flood-mapping">Floods</a>
-      <a class="small" href="#pdma-collab">PDMA</a>
-      <a class="small" href="#policy-collab">Policy</a>
-      <a class="small" href="#hobbies">Art</a>
-      <a class="small" href="#wwf-memories">WWF</a>
-      <a class="small" href="#pu-memories">PU</a>
-      <a class="small" href="#plantation-drive">Plantation</a>
-    </nav>
-  </header>
+    <!-- Title -->
+    <title>Somia Asim</title>
 
-  <!-- Hero -->
-  <section class="hero fade">
-    <div class="banner">
-      <h1>Somia Asim</h1>
-      <p class="sub">Research Associate · Geospatial & Data Analytics</p>
-      <p class="tools">ESRI Package · QGIS · Python · R · Google Earth Engine · Stata</p>
-      <div style="margin-top:10px">
-        <span class="pill">Remote Sensing</span>
-        <span class="pill">Spatial Analysis</span>
-        <span class="pill">Policy & Development</span>
-        <span class="pill">Data Visualization</span>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <!-- devicon (icons used in skills row) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+    <!-- ===== Hero with particles ===== -->
+    <div id="particles-js">
+      <div class="header">
+        <h1>
+          <span class="site-title">SOMIA ASIM</span>
+          <span class="site-description">Research Associate • Geospatial &amp; Data Analytics</span>
+        </h1>
+
+        <div class="header-icons">
+          <!-- update these profile links if needed -->
+          <a aria-label="LinkedIn" target="_blank" href="https://www.linkedin.com/in/somiaasim26/">
+            <i class="icon fa fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a aria-label="GitHub" target="_blank" href="https://github.com/somiaasim26">
+            <i class="icon fa fa-github-alt" aria-hidden="true"></i>
+          </a>
+          <a aria-label="Résumé" target="_blank" href="./data/CV_SomiaAsim_Updated_NEW.pdf">
+            <i class="icon fa fa-file-pdf-o" aria-hidden="true"></i>
+          </a>
+          <a aria-label="Email" href="mailto:somiaasim26@gmail.com" target="_blank">
+            <i class="icon fa fa-envelope"></i>
+          </a>
+        </div>
+
+        <div class="header-links">
+          <a class="link" href="#about" data-scroll>About</a>
+          <a class="link" href="#projects" data-scroll>Projects</a>
+        </div>
       </div>
+      <a class="down" href="#about" data-scroll>
+        <i class="icon fa fa-chevron-down" aria-hidden="true"></i>
+      </a>
     </div>
-  </section>
 
-  <!-- Cartography & GIS Analysis — WWF -->
-  <section id="cartography" class="fade">
-    <div class="panel">
-      <h2>Cartography & GIS Analysis — WWF Pakistan</h2>
-      <p class="meta">Produced for WWF Pakistan under the Richard Garstang Conservation GIS Lab — satellite-based land-use change, flood, and biodiversity mapping.</p>
-      <div class="grid cols-2">
-        <figure class="card">
-          <img src="/assets/visuals/islamabad-change-analysis.jpg" alt="Islamabad urban growth change analysis 1990–2020" loading="lazy">
-          <figcaption class="meta">Islamabad Change Analysis 1990–2020</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="/assets/visuals/lake-manchar-analysis.jpg" alt="Lake Manchar change analysis 2022" loading="lazy">
-          <figcaption class="meta">Lake Manchar Flood Impact 2022</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="/assets/visuals/lahore-change-analysis.jpg" alt="Lahore urbanisation over three decades" loading="lazy">
-          <figcaption class="meta">Lahore’s Urbanisation 1990–2020</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="/assets/visuals/madagascar-map.jpg" alt="Madagascar mouse lemurs ecoregions map" loading="lazy">
-          <figcaption class="meta">Madagascar — Mouse Lemur Ecoregions Map</figcaption>
-        </figure>
+    <!-- ===== About ===== -->
+    <section id="about">
+      <div class="user-details">
+        <h1>About Me</h1>
+
+        <picture>
+          <!-- round avatar from /assets/avatars -->
+          <img src="./assets/avatars/profile.jpg" alt="Somia Asim" width="20%" style="border-radius: 50%" />
+        </picture>
+
+        <p>
+          I’m a Research Associate focused on <b>Geospatial &amp; Data Analytics</b> — turning satellite imagery and spatial data
+          into clear insights for policy and conservation. My toolkit includes <b>ESRI/ArcGIS</b>, <b>QGIS</b>, <b>Python</b>, <b>R</b>,
+          <b>Google Earth Engine</b>, and <b>Stata</b>. I’ve contributed to projects with <b>WWF-Pakistan</b> and <b>LUMS</b> on urban change,
+          flood analysis, and risk mapping.
+        </p>
       </div>
-    </div>
-  </section>
 
-  <!-- R Programming & Data Visualization -->
-  <section id="r-visuals" class="fade">
-    <div class="panel">
-      <h2>R Programming & Data Visualization</h2>
-      <p class="meta">Animated analyses created using R (ggplot2, gganimate, tidyverse).</p>
-      <div class="grid cols-3">
-        <figure class="card">
-          <img src="/assets/visuals/lahore-change-animated.gif" alt="Animated change in built-up & vegetation — Lahore 1990–2020" loading="lazy">
-          <figcaption class="meta">Lahore (1990–2020) — Built-up vs Vegetation</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="/assets/visuals/chromite-jitter.gif" alt="Chromite production jitter view" loading="lazy">
-          <figcaption class="meta">Chromite Production — Monthly (Jitter)</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="/assets/visuals/chromite-faceted.gif" alt="Chromite production 2006–2014 faceted" loading="lazy">
-          <figcaption class="meta">Chromite Production (2006–2014) — Faceted</figcaption>
-        </figure>
+      <div class="user">
+        <div class="tech">
+          <h2>Languages</h2>
+          <i class="devicon-python-plain colored"></i>
+          <i class="devicon-r-original colored"></i>
+          <i class="devicon-javascript-plain colored"></i>
+          <p>Python, R, and JS for analysis, automation, and dashboards.</p>
+        </div>
+
+        <div class="tech">
+          <h2>GIS & RS</h2>
+          <i class="devicon-photoshop-plain colored"></i>
+          <i class="devicon-illustrator-plain colored"></i>
+          <p>ArcGIS / QGIS, cartography, Earth Engine, and map design.</p>
+        </div>
+
+        <div class="tech">
+          <h2>Data</h2>
+          <i class="devicon-postgresql-plain-wordmark colored"></i>
+          <i class="devicon-mysql-plain-wordmark colored"></i>
+          <p>Spatial SQL, rasters/vectors, stats, and reproducible workflows.</p>
+        </div>
+
+        <div class="tech">
+          <h2>Tools</h2>
+          <i class="devicon-git-plain colored"></i>
+          <i class="devicon-github-plain colored"></i>
+          <i class="devicon-visualstudio-plain colored"></i>
+          <p>Git/GitHub, VS Code, and collaborative reporting.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Flood Mapping & Climate Analysis — LUMS -->
-  <section id="flood-mapping" class="fade">
-    <div class="panel">
-      <h2>Flood Mapping & Climate Analysis — LUMS Research</h2>
-      <p class="meta">Spatial flood mapping and vulnerability analysis using Google Earth Engine, QGIS, and Python.</p>
-      <div class="grid cols-2">
-        <figure class="card">
-          <img src="/assets/visuals/badin-flooded-fraction.jpg" alt="Badin monthly floodwater fraction 2022" loading="lazy">
-          <figcaption class="meta">Badin — Floodwater Fraction (Mar–Dec 2022)</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="/assets/visuals/pakistan-before-after-flood.jpg" alt="Pakistan before/after flood 2022" loading="lazy">
-          <figcaption class="meta">Pakistan Flood 2022 — Before / After</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="/assets/visuals/pakistan-flood-risk-map.jpg" alt="Pakistan flood hazard levels map" loading="lazy">
-          <figcaption class="meta">Flood Hazard Assessment — by Tehsil</figcaption>
-        </figure>
+    <!-- ===== Projects (your GIS work) ===== -->
+    <section id="projects">
+      <div class="user-details">
+        <h1>Featured Projects</h1>
       </div>
-    </div>
-  </section>
 
-  <!-- PDMA Collaboration -->
-  <section id="pdma-collab" class="fade">
-    <div class="panel">
-      <h2>Flood Mapping & Policy Collaboration — LUMS × PDMA Punjab</h2>
-      <div class="grid cols-3">
-        <figure class="card">
-          <img src="/assets/gallery/pdma-meeting-1.jpg" alt="LUMS and PDMA Punjab meeting" loading="lazy">
-          <figcaption class="meta">Flood Response Models — Discussion</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="/assets/gallery/pdma-meeting-2.jpg" alt="PDMA policy coordination room" loading="lazy">
-          <figcaption class="meta">Policy Coordination — PDMA Punjab</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="/assets/gallery/pdma-meeting-3.jpg" alt="Presenting hazard analysis to PDMA" loading="lazy">
-          <figcaption class="meta">Integrating GIS into Preparedness</figcaption>
-        </figure>
+      <!-- Islamabad Change Analysis -->
+      <div class="user-projects">
+        <div class="images-right">
+          <img alt="Islamabad Change Analysis" src="./assets/visuals/ICT.jpeg" />
+        </div>
+        <div class="contents" style="text-align:center">
+          <h3>Islamabad Change Analysis (1990–2020)</h3>
+          <p style="text-align:justify">
+            LULC classification and growth analysis for Islamabad district across three decades. Visualized urban expansion,
+            NDVI trends, and change hotspots to support conservation planning with WWF-Pakistan.
+          </p>
+          <a class="project-link" target="_blank" href="./assets/visuals/ICT.jpeg">View full image</a>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Policy & Economic Research Collaboration -->
-  <section id="policy-collab" class="fade">
-    <div class="panel">
-      <h2>Policy & Economic Research Collaboration — LUMS, PRA & Chief Economist</h2>
-      <div class="grid cols-3">
-        <figure class="card">
-          <img src="/assets/gallery/pra-meeting-1.jpg" alt="Meeting with Punjab Revenue Authority at LUMS" loading="lazy">
-          <figcaption class="meta">PRA × LUMS — Policy Meeting</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="/assets/gallery/pra-meeting-2.jpg" alt="Collaboration discussion with PRA" loading="lazy">
-          <figcaption class="meta">Compliance & Data Frameworks</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="/assets/gallery/chief-economist-meeting.jpg" alt="With Chief Economist Pakistan" loading="lazy">
-          <figcaption class="meta">Chief Economist Pakistan — Discussion</figcaption>
-        </figure>
+      <!-- Lake Manchar Change -->
+      <div class="user-projects">
+        <div class="images-left">
+          <img alt="Lake Manchar Change Analysis" src="./assets/visuals/Lake Manchar_v5.jpg" />
+        </div>
+        <div class="contents-right" style="text-align:center">
+          <h3>Lake Manchar Change Analysis (2022 Floods)</h3>
+          <p style="text-align:justify">
+            Multitemporal satellite assessment quantifying water extent changes during 2022 floods. Supported situational
+            awareness for response teams.
+          </p>
+          <a class="project-link" target="_blank" href="./assets/visuals/Lake Manchar_v5.jpg">View full image</a>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Digital Art & Illustration (Hobbies) -->
-  <section id="hobbies" class="fade">
-    <div class="panel">
-      <h2>Hobbies — Digital Art & Illustration</h2>
-      <div class="grid cols-3">
-        <figure class="card"><img src="/assets/gallery/cloud-woman.jpg" alt="Monochrome smiling portrait" loading="lazy"><figcaption class="meta">Cloud Woman</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/ocean-swash.png" alt="Rocky coastline ocean swash" loading="lazy"><figcaption class="meta">Ocean Swash</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/hijabi-portrait.jpg" alt="Smiling hijabi portrait" loading="lazy"><figcaption class="meta">Smiling Portrait</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/floral-portrait.jpg" alt="Portrait with purple flowers" loading="lazy"><figcaption class="meta">Floral Portrait</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/luffy-fanart.jpg" alt="Luffy fan art" loading="lazy"><figcaption class="meta">Luffy — Fan Art</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/vintage-lady.jpg" alt="Vintage lady portrait" loading="lazy"><figcaption class="meta">Vintage Lady</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/minimal-face.jpg" alt="Minimal line art face" loading="lazy"><figcaption class="meta">Minimal Line Art</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/mischief-friend.jpg" alt="Playful anime character" loading="lazy"><figcaption class="meta">Mischief Friend</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/dual-tone-portrait.jpg" alt="Half green half brown hair portrait" loading="lazy"><figcaption class="meta">Dual-Tone Portrait</figcaption></figure>
+      <!-- Lahore Urbanisation -->
+      <div class="user-projects">
+        <div class="images-right">
+          <img alt="Lahore Urbanisation" src="./assets/visuals/LULC Lahore.jpg" />
+        </div>
+        <div class="contents" style="text-align:center">
+          <h3>Lahore Urbanisation (1990–2020)</h3>
+          <p style="text-align:justify">
+            Time-series LULC maps highlighting urban sprawl patterns and vegetation decline, produced for WWF-Pakistan communications.
+          </p>
+          <a class="project-link" target="_blank" href="./assets/visuals/LULC Lahore.jpg">View full image</a>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- WWF Memories -->
-  <section id="wwf-memories" class="fade">
-    <div class="panel">
-      <h2>WWF Memories & Field Experiences</h2>
-      <div class="grid cols-3">
-        <figure class="card"><img src="/assets/gallery/gis-day-wwf-1.jpg" alt="GIS Day cake" loading="lazy"><figcaption class="meta">GIS Day 2022 — WWF</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/gis-day-wwf-2.jpg" alt="GIS Day cake close-up" loading="lazy"><figcaption class="meta">Celebrating Mapping</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/lahore-science-mela.jpg" alt="Lahore Science Mela volunteer stall" loading="lazy"><figcaption class="meta">Lahore Science Mela</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/wwf-team-1.jpg" alt="WWF team at office" loading="lazy"><figcaption class="meta">Conservation GIS Lab</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/wwf-team-2.jpg" alt="WWF team dinner" loading="lazy"><figcaption class="meta">Team Dinner</figcaption></figure>
+      <!-- Madagascar Lemurs Map -->
+      <div class="user-projects">
+        <div class="images-left">
+          <img alt="Madagascar Lemurs Map" src="./assets/visuals/Madagasscar.jpg" />
+        </div>
+        <div class="contents-right" style="text-align:center">
+          <h3>Mouse Lemurs in Madagascar — Ecoregions Map</h3>
+          <p style="text-align:justify">
+            Cartographic product showing ecoregions and species distribution. Styled for clarity and print-readiness.
+          </p>
+          <a class="project-link" target="_blank" href="./assets/visuals/Madagasscar.jpg">View full image</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Punjab University Memories -->
-  <section id="pu-memories" class="fade">
-    <div class="panel">
-      <h2>Punjab University Memories — BS Geography (2018–2022)</h2>
-      <div class="grid cols-3">
-        <figure class="card"><img src="/assets/gallery/batch-2018-2022.jpg" alt="Batch 2018–2022 group" loading="lazy"><figcaption class="meta">Batch 2018–2022</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/gis-day-pu-1.jpg" alt="GIS Day at PU" loading="lazy"><figcaption class="meta">GIS Day 2021</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/gis-day-pu-2.jpg" alt="GIS Day organizers" loading="lazy"><figcaption class="meta">Organizing Team</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/geo-awareness-walk-1.jpg" alt="Awareness walk 1" loading="lazy"><figcaption class="meta">Geography Awareness Walk</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/geo-awareness-walk-2.jpg" alt="Awareness walk 2" loading="lazy"><figcaption class="meta">Awareness Campaign</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/geo-awareness-walk-3.jpg" alt="Awareness walk 3" loading="lazy"><figcaption class="meta">Faculty Participation</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/trip-jahangirs-fort.jpg" alt="Trip to Jahangir’s Fort" loading="lazy"><figcaption class="meta">Trip — Jahangir’s Fort</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/trip-salt-mines-1.jpg" alt="Salt mines trip 1" loading="lazy"><figcaption class="meta">Khewra Salt Mines</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/trip-salt-mines-2.jpg" alt="Salt mines trip 2" loading="lazy"><figcaption class="meta">Khewra — Group</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/trip-salt-mines-3.jpg" alt="Salt mines trip 3" loading="lazy"><figcaption class="meta">Khewra — Group II</figcaption></figure>
-        <figure class="card"><img src="/assets/gallery/with-sir-adeel.jpg" alt="With Sir Adeel and class" loading="lazy"><figcaption class="meta">With Sir Adeel & Class</figcaption></figure>
-      </div>
-    </div>
-  </section>
+    <footer class="footer">
+      <p>&copy; Somia Asim</p>
+    </footer>
 
-  <!-- Plantation Drive -->
-  <section id="plantation-drive" class="fade">
-    <div class="panel">
-      <h2>Community Plantation Drive — Environmental Awareness</h2>
-      <div class="grid cols-2">
-        <figure class="card">
-          <img src="/assets/visuals/plantation-drive.jpg" alt="Community plantation activity with children" loading="lazy">
-          <figcaption class="meta">Plantation Activity — 2024</figcaption>
-        </figure>
-        <figure class="card">
-          <video controls autoplay muted loop playsinline>
-            <source src="/assets/visuals/plantation-drive.mp4" type="video/mp4" />
-          </video>
-          <figcaption class="meta">Plantation Awareness Video</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div>© <span id="y"></span> Somia Asim · Built with GitHub Pages</div>
-    <div class="meta" style="margin-top:6px">Contact: <a href="mailto:">Email</a> · <a href="#" target="_blank" rel="noopener">LinkedIn</a> · <a href="#" target="_blank" rel="noopener">GitHub</a></div>
-  </footer>
-
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</body>
+    <!-- ===== Scripts (keep from template) ===== -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="./assets/js/sweet-scroll.min.js"></script>
+    <script src="./assets/js/google-analytics.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
 </html>
