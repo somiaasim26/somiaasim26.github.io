@@ -260,4 +260,94 @@ footer{ max-width: var(--maxW); margin: 40px auto; padding: 0 20px; color: var(-
   transform: scale(1.1);
   filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
 }
+/* --- Glass wrapper the belts sit in (same vibe as your panels) --- */
+.skills-belts.glass{
+  margin-top: 12px;
+  padding: 18px 14px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(10,16,23,0.55), rgba(10,16,23,0.35));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+  backdrop-filter: blur(10px);
+}
+
+/* container for each scrolling row */
+.belt-row{
+  display: flex;
+  gap: 16px;
+  overflow: hidden;               /* hide the repeating flow beyond bounds */
+  mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+  padding: 10px 4px;
+  margin: 4px 0;
+}
+
+/* individual pill with icon + label */
+.skill-pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  color: #eaf2ff;
+  text-decoration: none;
+  font-weight: 600;
+  background: radial-gradient(90px 50px at 30% 0%, rgba(255,255,255,.12), rgba(255,255,255,.06));
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 10px 22px rgba(0,0,0,.25);
+  white-space: nowrap;
+  transform: translateZ(0);       /* smoother */
+  will-change: transform;
+}
+
+.skill-pill img{
+  width: 28px; height: 28px; object-fit: contain;
+  filter: drop-shadow(0 1px 6px rgba(255,255,255,.25));
+}
+
+/* lowercase labels look tidy */
+.skill-pill span{ text-transform: lowercase; letter-spacing: .2px; }
+
+/* hover pop */
+.skill-pill:hover{
+  transform: translateY(-3px);
+  background: radial-gradient(90px 50px at 30% 0%, rgba(255,255,255,.18), rgba(255,255,255,.08));
+  box-shadow: 0 16px 28px rgba(0,0,0,.38);
+}
+
+/* --- marquee keyframes (soft gradient + alternating directions) --- */
+@keyframes belt-left {
+  from { transform: translateX(-8%); }
+  to   { transform: translateX(8%); }
+}
+@keyframes belt-right {
+  from { transform: translateX(8%); }
+  to   { transform: translateX(-8%); }
+}
+
+/* play states; we’ll toggle .play via JS when in view */
+.belt-a { animation: belt-left 16s linear infinite; opacity: .98; }
+.belt-b { animation: belt-right 16s linear infinite; opacity: .98; }
+
+/* slow, soft gradient motion instead of harsh marquee */
+.belt-a, .belt-b { animation-play-state: paused; } /* default paused */
+.skills-belts.play .belt-a,
+.skills-belts.play .belt-b { animation-play-state: running; }
+
+/* reduce motion support */
+@media (prefers-reduced-motion: reduce){
+  .belt-a, .belt-b { animation: none; }
+}
+
+/* spacing from the section title so header never overlaps */
+#stack .section-head { margin-bottom: 8px; }
+
+/* make sure the header never covers section top when using anchors */
+section { scroll-margin-top: 84px; }
+
+/* soften the page top gradient so background is visible */
+body::after{
+  background: linear-gradient(to bottom, rgba(10,15,20,0.50), rgba(10,15,20,0.45));
+}
+
 
