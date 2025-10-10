@@ -251,9 +251,142 @@
       }
     }
 
+    /* ===== Experience: glass + gradient ===== */
+    .cv-section {
+      padding-top: 3.5rem;
+    }
+    
+    .glass.wide {
+      max-width: 1100px;
+      margin: 1.2rem auto;
+      padding: 1.25rem 1.5rem;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(15,20,28,0.60), rgba(15,20,28,0.35));
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.30);
+    }
+    
+    .cv-header { display: flex; flex-direction: column; gap: .35rem; }
+    .cv-title {
+      font-size: clamp(1.85rem, 2.9vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+    .cv-title .badge {
+      font-size: .95rem;
+      margin-left: .6rem;
+      padding: .25rem .6rem;
+      border-radius: 999px;
+      background: rgba(44, 181, 92, .18);
+      color: #35f18a;
+      border: 1px solid rgba(53, 241, 138, .35);
+    }
+    .cv-subtitle { color: #b9c3cf; opacity: .9; }
+    
+    .cv-h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: .75rem;
+    }
+    
+    /* ===== Skill grid & animated “collapse together” entrance ===== */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: .75rem;
+    }
+    
+    .skill-chip {
+      --stagger: 0;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      align-items: center;
+      gap: .5rem;
+      padding: .8rem .9rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      color: #e9eef5;
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      transform: translateY(20px) scale(.92);
+      opacity: 0;
+      transition: transform .6s cubic-bezier(.2,.8,.2,1), opacity .6s;
+      transition-delay: calc(var(--stagger) * 60ms);
+    }
+    .skill-chip.in { transform: translateY(0) scale(1); opacity: 1; }
+    .skill-chip .ic {
+      width: 40px; height: 40px;
+      display: grid; place-items: center;
+      border-radius: 10px;
+      background: radial-gradient(120% 120% at 20% 10%, rgba(255,255,255,.12), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.1);
+      font-size: 20px;
+    }
+    .skill-chip small {
+      grid-column: 2 / -1;
+      margin-top: .15rem;
+      color: #a9b4c2;
+      font-size: .8rem;
+      opacity: .9;
+    }
+    
+    /* ===== Experience cards ===== */
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1rem;
+    }
+    .exp-card {
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 1rem;
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+    }
+    .exp-top {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: .75rem; margin-bottom: .35rem;
+    }
+    .role { font-weight: 800; }
+    .time { color: #a9b4c2; font-weight: 600; }
+    .org { color: #b9c3cf; margin-bottom: .35rem; }
+    .bullets { margin: .4rem 0 .6rem; padding-left: 1.1rem; }
+    .bullets li { margin: .25rem 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .tags span {
+      font-size: .8rem;
+      padding: .2rem .5rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+
 
   </style>
 </head>
+<script>
+  // Staggered skill-chip entrance
+  document.addEventListener('DOMContentLoaded', () => {
+    const chips = [...document.querySelectorAll('.skill-chip')];
+    chips.forEach((el, i) => el.style.setProperty('--stagger', i));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    chips.forEach(c => io.observe(c));
+  });
+</script>
 
 <body>
 <header>
@@ -305,146 +438,149 @@
 </section>
 
 <!-- ===================== EXPERIENCE ===================== -->
-<!-- ===================== EXPERIENCE ===================== -->
-<section id="experience" class="section section-narrow">
-  <div class="container">
+<section id="cv" class="section cv-section">
+  <!-- Glassy title strip -->
+  <div class="glass wide">
+    <div class="cv-header">
+      <h1 class="cv-title">
+        Experience
+        <span class="badge">2+ years</span>
+      </h1>
+      <p class="cv-subtitle">My professional journey and key experiences.</p>
+    </div>
+  </div>
 
-    <!-- Title -->
-    <h1 class="section-title">Experience</h1>
-    <p class="section-subtitle">Projects at the intersection of environment, policy, and urban systems.</p>
+  <!-- Skills -->
+  <div class="glass wide">
+    <h2 class="cv-h2">Technical Skills</h2>
 
-    <!-- ====== Skill Icons Section ====== -->
-    <div class="skills-visual glass">
-      <h2 class="h4">Technical Skills</h2>
-      <div class="skills-grid">
+    <div class="skill-grid">
+      <div class="skill-chip" title="ESRI ArcGIS, Pro, Online">
+        <span class="ic">🗺️</span>
+        <span>ESRI Products</span>
+      </div>
 
-        <div class="skill-group">
-          <h3>GIS & Mapping</h3>
-          <div class="icons">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/qgis/qgis-original.svg" alt="QGIS">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="ArcGIS">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Earth Engine">
-          </div>
-        </div>
+      <div class="skill-chip" title="Google Earth Engine, raster & vector ops">
+        <span class="ic">🌎</span>
+        <span>Google Earth Engine</span>
+      </div>
 
-        <div class="skill-group">
-          <h3>Programming</h3>
-          <div class="icons">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-          </div>
-        </div>
+      <div class="skill-chip" title="Python, GeoPandas, arcpy, dashboards">
+        <span class="ic">🐍</span>
+        <span>Python Scripting</span>
+        <small>geopandas • arcpy • dashboards</small>
+      </div>
 
-        <div class="skill-group">
-          <h3>Remote Sensing</h3>
-          <div class="icons">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nasa/nasa-original.svg" alt="Remote Sensing">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="GEE">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-line.svg" alt="ENVI">
-          </div>
-        </div>
+      <div class="skill-chip" title="ArcGIS JS API / Web mapping">
+        <span class="ic">🧭</span>
+        <span>JavaScript API</span>
+      </div>
 
-        <div class="skill-group">
-          <h3>Data & Database</h3>
-          <div class="icons">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-          </div>
-        </div>
+      <div class="skill-chip" title="R spatial (terra/sf), stats">
+        <span class="ic">📈</span>
+        <span>R Language</span>
+      </div>
 
-        <div class="skill-group">
-          <h3>Visualization & Reporting</h3>
-          <div class="icons">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tableau/tableau-original.svg" alt="Tableau">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
-          </div>
-        </div>
+      <div class="skill-chip" title="Google Earth Studio animation & camera">
+        <span class="ic">🎥</span>
+        <span>Google Earth Studio</span>
+      </div>
 
+      <div class="skill-chip" title="QGIS">
+        <span class="ic">🧩</span>
+        <span>QGIS</span>
+      </div>
+
+      <div class="skill-chip" title="Excel, PowerPoint, Word">
+        <span class="ic">🗂️</span>
+        <span>Microsoft Office</span>
+      </div>
+
+      <div class="skill-chip" title="PostgreSQL/PostGIS, data modeling">
+        <span class="ic">🗄️</span>
+        <span>Database Mgmt</span>
+      </div>
+
+      <div class="skill-chip" title="Illustrator, Photoshop, InDesign">
+        <span class="ic">🎨</span>
+        <span>Adobe Package</span>
       </div>
     </div>
+  </div>
 
-    <!-- ====== Stats Section ====== -->
-    <div class="exp-stats glass">
-      <div class="stat-item">
-        <h2>3+</h2>
-        <p>Years of Experience</p>
-      </div>
-      <div class="stat-item">
-        <h2>15+</h2>
-        <p>Major Projects</p>
-      </div>
-      <div class="stat-item">
-        <h2>10000+</h2>
-        <p>Data Hours Logged</p>
-      </div>
-    </div>
-
-    <!-- ====== Experience Timeline ====== -->
-    <div class="timeline">
-      <article class="t-card glass">
-        <header class="t-head">
-          <div>
-            <h3 class="role">Research Associate</h3>
-            <div class="org">Lahore University of Management Sciences (LUMS)</div>
-          </div>
-          <span class="dates">2024 — Present</span>
+  <!-- Timeline / roles -->
+  <div class="glass wide">
+    <div class="exp-grid">
+      <!-- Role 1 -->
+      <article class="exp-card">
+        <header class="exp-top">
+          <h3 class="role">Research Associate</h3>
+          <div class="time">2024 — Present</div>
         </header>
+        <div class="org">Lahore University of Management Sciences (LUMS)</div>
         <ul class="bullets">
-          <li>Quantifying urban growth, exposure, and flood risk using <b>GEE</b>, <b>Python</b>, and <b>R</b>.</li>
-          <li>Built reproducible <b>geospatial pipelines</b> and dashboards for environmental analytics.</li>
-          <li>Collaborated with government and NGO partners on policy-driven datasets.</li>
+          <li>Quantified urban growth, exposure, and flood risk using <strong>GEE</strong>, <strong>Python</strong>, and <strong>R</strong>.</li>
+          <li>Built reproducible pipelines and <strong>automation</strong> for geospatial analytics &amp; reporting.</li>
+          <li>Coordinated with government/policy partners for data-driven insights.</li>
         </ul>
+        <div class="tags">
+          <span>GEE</span><span>Python</span><span>R</span><span>Risk Mapping</span><span>Dashboards</span>
+        </div>
       </article>
 
-      <article class="t-card glass">
-        <header class="t-head">
-          <div>
-            <h3 class="role">GIS Officer</h3>
-            <div class="org">WWF-Pakistan</div>
-          </div>
-          <span class="dates">2022 — 2023</span>
+      <!-- Role 2 -->
+      <article class="exp-card">
+        <header class="exp-top">
+          <h3 class="role">Research Assistant</h3>
+          <div class="time">2023 — 2024</div>
         </header>
+        <div class="org">LUMS</div>
         <ul class="bullets">
-          <li>Led mapping for flood analysis and land cover change monitoring.</li>
-          <li>Managed remote sensing workflows with <b>ArcGIS</b>, <b>QGIS</b>, and <b>ENVI</b>.</li>
+          <li>Processed multi-temporal imagery for <strong>urban change</strong> &amp; LULC.</li>
+          <li>Supported policy briefs with clean maps and visual summaries.</li>
+          <li>Contributed to peer-reviewed outputs and internal reports.</li>
         </ul>
+        <div class="tags">
+          <span>Remote Sensing</span><span>Cartography</span><span>Classification</span>
+        </div>
       </article>
 
-      <article class="t-card glass">
-        <header class="t-head">
-          <div>
-            <h3 class="role">GIS Associate</h3>
-            <div class="org">WWF-Pakistan</div>
-          </div>
-          <span class="dates">2021 — 2022</span>
+      <!-- Role 3 -->
+      <article class="exp-card">
+        <header class="exp-top">
+          <h3 class="role">GIS Officer</h3>
+          <div class="time">2022 — 2023</div>
         </header>
+        <div class="org">WWF-Pakistan</div>
         <ul class="bullets">
-          <li>Produced land-use maps and environmental indicators using <b>Sentinel/Landsat</b> imagery.</li>
-          <li>Created cartographic templates and quality assurance routines.</li>
+          <li>Led mapping for <strong>flood analytics</strong> &amp; conservation planning.</li>
+          <li>Standardized map templates; trained teammates on QA/QC workflows.</li>
+          <li>Published cartographic products for public communication.</li>
         </ul>
+        <div class="tags">
+          <span>ArcGIS</span><span>Remote Sensing</span><span>QA/QC</span>
+        </div>
       </article>
 
-      <article class="t-card glass">
-        <header class="t-head">
-          <div>
-            <h3 class="role">GIS Intern</h3>
-            <div class="org">WWF-Pakistan</div>
-          </div>
-          <span class="dates">2020 — 2021</span>
+      <!-- Role 4 -->
+      <article class="exp-card">
+        <header class="exp-top">
+          <h3 class="role">GIS Associate</h3>
+          <div class="time">2021 — 2022</div>
         </header>
+        <div class="org">WWF-Pakistan</div>
         <ul class="bullets">
-          <li>Assisted with spatial digitization, data cleaning, and map layout standardization.</li>
+          <li>Produced LULC layers from <strong>Landsat/Sentinel</strong> and validated accuracy.</li>
+          <li>Built project atlases; automated repetitive cartography tasks.</li>
         </ul>
+        <div class="tags">
+          <span>Remote Sensing</span><span>LULC</span><span>Automation</span>
+        </div>
       </article>
     </div>
-
   </div>
 </section>
+
 
 
 <footer>© Somia Asim</footer>
