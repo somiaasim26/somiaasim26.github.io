@@ -32,6 +32,12 @@ body::after{
   z-index:-1;
 }
 
+/* put this anywhere in site.css */
+section[id]{
+  scroll-margin-top: 88px; /* ≈ header height */
+}
+
+
 /* ---------- Header / Nav ---------- */
 header{
   position: sticky; top: 0; z-index: 20;
