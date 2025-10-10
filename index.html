@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Somia Asim — GIS/RS & Data Analyst</title>
-  <meta name="description" content="Somia Asim | GIS/RS & Data Analyst — Geospatial analytics, remote sensing, urban change, flood analysis, risk mapping."/>
+  <meta name="description" content="Somia Asim | GIS/RS & Data Analyst — remote sensing, urban change, flood analysis, risk mapping."/>
   <link rel="icon" href="assets/favicon.png"/>
 
   <style>
@@ -91,12 +91,15 @@
 
     /* PROFILE PIC */
     .pfp{
-      width:240px; height:240px;
+      width:250px;
+      height:250px;
       border-radius:50%;
-      object-fit:cover;
+      object-fit:contain;       /* changed from cover to contain */
+      background-color:#fff;    /* adds padding around edges */
       box-shadow:0 10px 25px rgba(0,0,0,0.6);
       display:block;
       margin-bottom:20px;
+      padding:8px;              /* adds a clean white ring */
     }
 
     /* CONTACT BOX */
