@@ -184,6 +184,74 @@
       .timeline { grid-template-columns: 1fr 1fr; }
     }
 
+    /* ==== Skill Visual Section ==== */
+    .skills-visual {
+      padding: 30px 24px;
+      margin-bottom: 36px;
+      text-align: left;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .skill-group h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #a9b7c6;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .skill-group .icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .skill-group img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .skill-group img:hover {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+    }
+    
+    /* ==== Experience Stats Section ==== */
+    .exp-stats {
+      margin: 40px 0;
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 16px;
+      padding: 20px 0;
+      backdrop-filter: blur(6px);
+    }
+    .exp-stats .stat-item h2 {
+      font-size: 38px;
+      color: #00ff99;
+      font-weight: 800;
+      margin: 0;
+    }
+    .exp-stats .stat-item p {
+      margin: 4px 0 0;
+      color: #cdd4dc;
+      font-weight: 500;
+    }
+    
+    /* ==== Responsive Adjustments ==== */
+    @media (max-width: 768px) {
+      .exp-stats {
+        flex-direction: column;
+        gap: 18px;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+
   </style>
 </head>
 
@@ -237,6 +305,7 @@
 </section>
 
 <!-- ===================== EXPERIENCE ===================== -->
+<!-- ===================== EXPERIENCE ===================== -->
 <section id="experience" class="section section-narrow">
   <div class="container">
 
@@ -244,28 +313,79 @@
     <h1 class="section-title">Experience</h1>
     <p class="section-subtitle">Projects at the intersection of environment, policy, and urban systems.</p>
 
-    <!-- Skills / Tools -->
-    <div class="panel glass skills-wrap">
-      <h2 class="h4">Core Skills & Tools</h2>
-      <ul class="chips">
-        <li class="chip">ArcGIS Pro / ESRI Suite</li>
-        <li class="chip">QGIS</li>
-        <li class="chip">Google Earth Engine</li>
-        <li class="chip">Python (geopandas, rasterio, arcpy)</li>
-        <li class="chip">R (terra, sf, tidyverse)</li>
-        <li class="chip">SQL / PostGIS</li>
-        <li class="chip">Cartography & Map Design</li>
-        <li class="chip">Remote Sensing (Landsat/Sentinel)</li>
-        <li class="chip">Dashboards & Automation</li>
-        <li class="chip">HTML/CSS/JS</li>
-        <li class="chip">ENVI</li>
-      </ul>
+    <!-- ====== Skill Icons Section ====== -->
+    <div class="skills-visual glass">
+      <h2 class="h4">Technical Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <h3>GIS & Mapping</h3>
+          <div class="icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/qgis/qgis-original.svg" alt="QGIS">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="ArcGIS">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Earth Engine">
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Programming</h3>
+          <div class="icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Remote Sensing</h3>
+          <div class="icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nasa/nasa-original.svg" alt="Remote Sensing">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="GEE">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-line.svg" alt="ENVI">
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Data & Database</h3>
+          <div class="icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Visualization & Reporting</h3>
+          <div class="icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tableau/tableau-original.svg" alt="Tableau">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <!-- Timeline -->
-    <div class="timeline">
+    <!-- ====== Stats Section ====== -->
+    <div class="exp-stats glass">
+      <div class="stat-item">
+        <h2>3+</h2>
+        <p>Years of Experience</p>
+      </div>
+      <div class="stat-item">
+        <h2>15+</h2>
+        <p>Major Projects</p>
+      </div>
+      <div class="stat-item">
+        <h2>10000+</h2>
+        <p>Data Hours Logged</p>
+      </div>
+    </div>
 
-      <!-- LUMS — Research Associate -->
+    <!-- ====== Experience Timeline ====== -->
+    <div class="timeline">
       <article class="t-card glass">
         <header class="t-head">
           <div>
@@ -276,35 +396,11 @@
         </header>
         <ul class="bullets">
           <li>Quantifying urban growth, exposure, and flood risk using <b>GEE</b>, <b>Python</b>, and <b>R</b>.</li>
-          <li>Built reproducible pipelines and <b>automation</b> for geospatial analytics & reporting.</li>
-          <li>Coordinated with government and policy partners for data-driven insights.</li>
+          <li>Built reproducible <b>geospatial pipelines</b> and dashboards for environmental analytics.</li>
+          <li>Collaborated with government and NGO partners on policy-driven datasets.</li>
         </ul>
-        <div class="tags">
-          <span class="tag">GEE</span><span class="tag">Python</span><span class="tag">R</span>
-          <span class="tag">Risk Mapping</span><span class="tag">Dashboards</span>
-        </div>
       </article>
 
-      <!-- LUMS — Research Assistant -->
-      <article class="t-card glass">
-        <header class="t-head">
-          <div>
-            <h3 class="role">Research Assistant</h3>
-            <div class="org">LUMS</div>
-          </div>
-          <span class="dates">2023 — 2024</span>
-        </header>
-        <ul class="bullets">
-          <li>Processed multi-temporal imagery for <b>urban change</b> and land-use classification.</li>
-          <li>Supported policy briefs with clean maps and visual summaries.</li>
-          <li>Contributed to peer-reviewed outputs and internal reports.</li>
-        </ul>
-        <div class="tags">
-          <span class="tag">Remote Sensing</span><span class="tag">Cartography</span><span class="tag">Classification</span>
-        </div>
-      </article>
-
-      <!-- WWF — GIS Officer -->
       <article class="t-card glass">
         <header class="t-head">
           <div>
@@ -314,16 +410,11 @@
           <span class="dates">2022 — 2023</span>
         </header>
         <ul class="bullets">
-          <li>Led mapping for <b>flood analytics</b> and conservation planning.</li>
-          <li>Standardized map templates; trained teammates on QA/QC workflows.</li>
-          <li>Published cartographic products for public communication.</li>
+          <li>Led mapping for flood analysis and land cover change monitoring.</li>
+          <li>Managed remote sensing workflows with <b>ArcGIS</b>, <b>QGIS</b>, and <b>ENVI</b>.</li>
         </ul>
-        <div class="tags">
-          <span class="tag">ArcGIS Pro</span><span class="tag">QGIS</span><span class="tag">Data QA/QC</span>
-        </div>
       </article>
 
-      <!-- WWF — GIS Associate -->
       <article class="t-card glass">
         <header class="t-head">
           <div>
@@ -333,15 +424,11 @@
           <span class="dates">2021 — 2022</span>
         </header>
         <ul class="bullets">
-          <li>Produced LULC layers from <b>Landsat/Sentinel</b> and validated accuracy.</li>
-          <li>Built project atlases; automated repetitive cartography tasks.</li>
+          <li>Produced land-use maps and environmental indicators using <b>Sentinel/Landsat</b> imagery.</li>
+          <li>Created cartographic templates and quality assurance routines.</li>
         </ul>
-        <div class="tags">
-          <span class="tag">Remote Sensing</span><span class="tag">LULC</span><span class="tag">Automation</span>
-        </div>
       </article>
 
-      <!-- WWF — GIS Intern -->
       <article class="t-card glass">
         <header class="t-head">
           <div>
@@ -351,12 +438,8 @@
           <span class="dates">2020 — 2021</span>
         </header>
         <ul class="bullets">
-          <li>Assisted in data cleaning, digitizing, and map production for field teams.</li>
-          <li>Documented workflows for future reuse and training.</li>
+          <li>Assisted with spatial digitization, data cleaning, and map layout standardization.</li>
         </ul>
-        <div class="tags">
-          <span class="tag">Digitizing</span><span class="tag">Cartography</span>
-        </div>
       </article>
     </div>
 
