@@ -135,6 +135,55 @@
     .about-text p{color:var(--text); line-height:1.75; margin-bottom:1rem;}
 
     footer{max-width:var(--maxW); margin:40px auto; text-align:left; color:var(--muted); font-size:0.9rem;}
+
+    /* Section spacing */
+    .section { padding: 72px 0; }
+    .section-narrow { padding-top: 56px; }
+    .section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin: 0 0 6px; }
+    .section-subtitle { color: #b8c2cc; margin: 0 0 24px; }
+    
+    /* Glass panel + chips (reuse look from About) */
+    .panel.glass, .t-card.glass {
+      background: rgba(18, 24, 32, 0.65);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+    }
+    .skills-wrap { padding: 18px 20px; margin-bottom: 22px; }
+    .skills-wrap .h4 { margin: 0 0 10px; font-weight: 700; }
+    
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+    .chip {
+      padding: 6px 10px; border-radius: 999px; font-size: 13px; line-height: 1;
+      background: rgba(88, 133, 255, 0.16); border: 1px solid rgba(110, 150, 255, 0.25); color: #dfe7ff;
+    }
+
+    /* Timeline */
+    .timeline { display: grid; grid-template-columns: 1fr; gap: 14px; position: relative; }
+    .t-card { padding: 18px 20px; }
+    .t-head { display: flex; align-items: start; justify-content: space-between; gap: 16px; margin-bottom: 8px; }
+    .role { margin: 0; font-size: 20px; font-weight: 800; }
+    .org { color: #b8c2cc; font-size: 14px; }
+    .dates { color: #a8b0bb; font-weight: 600; white-space: nowrap; }
+    
+    .bullets { margin: 8px 0 10px; padding-left: 18px; }
+    .bullets li { margin: 6px 0; color: #d9e2ec; }
+    
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      padding: 4px 8px; border-radius: 999px; font-size: 12px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: #eef3ff;
+    }
+
+    /* Hover polish */
+    .t-card:hover { transform: translateY(-2px); transition: transform .2s ease; }
+    
+    /* Responsive */
+    @media (min-width: 900px){
+      .timeline { grid-template-columns: 1fr 1fr; }
+    }
+
   </style>
 </head>
 
@@ -186,6 +235,134 @@
     </div>
   </div>
 </section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section id="experience" class="section section-narrow">
+  <div class="container">
+
+    <!-- Title -->
+    <h1 class="section-title">Experience</h1>
+    <p class="section-subtitle">Projects at the intersection of environment, policy, and urban systems.</p>
+
+    <!-- Skills / Tools -->
+    <div class="panel glass skills-wrap">
+      <h2 class="h4">Core Skills & Tools</h2>
+      <ul class="chips">
+        <li class="chip">ArcGIS Pro / ESRI Suite</li>
+        <li class="chip">QGIS</li>
+        <li class="chip">Google Earth Engine</li>
+        <li class="chip">Python (geopandas, rasterio, arcpy)</li>
+        <li class="chip">R (terra, sf, tidyverse)</li>
+        <li class="chip">SQL / PostGIS</li>
+        <li class="chip">Cartography & Map Design</li>
+        <li class="chip">Remote Sensing (Landsat/Sentinel)</li>
+        <li class="chip">Dashboards & Automation</li>
+        <li class="chip">HTML/CSS/JS</li>
+        <li class="chip">ENVI</li>
+      </ul>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline">
+
+      <!-- LUMS — Research Associate -->
+      <article class="t-card glass">
+        <header class="t-head">
+          <div>
+            <h3 class="role">Research Associate</h3>
+            <div class="org">Lahore University of Management Sciences (LUMS)</div>
+          </div>
+          <span class="dates">2024 — Present</span>
+        </header>
+        <ul class="bullets">
+          <li>Quantifying urban growth, exposure, and flood risk using <b>GEE</b>, <b>Python</b>, and <b>R</b>.</li>
+          <li>Built reproducible pipelines and <b>automation</b> for geospatial analytics & reporting.</li>
+          <li>Coordinated with government and policy partners for data-driven insights.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">GEE</span><span class="tag">Python</span><span class="tag">R</span>
+          <span class="tag">Risk Mapping</span><span class="tag">Dashboards</span>
+        </div>
+      </article>
+
+      <!-- LUMS — Research Assistant -->
+      <article class="t-card glass">
+        <header class="t-head">
+          <div>
+            <h3 class="role">Research Assistant</h3>
+            <div class="org">LUMS</div>
+          </div>
+          <span class="dates">2023 — 2024</span>
+        </header>
+        <ul class="bullets">
+          <li>Processed multi-temporal imagery for <b>urban change</b> and land-use classification.</li>
+          <li>Supported policy briefs with clean maps and visual summaries.</li>
+          <li>Contributed to peer-reviewed outputs and internal reports.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Remote Sensing</span><span class="tag">Cartography</span><span class="tag">Classification</span>
+        </div>
+      </article>
+
+      <!-- WWF — GIS Officer -->
+      <article class="t-card glass">
+        <header class="t-head">
+          <div>
+            <h3 class="role">GIS Officer</h3>
+            <div class="org">WWF-Pakistan</div>
+          </div>
+          <span class="dates">2022 — 2023</span>
+        </header>
+        <ul class="bullets">
+          <li>Led mapping for <b>flood analytics</b> and conservation planning.</li>
+          <li>Standardized map templates; trained teammates on QA/QC workflows.</li>
+          <li>Published cartographic products for public communication.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">ArcGIS Pro</span><span class="tag">QGIS</span><span class="tag">Data QA/QC</span>
+        </div>
+      </article>
+
+      <!-- WWF — GIS Associate -->
+      <article class="t-card glass">
+        <header class="t-head">
+          <div>
+            <h3 class="role">GIS Associate</h3>
+            <div class="org">WWF-Pakistan</div>
+          </div>
+          <span class="dates">2021 — 2022</span>
+        </header>
+        <ul class="bullets">
+          <li>Produced LULC layers from <b>Landsat/Sentinel</b> and validated accuracy.</li>
+          <li>Built project atlases; automated repetitive cartography tasks.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Remote Sensing</span><span class="tag">LULC</span><span class="tag">Automation</span>
+        </div>
+      </article>
+
+      <!-- WWF — GIS Intern -->
+      <article class="t-card glass">
+        <header class="t-head">
+          <div>
+            <h3 class="role">GIS Intern</h3>
+            <div class="org">WWF-Pakistan</div>
+          </div>
+          <span class="dates">2020 — 2021</span>
+        </header>
+        <ul class="bullets">
+          <li>Assisted in data cleaning, digitizing, and map production for field teams.</li>
+          <li>Documented workflows for future reuse and training.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Digitizing</span><span class="tag">Cartography</span>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
 
 <footer>© Somia Asim</footer>
 </body>
