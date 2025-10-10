@@ -244,3 +244,20 @@ footer{ max-width: var(--maxW); margin: 40px auto; padding: 0 20px; color: var(-
   .skill-card{ width: 100px; height: 100px; font-size: .8rem; }
   .skill-card img{ width: 36px; height: 36px; }
 }
+
+/* === Skill Card Fixes & Hover Effects === */
+.skill-card img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: transparent;
+  mix-blend-mode: normal;
+  opacity: 0.95;
+  transition: transform .3s ease, filter .3s ease;
+}
+
+.skill-card img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+
