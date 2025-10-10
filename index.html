@@ -25,7 +25,6 @@
       color:var(--text);
     }
 
-    /* overlay for readability */
     body::after{
       content:"";
       position:fixed;
@@ -34,7 +33,6 @@
       z-index:-1;
     }
 
-    /* NAV */
     header{
       position:sticky; top:0; z-index:10;
       background:rgba(10,15,20,0.7);
@@ -54,7 +52,6 @@
     }
     nav a:hover, nav a.active{color:var(--text);}
 
-    /* HERO */
     .hero{
       max-width:var(--maxW);
       margin:50px auto 30px;
@@ -83,37 +80,48 @@
       font-size:0.85rem;
     }
 
-    /* ABOUT SECTION */
     section{max-width:var(--maxW); margin:0 auto; padding:20px;}
     .about-grid{
       display:grid;
-      grid-template-columns:260px 1fr;
-      gap:30px;
+      grid-template-columns:270px 1fr;
+      gap:35px;
       align-items:start;
     }
     @media(max-width:850px){.about-grid{grid-template-columns:1fr;}}
 
-    /* PROFILE PICTURE */
+    /* PROFILE PIC */
     .pfp{
-      width:250px; height:auto;
-      border:none; border-radius:0;
-      box-shadow:none;
+      width:240px; height:240px;
+      border-radius:50%;
+      object-fit:cover;
+      box-shadow:0 10px 25px rgba(0,0,0,0.6);
       display:block;
+      margin-bottom:20px;
     }
 
-    .contact{
-      margin-top:18px;
-      font-size:0.9rem;
-      color:var(--muted);
+    /* CONTACT BOX */
+    .contact-box{
+      background:linear-gradient(135deg, rgba(15,20,25,0.6), rgba(15,20,25,0.4));
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:14px;
+      padding:14px 18px;
+      backdrop-filter:blur(6px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.3);
     }
-    .contact a{color:var(--accent); text-decoration:none;}
-    .contact a:hover{text-decoration:underline;}
+    .contact-box strong{display:block; color:#cfe0ff; margin-bottom:6px; font-size:1rem;}
+    .contact-box a{
+      color:var(--accent);
+      text-decoration:none;
+      font-size:0.95rem;
+      display:block;
+      margin-bottom:4px;
+    }
+    .contact-box a:hover{text-decoration:underline;}
 
-    /* ABOUT TEXT CARD */
     .about-text{
       background:linear-gradient(135deg, rgba(15,20,25,0.55), rgba(15,20,25,0.35));
       border:1px solid rgba(255,255,255,0.08);
-      padding:24px 26px;
+      padding:26px 28px;
       border-radius:14px;
       backdrop-filter:blur(6px);
       box-shadow:0 8px 20px rgba(0,0,0,0.3);
@@ -124,8 +132,8 @@
     footer{max-width:var(--maxW); margin:40px auto; text-align:left; color:var(--muted); font-size:0.9rem;}
   </style>
 </head>
-<body>
 
+<body>
 <header>
   <div class="nav-wrap">
     <div class="brand">SOMIA ASIM</div>
@@ -157,10 +165,10 @@
   <div class="about-grid">
     <div>
       <img src="assets/Somia.jpg" alt="Somia Asim portrait" class="pfp"/>
-      <div class="contact">
-        <strong>Contact</strong><br>
-        <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a><br>
-        <a href="https://www.linkedin.com/in/somia-asim/" target="_blank">LinkedIn</a>
+      <div class="contact-box">
+        <strong>Contact</strong>
+        <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a>
+        <a href="https://www.linkedin.com/in/somia-asim-35688617a" target="_blank">LinkedIn</a>
       </div>
     </div>
 
@@ -175,6 +183,5 @@
 </section>
 
 <footer>© Somia Asim</footer>
-
 </body>
 </html>
