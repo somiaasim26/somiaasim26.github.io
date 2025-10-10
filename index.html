@@ -450,6 +450,21 @@
     chips.forEach(c => io.observe(c));
   });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".skill-card");
+  cards.forEach((card, i) => card.style.setProperty("--delay", i));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  cards.forEach(card => observer.observe(card));
+});
+</script>
 
 <body>
 <header>
