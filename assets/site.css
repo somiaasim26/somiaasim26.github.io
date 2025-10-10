@@ -3,6 +3,31 @@
    ========================================================= */
 
 /* ---------- Theme ---------- */
+/* put this near the top of site.css */
+html, body { height: 100%; margin: 0; }
+
+body{
+  /* cache-bust with ?v=3 in case GitHub Pages is serving an older file */
+  background: url('assets/Background_1.jpg?v=3') center / cover fixed no-repeat;
+  color: #eaf1fa;
+  padding-top: 64px;            /* prevents sticky header overlap */
+}
+
+/* soft overlay so text pops but image stays visible */
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,15,20,.50), rgba(10,15,20,.45));
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* when you jump to #about / #experience, the header won't cover the titles */
+section{ scroll-margin-top: 84px; }
+
+
+
 :root{
   --bg: #0c1218;
   --text: #eaf1fa;
@@ -41,10 +66,11 @@ section[id]{
 /* ---------- Header / Nav ---------- */
 header{
   position: sticky; top: 0; z-index: 20;
-  background: rgba(10,15,20,0.7);
+  background: rgba(10,15,20,.65);  /* translucent */
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,.06);
 }
+
 .nav-wrap{
   max-width: var(--maxW);
   margin: 0 auto;
