@@ -367,6 +367,69 @@
       border: 1px solid rgba(255,255,255,.12);
     }
 
+    /* === Skills Showcase === */
+    .skill-showcase {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    
+    .skills-gallery {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+    }
+    
+    .skill-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 1.2rem 1rem 1rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    
+    .skill-card.in-view {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: calc(var(--delay) * 60ms);
+    }
+    
+    .skill-card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      background: rgba(255,255,255,0.12);
+    }
+    
+    .skill-card img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+      margin-bottom: 8px;
+      filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+    }
+    
+    .skill-card p {
+      color: #eaeaea;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    
+    /* Add responsive refinement */
+    @media (max-width: 768px) {
+      .skills-gallery {
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      }
+      .skill-card img { width: 38px; height: 38px; }
+    }
+
+
 
 
   </style>
@@ -450,63 +513,43 @@
     </div>
   </div>
 
-  <!-- Skills -->
-  <div class="glass wide">
-    <h2 class="cv-h2">Technical Skills</h2>
-
-    <div class="skill-grid">
-      <div class="skill-chip" title="ESRI ArcGIS, Pro, Online">
-        <span class="ic">🗺️</span>
-        <span>ESRI Products</span>
-      </div>
-
-      <div class="skill-chip" title="Google Earth Engine, raster & vector ops">
-        <span class="ic">🌎</span>
-        <span>Google Earth Engine</span>
-      </div>
-
-      <div class="skill-chip" title="Python, GeoPandas, arcpy, dashboards">
-        <span class="ic">🐍</span>
-        <span>Python Scripting</span>
-        <small>geopandas • arcpy • dashboards</small>
-      </div>
-
-      <div class="skill-chip" title="ArcGIS JS API / Web mapping">
-        <span class="ic">🧭</span>
-        <span>JavaScript API</span>
-      </div>
-
-      <div class="skill-chip" title="R spatial (terra/sf), stats">
-        <span class="ic">📈</span>
-        <span>R Language</span>
-      </div>
-
-      <div class="skill-chip" title="Google Earth Studio animation & camera">
-        <span class="ic">🎥</span>
-        <span>Google Earth Studio</span>
-      </div>
-
-      <div class="skill-chip" title="QGIS">
-        <span class="ic">🧩</span>
-        <span>QGIS</span>
-      </div>
-
-      <div class="skill-chip" title="Excel, PowerPoint, Word">
-        <span class="ic">🗂️</span>
-        <span>Microsoft Office</span>
-      </div>
-
-      <div class="skill-chip" title="PostgreSQL/PostGIS, data modeling">
-        <span class="ic">🗄️</span>
-        <span>Database Mgmt</span>
-      </div>
-
-      <div class="skill-chip" title="Illustrator, Photoshop, InDesign">
-        <span class="ic">🎨</span>
-        <span>Adobe Package</span>
-      </div>
+  <!-- ====== SKILLS SHOWCASE ====== -->
+  <div class="glass wide skill-showcase">
+    <h2 class="cv-h2">Technical Stack</h2>
+    <p class="cv-subtitle">A collection of languages, platforms, and tools I’ve used across geospatial analytics and data science projects.</p>
+  
+    <div class="skills-gallery">
+      <!-- Programming & Data -->
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><p>Python</p></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R"><p>R Language</p></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><p>JavaScript</p></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><p>HTML</p></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><p>CSS</p></div>
+  
+      <!-- GIS / Remote Sensing -->
+      <div class="skill-card"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/ArcGIS_logo.png" alt="ArcGIS"><p>ArcGIS</p></div>
+      <div class="skill-card"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/QGIS_logo_new.svg" alt="QGIS"><p>QGIS</p></div>
+      <div class="skill-card"><img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Google_Earth_Engine_logo.svg" alt="GEE"><p>Google Earth Engine</p></div>
+      <div class="skill-card"><img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Envi_logo.png" alt="ENVI"><p>ENVI</p></div>
+      <div class="skill-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/ArcGIS_Pro_logo.svg" alt="ArcGIS Pro"><p>ArcGIS Pro</p></div>
+  
+      <!-- Data / Cloud -->
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"><p>PostgreSQL</p></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><p>SQL</p></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><p>MongoDB</p></div>
+      <div class="skill-card"><img src="https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png" alt="Supabase"><p>Supabase</p></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud"><p>Google Cloud</p></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS"><p>AWS</p></div>
+  
+      <!-- Visualization / Apps -->
+      <div class="skill-card"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau"><p>Tableau</p></div>
+      <div class="skill-card"><img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="Streamlit"><p>Streamlit</p></div>
+  
+      <!-- Other -->
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><p>GitHub</p></div>
     </div>
   </div>
+
 
   <!-- Timeline / roles -->
   <div class="glass wide">
