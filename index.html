@@ -184,32 +184,31 @@ document.addEventListener("DOMContentLoaded", () => {
   </header>
 
   <div class="skills-belts glass">
-  <!-- Row A – moves L→R -->
   <div class="belt-row belt-a">
-    <div class="skill-pill"><img src="assets/logo/python.svg" alt=""><span>python</span></div>
-    <div class="skill-pill"><img src="assets/logo/r.svg" alt=""><span>r language</span></div>
-    <div class="skill-pill"><img src="assets/logo/javascript.svg" alt=""><span>javascript</span></div>
-    <div class="skill-pill"><img src="assets/logo/html.svg" alt=""><span>html</span></div>
-    <div class="skill-pill"><img src="assets/logo/css.svg" alt=""><span>css</span></div>
-    <div class="skill-pill"><img src="assets/logo/arcgis.svg" alt=""><span>arcgis</span></div>
-    <div class="skill-pill"><img src="assets/logo/qgis.svg" alt=""><span>qgis</span></div>
-    <div class="skill-pill"><img src="assets/logo/gee.svg" alt=""><span>earth engine</span></div>
-    <div class="skill-pill"><img src="assets/logo/arcgispro.png" alt=""><span>arcgis pro</span></div>
+    <div class="skill-pill"><img src="assets/logo/python.svg" alt="python"></div>
+    <div class="skill-pill"><img src="assets/logo/r.svg" alt="r"></div>
+    <div class="skill-pill"><img src="assets/logo/javascript.svg" alt="js"></div>
+    <div class="skill-pill"><img src="assets/logo/html.svg" alt="html"></div>
+    <div class="skill-pill"><img src="assets/logo/css.svg" alt="css"></div>
+    <div class="skill-pill"><img src="assets/logo/arcgis.svg" alt="arcgis"></div>
+    <div class="skill-pill"><img src="assets/logo/qgis.svg" alt="qgis"></div>
+    <div class="skill-pill"><img src="assets/logo/gee.svg" alt="gee"></div>
+    <div class="skill-pill"><img src="assets/logo/arcgispro.png" alt="arcgis pro"></div>
   </div>
 
-  <!-- Row B – moves R→L -->
   <div class="belt-row belt-b">
-    <div class="skill-pill"><img src="assets/logo/postgresql.svg" alt=""><span>postgresql</span></div>
-    <div class="skill-pill"><img src="assets/logo/mysql.svg" alt=""><span>sql</span></div>
-    <div class="skill-pill"><img src="assets/logo/mongodb.svg" alt=""><span>mongodb</span></div>
-    <div class="skill-pill"><img src="assets/logo/supabase.png" alt=""><span>supabase</span></div>
-    <div class="skill-pill"><img src="assets/logo/google-cloud.svg" alt=""><span>google cloud</span></div>
-    <div class="skill-pill"><img src="assets/logo/aws.svg" alt=""><span>aws</span></div>
-    <div class="skill-pill"><img src="assets/logo/github.svg" alt=""><span>github</span></div>
-    <div class="skill-pill"><img src="assets/logo/streamlit.png" alt=""><span>streamlit</span></div>
-    <div class="skill-pill"><img src="assets/logo/msoffice.svg" alt=""><span>microsoft office</span></div>
+    <div class="skill-pill"><img src="assets/logo/postgresql.svg" alt="postgresql"></div>
+    <div class="skill-pill"><img src="assets/logo/mysql.svg" alt="sql"></div>
+    <div class="skill-pill"><img src="assets/logo/mongodb.svg" alt="mongodb"></div>
+    <div class="skill-pill"><img src="assets/logo/supabase.png" alt="supabase"></div>
+    <div class="skill-pill"><img src="assets/logo/google-cloud.svg" alt="gcloud"></div>
+    <div class="skill-pill"><img src="assets/logo/aws.svg" alt="aws"></div>
+    <div class="skill-pill"><img src="assets/logo/github.svg" alt="github"></div>
+    <div class="skill-pill"><img src="assets/logo/streamlit.png" alt="streamlit"></div>
+    <div class="skill-pill"><img src="assets/logo/msoffice.svg" alt="office"></div>
   </div>
 </div>
+
 
 </section>
 
@@ -233,19 +232,12 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('DOMContentLoaded', () => {
   const belts = document.querySelector('.skills-belts');
   if(!belts) return;
-
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        belts.classList.add('play');
-      } else {
-        belts.classList.remove('play');
-      }
-    });
-  }, { threshold: 0.15 });
-
+    entries.forEach(e => belts.classList.toggle('play', e.isIntersecting));
+  }, { threshold: 0.12 });
   io.observe(belts);
 });
 </script>
+
 </body>
 </html>
