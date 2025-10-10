@@ -430,6 +430,103 @@
     }
 
 
+    /* Section shells with glass gradient */
+    .section.glass-wrap {
+      margin: 2.5rem auto;
+      padding: 1.25rem 1.25rem 0.75rem;
+      border-radius: 18px;
+      max-width: 1100px;
+      background: linear-gradient(180deg, rgba(10,16,23,0.55), rgba(10,16,23,0.35));
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 28px rgba(0,0,0,.35);
+    }
+    
+    /* Titles + tag */
+    .section-head { padding: .5rem 1rem 1rem; }
+    .section-title { display:flex; align-items:center; gap:.75rem; font-size:2.1rem; }
+    .section-sub { opacity:.85; margin-top:.25rem; }
+    
+    .years-chip{
+      font-size:.9rem;
+      background:#0ea5a5;
+      color:#eafffa;
+      border-radius:999px;
+      padding:.22rem .6rem;
+      box-shadow:0 2px 10px rgba(14,165,165,.35);
+    }
+    
+    /* Experience cards grid */
+    .exp-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.25rem;
+      padding: 1rem;
+    }
+    
+    .exp-card.glass{
+      background: linear-gradient(180deg, rgba(25,32,42,.66), rgba(25,32,42,.35));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 1rem 1rem 0.85rem;
+      box-shadow:0 8px 24px rgba(0,0,0,.35);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .exp-card.glass:hover{ transform: translateY(-2px); box-shadow:0 14px 28px rgba(0,0,0,.45); }
+    
+    .exp-top{ display:flex; justify-content:space-between; align-items:center; gap:.75rem; }
+    .exp-top h3{ margin:0; font-size:1.15rem; }
+    .exp-dates{ opacity:.85; white-space:nowrap; }
+    .exp-org{ opacity:.85; margin:.25rem 0 .75rem; font-size:.95rem; }
+    
+    .exp-points{ margin:.25rem 0 .75rem 1rem; }
+    .exp-points li{ margin:.3rem 0; }
+    
+    .chips{ display:flex; flex-wrap:wrap; gap:.4rem; }
+    .chips span{
+      font-size:.8rem; padding:.22rem .55rem; border-radius:999px;
+      background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.09);
+    }
+    
+    /* Skills grid AFTER experience */
+    .skills-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 14px;
+      padding: 0 1rem 1.25rem;
+    }
+    
+    .skill-card{
+      display:flex; flex-direction:column; align-items:center; gap:.55rem;
+      padding: 14px 10px;
+      border-radius: 14px;
+      background: radial-gradient(110px 60px at 50% 0%, rgba(255,255,255,.12), rgba(255,255,255,.06));
+      border: 1px solid rgba(255,255,255,.09);
+      box-shadow: 0 10px 22px rgba(0,0,0,.28);
+      text-decoration:none;
+      color:#e9eef4;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .skill-card:hover{
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 26px rgba(0,0,0,.4);
+      background: radial-gradient(110px 60px at 50% 0%, rgba(255,255,255,.18), rgba(255,255,255,.08));
+    }
+    
+    .skill-card img{
+      width:44px; height:44px; object-fit:contain;
+      filter:none; mix-blend-mode:normal; opacity:0.98;
+    }
+    .skill-card span{ font-size:.92rem; opacity:.95; text-align:center; }
+    
+    /* Pop-in animation */
+    .pop{ animation: popin .5s ease both; }
+    .pop:nth-child(2){ animation-delay:.03s } .pop:nth-child(3){ animation-delay:.06s }
+    .pop:nth-child(4){ animation-delay:.09s } .pop:nth-child(5){ animation-delay:.12s }
+    .pop:nth-child(6){ animation-delay:.15s } .pop:nth-child(7){ animation-delay:.18s }
+    .pop:nth-child(8){ animation-delay:.21s } .pop:nth-child(9){ animation-delay:.24s }
+    @keyframes popin { from {opacity:0; transform:translateY(8px) scale(.98)} to {opacity:1; transform:translateY(0) scale(1)} }
+    
+
 
 
   </style>
@@ -516,128 +613,183 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
 
 <!-- ===================== EXPERIENCE ===================== -->
-<section id="cv" class="section cv-section">
-  <!-- Glassy title strip -->
-  <div class="glass wide">
-    <div class="cv-header">
-      <h1 class="cv-title">
-        Experience
-        <span class="badge">2+ years</span>
-      </h1>
-      <p class="cv-subtitle">My professional journey and key experiences.</p>
-    </div>
-  </div>
+<!-- EXPERIENCE -->
+<section id="experience" class="section glass-wrap">
+  <header class="section-head">
+    <h2 class="section-title">Experience
+      <span class="years-chip">2+ years</span>
+    </h2>
+    <p class="section-sub">My professional journey and key experiences.</p>
+  </header>
 
-  <!-- ====== SKILLS SHOWCASE ====== -->
-  <div class="glass wide skill-showcase">
-    <h2 class="cv-h2">Technical Stack</h2>
-    <p class="cv-subtitle">A collection of languages, platforms, and tools I’ve used across geospatial analytics and data science projects.</p>
-  
-    <div class="skills-gallery">
-      <!-- Programming & Data -->
-      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><p>Python</p></div>
-      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R"><p>R Language</p></div>
-      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><p>JavaScript</p></div>
-      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><p>HTML</p></div>
-      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><p>CSS</p></div>
-  
-      <!-- GIS / Remote Sensing -->
-      <div class="skill-card"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/ArcGIS_logo.png" alt="ArcGIS"><p>ArcGIS</p></div>
-      <div class="skill-card"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/QGIS_logo_new.svg" alt="QGIS"><p>QGIS</p></div>
-      <div class="skill-card"><img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Google_Earth_Engine_logo.svg" alt="GEE"><p>Google Earth Engine</p></div>
-      <div class="skill-card"><img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Envi_logo.png" alt="ENVI"><p>ENVI</p></div>
-      <div class="skill-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/ArcGIS_Pro_logo.svg" alt="ArcGIS Pro"><p>ArcGIS Pro</p></div>
-  
-      <!-- Data / Cloud -->
-      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"><p>PostgreSQL</p></div>
-      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><p>SQL</p></div>
-      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><p>MongoDB</p></div>
-      <div class="skill-card"><img src="https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png" alt="Supabase"><p>Supabase</p></div>
-      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud"><p>Google Cloud</p></div>
-      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS"><p>AWS</p></div>
-  
-      <!-- Visualization / Apps -->
-      <div class="skill-card"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau"><p>Tableau</p></div>
-      <div class="skill-card"><img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="Streamlit"><p>Streamlit</p></div>
-  
-      <!-- Other -->
-      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><p>GitHub</p></div>
-    </div>
-  </div>
+  <!-- Experience cards grid -->
+  <div class="exp-grid">
+    <!-- LUMS - Research Associate -->
+    <article class="exp-card glass">
+      <div class="exp-top">
+        <h3>Research Associate</h3>
+        <span class="exp-dates">2024 — Present</span>
+      </div>
+      <div class="exp-org">Lahore University of Management Sciences (LUMS)</div>
+      <ul class="exp-points">
+        <li>Quantified urban growth, exposure, and flood risk using <b>GEE</b>, <b>Python</b>, and <b>R</b>.</li>
+        <li>Built reproducible pipelines and <b>automation</b> for geospatial analytics &amp; reporting.</li>
+        <li>Coordinated with government/policy partners for data-driven insights.</li>
+      </ul>
+      <div class="chips">
+        <span>GEE</span><span>Python</span><span>R</span><span>Risk Mapping</span><span>Dashboards</span>
+      </div>
+    </article>
 
+    <!-- LUMS - Research Assistant -->
+    <article class="exp-card glass">
+      <div class="exp-top">
+        <h3>Research Assistant</h3>
+        <span class="exp-dates">2023 — 2024</span>
+      </div>
+      <div class="exp-org">LUMS</div>
+      <ul class="exp-points">
+        <li>Processed multi-temporal imagery for <b>urban change</b> &amp; LULC.</li>
+        <li>Supported policy briefs with clean maps and visual summaries.</li>
+        <li>Contributed to peer-reviewed outputs and internal reports.</li>
+      </ul>
+      <div class="chips">
+        <span>Remote Sensing</span><span>Cartography</span><span>Classification</span>
+      </div>
+    </article>
 
-  <!-- Timeline / roles -->
-  <div class="glass wide">
-    <div class="exp-grid">
-      <!-- Role 1 -->
-      <article class="exp-card">
-        <header class="exp-top">
-          <h3 class="role">Research Associate</h3>
-          <div class="time">2024 — Present</div>
-        </header>
-        <div class="org">Lahore University of Management Sciences (LUMS)</div>
-        <ul class="bullets">
-          <li>Quantified urban growth, exposure, and flood risk using <strong>GEE</strong>, <strong>Python</strong>, and <strong>R</strong>.</li>
-          <li>Built reproducible pipelines and <strong>automation</strong> for geospatial analytics &amp; reporting.</li>
-          <li>Coordinated with government/policy partners for data-driven insights.</li>
-        </ul>
-        <div class="tags">
-          <span>GEE</span><span>Python</span><span>R</span><span>Risk Mapping</span><span>Dashboards</span>
-        </div>
-      </article>
+    <!-- WWF - GIS Officer -->
+    <article class="exp-card glass">
+      <div class="exp-top">
+        <h3>GIS Officer</h3>
+        <span class="exp-dates">2022 — 2023</span>
+      </div>
+      <div class="exp-org">WWF-Pakistan</div>
+      <ul class="exp-points">
+        <li>Led mapping for <b>flood analytics</b> &amp; conservation planning.</li>
+        <li>Standardized map templates; trained teammates on QA/QC workflows.</li>
+        <li>Published cartographic products for public communication.</li>
+      </ul>
+      <div class="chips">
+        <span>ArcGIS</span><span>Remote Sensing</span><span>QA/QC</span>
+      </div>
+    </article>
 
-      <!-- Role 2 -->
-      <article class="exp-card">
-        <header class="exp-top">
-          <h3 class="role">Research Assistant</h3>
-          <div class="time">2023 — 2024</div>
-        </header>
-        <div class="org">LUMS</div>
-        <ul class="bullets">
-          <li>Processed multi-temporal imagery for <strong>urban change</strong> &amp; LULC.</li>
-          <li>Supported policy briefs with clean maps and visual summaries.</li>
-          <li>Contributed to peer-reviewed outputs and internal reports.</li>
-        </ul>
-        <div class="tags">
-          <span>Remote Sensing</span><span>Cartography</span><span>Classification</span>
-        </div>
-      </article>
-
-      <!-- Role 3 -->
-      <article class="exp-card">
-        <header class="exp-top">
-          <h3 class="role">GIS Officer</h3>
-          <div class="time">2022 — 2023</div>
-        </header>
-        <div class="org">WWF-Pakistan</div>
-        <ul class="bullets">
-          <li>Led mapping for <strong>flood analytics</strong> &amp; conservation planning.</li>
-          <li>Standardized map templates; trained teammates on QA/QC workflows.</li>
-          <li>Published cartographic products for public communication.</li>
-        </ul>
-        <div class="tags">
-          <span>ArcGIS</span><span>Remote Sensing</span><span>QA/QC</span>
-        </div>
-      </article>
-
-      <!-- Role 4 -->
-      <article class="exp-card">
-        <header class="exp-top">
-          <h3 class="role">GIS Associate</h3>
-          <div class="time">2021 — 2022</div>
-        </header>
-        <div class="org">WWF-Pakistan</div>
-        <ul class="bullets">
-          <li>Produced LULC layers from <strong>Landsat/Sentinel</strong> and validated accuracy.</li>
-          <li>Built project atlases; automated repetitive cartography tasks.</li>
-        </ul>
-        <div class="tags">
-          <span>Remote Sensing</span><span>LULC</span><span>Automation</span>
-        </div>
-      </article>
-    </div>
+    <!-- WWF - GIS Associate -->
+    <article class="exp-card glass">
+      <div class="exp-top">
+        <h3>GIS Associate</h3>
+        <span class="exp-dates">2021 — 2022</span>
+      </div>
+      <div class="exp-org">WWF-Pakistan</div>
+      <ul class="exp-points">
+        <li>Produced LULC layers from <b>Landsat/Sentinel</b> and validated accuracy.</li>
+        <li>Built project atlases; automated repetitive cartography tasks.</li>
+      </ul>
+      <div class="chips">
+        <span>Remote Sensing</span><span>LULC</span><span>Automation</span>
+      </div>
+    </article>
   </div>
 </section>
+
+<!-- TECHNICAL STACK (placed AFTER experience) -->
+<section id="stack" class="section glass-wrap">
+  <header class="section-head">
+    <h2 class="section-title">Technical Stack</h2>
+    <p class="section-sub">A collection of languages, platforms, and tools I’ve used across geospatial analytics and data-science projects.</p>
+  </header>
+
+  <div class="skills-grid">
+
+    <!-- Row 1 -->
+    <a class="skill-card pop" href="#" aria-label="Python">
+      <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python">
+      <span>Python</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="R Language">
+      <img src="https://cdn.simpleicons.org/r/276DC3" alt="R">
+      <span>R Language</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="JavaScript">
+      <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">
+      <span>JavaScript</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="HTML">
+      <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML">
+      <span>HTML</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="CSS">
+      <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS">
+      <span>CSS</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="ArcGIS">
+      <img src="https://cdn.simpleicons.org/arcgis/2C7AC3" alt="ArcGIS">
+      <span>ArcGIS</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="QGIS">
+      <img src="https://cdn.simpleicons.org/qgis/589632" alt="QGIS">
+      <span>QGIS</span>
+    </a>
+
+    <!-- Row 2 -->
+    <a class="skill-card pop" href="#" aria-label="Google Earth Engine">
+      <img src="https://cdn.simpleicons.org/googleearth/4285F4" alt="Google Earth Engine">
+      <span>Google Earth Engine</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="ENVI">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/ENVI_Logo.png" alt="ENVI">
+      <span>ENVI</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="ArcGIS Pro">
+      <img src="https://cdn.simpleicons.org/arcgis/2C7AC3" alt="ArcGIS Pro">
+      <span>ArcGIS Pro</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="PostgreSQL">
+      <img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL">
+      <span>PostgreSQL</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="SQL">
+      <img src="https://cdn.simpleicons.org/sqlite/003B57" alt="SQL">
+      <span>SQL</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="MongoDB">
+      <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB">
+      <span>MongoDB</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="Supabase">
+      <img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase">
+      <span>Supabase</span>
+    </a>
+
+    <!-- Row 3 -->
+    <a class="skill-card pop" href="#" aria-label="Google Cloud">
+      <img src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="Google Cloud">
+      <span>Google Cloud</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="AWS">
+      <img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS">
+      <span>AWS</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="Tableau">
+      <img src="https://cdn.simpleicons.org/tableau/E97627" alt="Tableau">
+      <span>Tableau</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="Streamlit">
+      <img src="https://cdn.simpleicons.org/streamlit/FF4B4B" alt="Streamlit">
+      <span>Streamlit</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="GitHub">
+      <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="GitHub">
+      <span>GitHub</span>
+    </a>
+    <a class="skill-card pop" href="#" aria-label="Microsoft Office">
+      <img src="https://cdn.simpleicons.org/microsoftoffice/F25022" alt="Microsoft Office">
+      <span>Microsoft Office</span>
+    </a>
+  </div>
+</section>
+
 
 
 
