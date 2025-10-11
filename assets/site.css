@@ -159,14 +159,23 @@ h1:hover,h2:hover,h3:hover{
 .contact-box a:hover{text-decoration:underline;}
 
 /* ===== EXPERIENCE ===== */
+/* ===== EXPERIENCE (replace this whole block) ===== */
 .exp-grid{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:24px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+  gap:26px;
+  align-items:stretch;             /* make all cards same height */
 }
+
 .exp-card{
   position:relative;
+  display:flex;                    /* allow footer to stick to bottom */
+  flex-direction:column;
+  min-height:460px;                /* room for longer text */
   background:rgba(11,15,22,.72);
-  border:2px solid rgba(190,205,255,.34); /* thicker */
-  border-radius:18px; padding:20px;
+  border:2px solid rgba(190,205,255,.34);  /* prominent outline */
+  border-radius:20px;
+  padding:22px;
   backdrop-filter: blur(12px);
   box-shadow:0 16px 32px rgba(0,0,0,.58);
   transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
@@ -174,34 +183,67 @@ h1:hover,h2:hover,h3:hover{
 }
 .exp-card:hover{transform:translateY(-3px); box-shadow:0 22px 44px rgba(0,0,0,.62);}
 
+/* top row */
 .exp-top{
-  display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:12px;
 }
-
-/* NEON text (no boxes) for job title + dates */
 .exp-top h3{
   margin:0;
-  color:#b9ffe1; /* mint neon */
+  color:#b9ffe1;                   /* mint neon */
   text-shadow:0 0 10px rgba(0,255,136,.55), 0 0 28px rgba(0,255,136,.22);
-  font-weight:900;
+  font-weight:900; letter-spacing:.2px;
 }
 .exp-dates{
-  color:#aecdff; /* blue neon */
+  color:#aecdff;                   /* blue neon */
   text-shadow:0 0 10px rgba(120,160,255,.55), 0 0 26px rgba(120,160,255,.22);
-  font-weight:800;
+  font-weight:800; letter-spacing:.2px;
 }
+
 .exp-org{
-  font-weight:900; color:#ffffff; margin:12px 0 10px;
+  font-weight:900; color:#ffffff;
+  margin:6px 0 12px;
   text-shadow:0 1px 10px rgba(0,0,0,.45);
+  line-height:1.25;
 }
-.exp-card ul{margin:10px 0 0 18px; padding:0;}
-.exp-card li{margin:6px 0; text-shadow:0 1px 8px rgba(0,0,0,.4);}
+
+/* bullets */
+.exp-card ul{
+  flex:1;                          /* takes up remaining space above footer */
+  margin:0 0 14px 1.1rem;
+  padding:0;
+  line-height:1.48;
+}
+.exp-card li{
+  margin:10px 0;
+  text-shadow:0 1px 8px rgba(0,0,0,.4);
+}
+
+/* card footer: Tools */
+.exp-tools{
+  margin:16px -22px -22px;         /* stretch to card edges */
+  padding:12px 18px;
+  border-top:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.18));
+  backdrop-filter: blur(8px);
+  font-size:.94rem; line-height:1.35;
+  color:#dfe6ff;
+}
+.exp-tools b{
+  color:#fff; letter-spacing:.2px;
+}
 
 /* thicker neon rims per variant */
 .exp-green{ box-shadow: inset 0 0 0 4px rgba(0,255,136,.35), 0 0 26px rgba(0,255,136,.10), 0 16px 32px rgba(0,0,0,.55); }
 .exp-blue { box-shadow: inset 0 0 0 4px rgba(112,185,255,.38), 0 0 26px rgba(112,185,255,.10), 0 16px 32px rgba(0,0,0,.55); }
 .exp-purple{ box-shadow: inset 0 0 0 4px rgba(160,139,255,.40), 0 0 26px rgba(160,139,255,.10), 0 16px 32px rgba(0,0,0,.55); }
 .exp-amber{ box-shadow: inset 0 0 0 4px rgba(255,209,102,.42), 0 0 26px rgba(255,209,102,.12), 0 16px 32px rgba(0,0,0,.55); }
+
+/* responsive tweak for smaller screens */
+@media (max-width: 560px){
+  .exp-card{ min-height: unset; padding:18px; }
+  .exp-tools{ margin:14px -18px -18px; }
+}
 
 /* ===== CORE TECH ===== */
 .tech-stack{display:flex; justify-content:center; margin-top:46px;}
