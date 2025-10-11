@@ -6,9 +6,9 @@
   --maxW:1100px;
 
   /* neon accents */
-  --neon-green:#00ff88;
-  --neon-blue:#78a3ff;
-  --neon-violet:#b08bff;
+  --neon-green:#014224;
+  --neon-blue:#041f57;
+  --neon-violet:#332354;
 
   /* tech-line glass */
   --chip-blue1:#1a2342;
@@ -33,20 +33,20 @@ body::before{
   content:"";
   position:fixed; inset:0; z-index:-2;
   background:url('Background_1.jpg') center/cover fixed no-repeat;
-  filter:blur(4px) brightness(.9) saturate(1.05);   /* tweak blur here */
+  filter:blur(2px) brightness(.8) saturate(1.02);   /* tweak blur here */
   transform:scale(1.02);
 }
 body::after{
   content:"";
   position:fixed; inset:0; z-index:-1;
-  background:radial-gradient(110% 80% at 50% 20%, rgba(0,0,0,.18), rgba(0,0,0,.46));
+  background:radial-gradient(110% 80% at 50% 20%, rgba(0,0,0,.15), rgba(0,0,0,.40));
 }
 
 /* ===== TOPBAR ===== */
 .topbar{
   position:sticky; top:0; z-index:20;
   background:linear-gradient(90deg, rgba(8,12,18,.82), rgba(8,12,18,.62));
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
   border-bottom:1px solid var(--edge);
 }
 .nav-wrap{
