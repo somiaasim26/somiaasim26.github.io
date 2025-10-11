@@ -391,5 +391,57 @@ function showTab(evt, id){
   window.scrollTo({top:0, behavior:'smooth'});
 }
 </script>
+<script>
+/* ==== GALLERY: filter, lightbox, counters ==== */
+(function(){
+  const grid = document.getElementById('masonry');
+  if(!grid) return;
+
+  // counters
+  const photos = grid.querySelectorAll('figure.card').length;
+  document.getElementById('g-count').textContent = photos;
+  document.getElementById('g-sections').textContent =
+    grid.querySelectorAll('h3.gallery-section').length;
+  document.getElementById('g-updated').textContent =
+    new Date().toLocaleDateString();
+
+  // filter pills
+  const pills = document.querySelectorAll('.gallery-filters .pill');
+  pills.forEach(p => p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    const f = p.dataset.filter;
+    grid.querySelectorAll('figure.card').forEach(card => {
+      card.style.display = (f === 'all' || card.dataset.cat === f) ? '' : 'none';
+    });
+  }));
+
+  // lightbox
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbCap = document.getElementById('lightbox-cap');
+  const close = lb.querySelector('.lightbox-close');
+
+  grid.addEventListener('click', e => {
+    const a = e.target.closest('a[href]');
+    if(!a) return;
+    e.preventDefault();
+    lbImg.src = a.getAttribute('href');
+    lbCap.textContent = a.dataset.caption || '';
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  });
+
+  function hideLB(){
+    lb.setAttribute('aria-hidden','true');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+  close.addEventListener('click', hideLB);
+  lb.addEventListener('click', e => { if(e.target === lb) hideLB(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') hideLB(); });
+})();
+</script>
+
 </body>
 </html>
