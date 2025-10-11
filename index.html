@@ -8,40 +8,7 @@
   <meta name="description" content="Somia Asim | GIS/RS & Data Analyst — remote sensing, urban change, flood analysis, risk mapping."/>
   <link rel="icon" href="assets/favicon.png"/>
   <link rel="stylesheet" href="assets/site.css">
-
-  
 </head>
-<script>
-  // Staggered skill-chip entrance
-  document.addEventListener('DOMContentLoaded', () => {
-    const chips = [...document.querySelectorAll('.skill-chip')];
-    chips.forEach((el, i) => el.style.setProperty('--stagger', i));
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    chips.forEach(c => io.observe(c));
-  });
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".skill-card");
-  cards.forEach((card, i) => card.style.setProperty("--delay", i));
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  cards.forEach(card => observer.observe(card));
-});
-</script>
 
 <body>
 <header>
@@ -50,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <nav>
       <a href="#about" class="active">About</a>
       <a href="#experience">Experience</a>
+      <a href="#stack">Technical Stack</a>
       <a href="#cv">CV</a>
       <a href="#blog">Blogs / Publications</a>
       <a href="#gallery">Gallery</a>
@@ -60,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- HERO -->
 <div class="hero">
   <h1>GIS/RS &amp; Data Analyst</h1>
-  <div class="techline">ESRI Package • QGIS • Python/HTML/CSS/JS • Google Earth Engine • R • ENVI</div>
+  <div class="techline">ESRI Package • QGIS • Python/HTML/CSS/JS • Google Earth Engine • R</div>
   <div class="tags">
     <span class="tag">Urban Change</span>
     <span class="tag">Flood Analysis</span>
@@ -85,14 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="about-text">
       <h2>About Me</h2>
       <p>I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My journey into geospatial research began during my undergraduate studies at the University of the Punjab, where I developed an interest in spatial analysis, cartography, and environmental data interpretation.</p>
-      <p>I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS Officer, where I gained hands-on experience in geospatial analysis, remote sensing, and environmental mapping. Currently, I’m part of the Lahore University of Management Sciences (LUMS), where I first served as a Research Assistant and now work as a Research Associate, contributing to data-driven projects at the intersection of environment, policy, and urban systems.</p>
+      <p>I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS Officer. Currently, I’m part of the Lahore University of Management Sciences (LUMS), where I first served as a Research Assistant and now work as a Research Associate, contributing to data-driven projects at the intersection of environment, policy, and urban systems.</p>
       <p>My expertise lies in spatial data management, statistical and geospatial analysis, and machine learning applications. I’m skilled in tools such as ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL, and have a keen interest in automating analytical workflows, developing dashboards, and visualizing complex datasets.</p>
       <p>I’m passionate about exploring how geospatial intelligence and data analytics can be used to support sustainable development, environmental planning, and informed decision-making.</p>
     </div>
   </div>
 </section>
 
-<!-- ===================== EXPERIENCE ===================== -->
 <!-- EXPERIENCE -->
 <section id="experience" class="section glass-wrap">
   <header class="section-head">
@@ -101,10 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
     </h2>
   </header>
 
-  <!-- Experience cards grid -->
   <div class="exp-grid">
-    <!-- LUMS - Research Associate -->
-    <article class="exp-card glass">
+    <article class="exp-card">
       <div class="exp-top">
         <h3>Research Associate</h3>
         <span class="exp-dates">2024 — Present</span>
@@ -112,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="exp-org">Lahore University of Management Sciences (LUMS)</div>
       <ul class="exp-points">
         <li>Quantified urban growth, exposure, and flood risk using <b>GEE</b>, <b>Python</b>, and <b>R</b>.</li>
-        <li>Built reproducible pipelines and <b>automation</b> for geospatial analytics &amp; reporting.</li>
+        <li>Built reproducible pipelines and automation for geospatial analytics and reporting.</li>
         <li>Coordinated with government/policy partners for data-driven insights.</li>
       </ul>
       <div class="chips">
@@ -120,8 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </article>
 
-    <!-- LUMS - Research Assistant -->
-    <article class="exp-card glass">
+    <article class="exp-card">
       <div class="exp-top">
         <h3>Research Assistant</h3>
         <span class="exp-dates">2023 — 2024</span>
@@ -137,15 +101,14 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </article>
 
-    <!-- WWF - GIS Officer -->
-    <article class="exp-card glass">
+    <article class="exp-card">
       <div class="exp-top">
         <h3>GIS Officer</h3>
         <span class="exp-dates">2022 — 2023</span>
       </div>
       <div class="exp-org">WWF-Pakistan</div>
       <ul class="exp-points">
-        <li>Led mapping for <b>flood analytics</b> &amp; conservation planning.</li>
+        <li>Led mapping for flood analytics &amp; conservation planning.</li>
         <li>Standardized map templates; trained teammates on QA/QC workflows.</li>
         <li>Published cartographic products for public communication.</li>
       </ul>
@@ -154,15 +117,14 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </article>
 
-    <!-- WWF - GIS Associate -->
-    <article class="exp-card glass">
+    <article class="exp-card">
       <div class="exp-top">
         <h3>GIS Associate</h3>
         <span class="exp-dates">2021 — 2022</span>
       </div>
       <div class="exp-org">WWF-Pakistan</div>
       <ul class="exp-points">
-        <li>Produced LULC layers from <b>Landsat/Sentinel</b> and validated accuracy.</li>
+        <li>Produced LULC layers from Landsat/Sentinel and validated accuracy.</li>
         <li>Built project atlases; automated repetitive cartography tasks.</li>
       </ul>
       <div class="chips">
@@ -172,8 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
 
-<!-- TECHNICAL STACK (placed AFTER experience) -->
-<!-- TECHNICAL STACK -->
 <!-- TECHNICAL STACK -->
 <section id="stack" class="section glass-wrap">
   <header class="section-head">
@@ -184,60 +144,43 @@ document.addEventListener("DOMContentLoaded", () => {
   </header>
 
   <div class="skills-belts glass">
-  <div class="belt-row belt-a">
-    <div class="skill-pill"><img src="assets/logo/python.svg" alt="python"></div>
-    <div class="skill-pill"><img src="assets/logo/r.svg" alt="r"></div>
-    <div class="skill-pill"><img src="assets/logo/javascript.svg" alt="js"></div>
-    <div class="skill-pill"><img src="assets/logo/html.svg" alt="html"></div>
-    <div class="skill-pill"><img src="assets/logo/css.svg" alt="css"></div>
-    <div class="skill-pill"><img src="assets/logo/arcgis.svg" alt="arcgis"></div>
-    <div class="skill-pill"><img src="assets/logo/qgis.svg" alt="qgis"></div>
-    <div class="skill-pill"><img src="assets/logo/gee.svg" alt="gee"></div>
-    <div class="skill-pill"><img src="assets/logo/arcgispro.png" alt="arcgis pro"></div>
+    <div class="belt-row belt-a">
+      <div class="skill-pill"><img src="assets/logo/python.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/r.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/javascript.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/html.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/css.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/arcgis.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/qgis.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/gee.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/arcgispro.png" alt=""></div>
+    </div>
+
+    <div class="belt-row belt-b">
+      <div class="skill-pill"><img src="assets/logo/postgresql.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/mysql.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/mongodb.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/supabase.png" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/google-cloud.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/aws.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/github.svg" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/streamlit.png" alt=""></div>
+      <div class="skill-pill"><img src="assets/logo/msoffice.svg" alt=""></div>
+    </div>
   </div>
-
-  <div class="belt-row belt-b">
-    <div class="skill-pill"><img src="assets/logo/postgresql.svg" alt="postgresql"></div>
-    <div class="skill-pill"><img src="assets/logo/mysql.svg" alt="sql"></div>
-    <div class="skill-pill"><img src="assets/logo/mongodb.svg" alt="mongodb"></div>
-    <div class="skill-pill"><img src="assets/logo/supabase.png" alt="supabase"></div>
-    <div class="skill-pill"><img src="assets/logo/google-cloud.svg" alt="gcloud"></div>
-    <div class="skill-pill"><img src="assets/logo/aws.svg" alt="aws"></div>
-    <div class="skill-pill"><img src="assets/logo/github.svg" alt="github"></div>
-    <div class="skill-pill"><img src="assets/logo/streamlit.png" alt="streamlit"></div>
-    <div class="skill-pill"><img src="assets/logo/msoffice.svg" alt="office"></div>
-  </div>
-</div>
-
-
 </section>
 
-
 <footer>© Somia Asim</footer>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".skill-card");
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  cards.forEach(card => io.observe(card));
-});
-</script>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const belts = document.querySelector('.skills-belts');
   if(!belts) return;
-  const io = new IntersectionObserver((entries) => {
+  const io = new IntersectionObserver(entries => {
     entries.forEach(e => belts.classList.toggle('play', e.isIntersecting));
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
   io.observe(belts);
 });
 </script>
-
 </body>
 </html>
