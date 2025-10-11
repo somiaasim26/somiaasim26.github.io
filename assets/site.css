@@ -1,23 +1,23 @@
 :root{
   /* tuned for your mountain background */
-  --text:#eaf1ff;
+  --text:#fcfcfc;
   --muted:#b8c6e6;
   --edge:rgba(255,255,255,.10);
   --shadow:0 12px 28px rgba(0,0,0,.45);
   --maxW:1100px;
 
-  --green:#00ff88;        /* heading accent (sharp green) */
-  --glow:rgba(0,255,136,.35);
+  --green:#052f73;        /* heading accent (sharp green) */
+  --glow:rgba(0,221,255,.35);
 
   /* chip/glass colors */
-  --chip-blue1:#1a2342;
-  --chip-blue2:#0e182e;
+  --chip-blue1:#46556b;
+  --chip-blue2:#384b66;
 
-  --urban:#39ff14;
-  --flood:#0080ff;
-  --risk:#9d00ff;
-  --carto:#ff6ec7;
-  --auto:#ffd700;
+  --urban:#413257;
+  --flood:#614a82;
+  --risk:#8e6dbd;
+  --carto:#a37ed9;
+  --auto:#c7a2fc;
 }
 
 html,body{
@@ -60,7 +60,7 @@ nav a.active{color:var(--text); background:rgba(255,255,255,.07); border-color:v
 
 /* ===== TITLES / ACCENTS ===== */
 h1,h2,h3{
-  color:var(--green);
+  color:var(--blue);
   text-shadow:0 0 14px var(--glow), 0 2px 0 rgba(0,0,0,.35);
   letter-spacing:.2px;
   transition:transform .2s ease, text-shadow .2s ease;
@@ -96,7 +96,7 @@ h1:hover,h2:hover,h3:hover{
 .tags{display:flex; gap:10px; flex-wrap:wrap;}
 .tag{
   border-radius:999px; padding:7px 14px; font-weight:800;
-  color:#0b0f16; /* dark text for high contrast chips */
+  color:#f7f5fa; /* dark text for high contrast chips */
   backdrop-filter: blur(10px);
   box-shadow:0 6px 18px rgba(0,0,0,.35);
   border:1px solid rgba(255,255,255,.15);
