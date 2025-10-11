@@ -1,84 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Somia Asim — GIS/RS & Data Analyst</title>
-  <meta name="description" content="Somia Asim | GIS/RS & Data Analyst — remote sensing, urban change, flood analysis, risk mapping."/>
-  <link rel="icon" href="assets/fevicon.png"/>
-  <link rel="stylesheet" href="assets/site.css">
+  <title>Somia Asim — Portfolio</title>
+  <link rel="icon" type="image/png" href="visuals/favicon.png"/>
+  <link rel="stylesheet" href="assets/site.css"/>
+  <style>
+    /* quick hide for inactive tabs */
+    section.tab-content { display: none; }
+    section.tab-content.active { display: block; animation: fadeIn .6s ease; }
+    @keyframes fadeIn { from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:translateY(0);} }
+  </style>
 </head>
 
 <body>
-<!-- TOP HEADER -->
+<!-- ===== HEADER ===== -->
 <header class="topbar">
   <div class="nav-wrap">
     <div class="brandpack">
-      <!-- favicon in header -->
-      <img class="brand-icon" src="assets/fevicon.png" alt="SA"/>
+      <img class="brand-icon" src="visuals/favicon.png" alt="SA"/>
       <div class="brand-meta">
         <div class="brand-name">SOMIA ASIM</div>
         <div class="brand-role">Research Associate</div>
       </div>
     </div>
-
     <nav>
-      <a href="#about" class="active">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#cv">CV</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#blog">Blog / Publications</a>
+      <a href="#about" class="active" onclick="showTab(event,'about')">About</a>
+      <a href="#experience" onclick="showTab(event,'experience')">Experience</a>
+      <a href="#cv" onclick="showTab(event,'cv')">CV</a>
+      <a href="#gallery" onclick="showTab(event,'gallery')">Gallery</a>
+      <a href="#blog" onclick="showTab(event,'blog')">Blog / Publications</a>
     </nav>
   </div>
 </header>
 
-<!-- ABOUT (default visible) -->
-<section id="about" class="section-page show">
-  <section class="hero fade-in">
-    <h1 class="title duo">Hi, I’m <span>Somia</span>.</h1>
+<!-- ===== ABOUT ===== -->
+<section id="about" class="tab-content active hero">
+  <h1 class="title">Hi, I’m Somia.</h1>
+  <p class="bigline">GIS/RS &amp; Data Analyst focused on urban change, flood exposure, and policy-driven spatial insights.</p>
 
-    <!-- glass box under the name -->
-    <div class="intro-glass glass fade-in">
-      <p class="subtitle">
-        GIS/RS &amp; Data Analyst focused on urban change, flood exposure, and policy-driven spatial insights.
-      </p>
-      <p class="techline">ArcGIS • QGIS • Google Earth Engine • Python • R • PostgreSQL</p>
-      <div class="tags">
-        <span class="tag">Urban Change</span>
-        <span class="tag">Flood Analysis</span>
-        <span class="tag">Risk Mapping</span>
-        <span class="tag">Cartography</span>
-        <span class="tag">Automation / Dashboards</span>
+  <p class="techline">ArcGIS • QGIS • Google Earth Engine • Python • R • PostgreSQL</p>
+
+  <div class="tags">
+    <span class="tag tag-urban">Urban Change</span>
+    <span class="tag tag-flood">Flood Analysis</span>
+    <span class="tag tag-risk">Risk Mapping</span>
+    <span class="tag tag-carto">Cartography</span>
+    <span class="tag tag-auto">Automation / Dashboards</span>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-left">
+      <img class="pfp" src="assets/Somia.jpg" alt="Somia Asim portrait"/>
+      <div class="contact-box glass">
+        <strong>Contact</strong>
+        <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a>
+        <a href="https://www.linkedin.com/in/somia-asim-35688617a" target="_blank">LinkedIn</a>
       </div>
     </div>
 
-    <div class="about-grid">
-      <div class="about-left">
-        <img class="pfp" src="assets/Somia.jpg" alt="Somia Asim portrait" />
-        <div class="contact-box glass">
-          <strong>Contact</strong>
-          <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a>
-          <a href="https://www.linkedin.com/in/somia-asim-35688617a" target="_blank">LinkedIn</a>
-        </div>
-      </div>
-
-      <div class="about-right glass">
-        <h2 class="section-title duo">About Me</h2>
-        <p>I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My geospatial journey began during my undergraduate studies at the University of the Punjab, where I developed a lasting interest in spatial analysis, cartography, and environmental data interpretation.</p>
-        <p>I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS Officer. Currently, at the Lahore University of Management Sciences (LUMS), I’ve served as a Research Assistant and now as a Research Associate, contributing to data-driven projects at the intersection of environment, policy, and urban systems.</p>
-        <p>My expertise spans spatial data management, statistical and geospatial analysis, and ML for Earth observation using ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL. I’m passionate about automating analytical workflows, building dashboards, and visualizing complex datasets.</p>
-      </div>
+    <div class="about-right glass">
+      <h2 class="section-title">About Me</h2>
+      <p>I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My geospatial journey began during my undergraduate studies at the University of the Punjab, where I developed a lasting interest in spatial analysis, cartography, and environmental data interpretation.</p>
+      <p>I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS Officer. Currently, at the Lahore University of Management Sciences (LUMS), I’ve served as a Research Assistant and now as a Research Associate, contributing to data-driven projects at the intersection of environment, policy, and urban systems.</p>
+      <p>My expertise spans spatial data management, statistical and geospatial analysis, and ML for Earth observation using ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL. I’m passionate about automating analytical workflows, building dashboards, and visualizing complex datasets.</p>
     </div>
-  </section>
+  </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="section section-page">
-  <h2 class="section-title duo fade-in">Experience <span class="years-chip">2+ years</span></h2>
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="tab-content section">
+  <h2 class="section-title">Experience <span class="years-chip">2+ years</span></h2>
 
   <div class="exp-grid">
-    <article class="exp-card exp-green zoom-in">
+    <article class="exp-card exp-green">
       <div class="exp-top">
         <h3>Research Associate</h3><span class="exp-dates">2024 — Present</span>
       </div>
@@ -90,7 +86,7 @@
       </ul>
     </article>
 
-    <article class="exp-card exp-blue zoom-in">
+    <article class="exp-card exp-blue">
       <div class="exp-top">
         <h3>Research Assistant</h3><span class="exp-dates">2023 — 2024</span>
       </div>
@@ -101,7 +97,7 @@
       </ul>
     </article>
 
-    <article class="exp-card exp-purple zoom-in">
+    <article class="exp-card exp-purple">
       <div class="exp-top">
         <h3>GIS Officer</h3><span class="exp-dates">2022 — 2023</span>
       </div>
@@ -112,7 +108,7 @@
       </ul>
     </article>
 
-    <article class="exp-card exp-amber zoom-in">
+    <article class="exp-card exp-amber">
       <div class="exp-top">
         <h3>GIS Associate</h3><span class="exp-dates">2021 — 2022</span>
       </div>
@@ -124,13 +120,12 @@
     </article>
   </div>
 
-  <!-- CORE TECHNOLOGIES -->
-  <div class="tech-stack fade-in">
+  <div class="tech-stack">
     <div class="tech-card glass">
-      <h3 class="section-subtitle duo heading-strong">Core Technologies</h3>
+      <h3 class="section-subtitle heading-strong">Core Technologies</h3>
       <p class="muted">Tools and platforms I use to deliver reproducible geospatial and data science work.</p>
       <div class="skills-grid">
-        <img src="assets/logo/python.svg" alt="Python" class="skill-icon">
+        <img src="assets/logo/python.svg" alt="Python">
         <img src="assets/logo/r.svg" alt="R">
         <img src="assets/logo/javascript.svg" alt="JavaScript">
         <img src="assets/logo/html.svg" alt="HTML">
@@ -153,59 +148,38 @@
   </div>
 </section>
 
-<!-- CV -->
-<section id="cv" class="section section-page">
-  <h2 class="section-title duo fade-in">CV</h2>
-  <p class="muted fade-in">Add a downloadable PDF or timeline here.</p>
+<!-- ===== CV ===== -->
+<section id="cv" class="tab-content section">
+  <h2 class="section-title">CV</h2>
+  <p class="subtitle">Add a downloadable PDF or timeline here.</p>
+  <!-- optional CV button -->
+  <!-- <a class="techline" href="assets/Somia_Asim_CV.pdf" download>Download CV (PDF)</a> -->
 </section>
 
-<!-- GALLERY -->
-<section id="gallery" class="section section-page">
-  <h2 class="section-title duo fade-in">Gallery</h2>
-  <p class="muted fade-in">A curated set of project visuals and maps.</p>
+<!-- ===== GALLERY ===== -->
+<section id="gallery" class="tab-content section">
+  <h2 class="section-title">Gallery</h2>
+  <p class="subtitle">A curated set of project visuals and maps.</p>
 </section>
 
-<!-- BLOG -->
-<section id="blog" class="section section-page">
-  <h2 class="section-title duo fade-in">Blog / Publications</h2>
-  <p class="muted fade-in">Short write-ups, case studies, and links to publications.</p>
+<!-- ===== BLOG ===== -->
+<section id="blog" class="tab-content section">
+  <h2 class="section-title">Blog / Publications</h2>
+  <p class="subtitle">Short write-ups, case studies, and links to publications.</p>
 </section>
 
 <footer>© Somia Asim</footer>
 
+<!-- ===== JS TAB SWITCHER ===== -->
 <script>
-  // reveal on view
-  const revealItems = document.querySelectorAll('.fade-in, .zoom-in');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => e.isIntersecting && e.target.classList.add('in'));
-  }, { threshold: 0.16 });
-  revealItems.forEach(el => io.observe(el));
-
-  // SPA-style section router: show only selected section
-  const navLinks = document.querySelectorAll('nav a');
-  const pages = document.querySelectorAll('.section-page');
-
-  function showSection(hash){
-    const id = (hash || '#about');
-    pages.forEach(sec => sec.classList.toggle('show', '#'+sec.id === id));
-    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
-    window.scrollTo({top:0, behavior:'instant'});
-  }
-
-  // clicks
-  navLinks.forEach(a => {
-    a.addEventListener('click', (e) => {
-      e.preventDefault();
-      const href = a.getAttribute('href');
-      history.pushState(null, '', href);
-      showSection(href);
-    });
-  });
-
-  // back/forward
-  window.addEventListener('popstate', () => showSection(location.hash || '#about'));
-  // initial
-  showSection(location.hash || '#about');
+function showTab(evt, id){
+  evt.preventDefault();
+  document.querySelectorAll('section.tab-content').forEach(sec => sec.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  evt.target.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
 </script>
 </body>
 </html>
