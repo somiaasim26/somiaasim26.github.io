@@ -5,7 +5,7 @@
   --shadow:0 12px 28px rgba(0,0,0,.45);
   --maxW:1100px;
 
-  /* neon accents used in badges */
+  /* neon accents */
   --neon-green:#00ff88;
   --neon-blue:#78a3ff;
   --neon-violet:#b08bff;
@@ -15,6 +15,7 @@
   --chip-blue2:#0e182e;
 }
 
+/* ===== BASE / BACKGROUND ===== */
 html,body{
   margin:0; padding:0;
   font-family:"Segoe UI", Roboto, sans-serif;
@@ -23,12 +24,12 @@ html,body{
   overflow-x:hidden;
 }
 
-/* ===== background blur/darken overlay (helps white text pop) ===== */
+/* background blur + darken overlay (helps white text pop) */
 body::before{
   content:"";
   position:fixed; inset:0; z-index:-2;
   background:url('Background_1.jpg') center/cover fixed no-repeat;
-  filter:blur(6px) brightness(.9) saturate(1.05);
+  filter:blur(4px) brightness(.9) saturate(1.05);   /* adjust blur here */
   transform:scale(1.02);
 }
 body::after{
@@ -67,7 +68,7 @@ nav a{
 nav a:hover{color:var(--text); border-color:var(--edge);}
 nav a.active{color:var(--text); background:rgba(255,255,255,.07); border-color:var(--edge);}
 
-/* ===== TITLES / MAIN TEXT ===== */
+/* ===== TITLES / TEXT ===== */
 h1,h2,h3{
   color:#fff; /* strong white */
   text-shadow:0 2px 14px rgba(0,0,0,.55), 0 0 18px rgba(255,255,255,.05);
@@ -87,14 +88,36 @@ h1:hover,h2:hover,h3:hover{
 .section{max-width:var(--maxW); margin:70px auto; padding:0 20px;}
 .hero{max-width:var(--maxW); margin:50px auto 0; padding:0 20px;}
 
-/* ===== ABOUT bits ===== */
-.bigline{
+/* ===== GLASS BOXES behind titles ===== */
+.glassbox{
+  background: rgba(16,20,28,.48);
+  border: 1px solid var(--edge);
+  backdrop-filter: blur(10px) saturate(1.05);
+  border-radius: 16px;
+  padding: 14px 18px;
+  box-shadow: 0 18px 36px rgba(0,0,0,.48);
+  animation: floatIn .6s ease both;
+}
+.lift:hover{ transform: translateY(-2px); }
+.hero-box{ display:inline-block; max-width: 980px; }
+.section-head{ display:inline-block; margin-bottom: 18px; }
+
+@keyframes floatIn{
+  from{ opacity:0; transform: translateY(10px) scale(.98); }
+  to  { opacity:1; transform: translateY(0)    scale(1); }
+}
+
+/* extra readability on hero titles inside the glass */
+.hero .title{ text-shadow: 0 3px 16px rgba(0,0,0,.6), 0 0 22px rgba(255,255,255,.06); }
+.hero .bigline{
   font-size:clamp(1.15rem,2.2vw,1.38rem);
   font-weight:900;
   margin:.4rem 0 1rem;
   color:#fff;
-  text-shadow:0 2px 14px rgba(0,0,0,.55);
+  text-shadow:0 2px 12px rgba(0,0,0,.55);
 }
+
+/* ===== ABOUT: tech line + colored chips ===== */
 .techline{
   display:inline-block;
   background:linear-gradient(135deg, var(--chip-blue1), var(--chip-blue2));
@@ -142,7 +165,7 @@ h1:hover,h2:hover,h3:hover{
 .exp-card{
   position:relative;
   background:rgba(11,15,22,.72);
-  border:1px solid rgba(190,205,255,.28);
+  border:2px solid rgba(190,205,255,.34); /* thicker */
   border-radius:18px; padding:20px;
   backdrop-filter: blur(12px);
   box-shadow:0 16px 32px rgba(0,0,0,.58);
@@ -150,36 +173,35 @@ h1:hover,h2:hover,h3:hover{
   overflow:hidden;
 }
 .exp-card:hover{transform:translateY(-3px); box-shadow:0 22px 44px rgba(0,0,0,.62);}
-.exp-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;}
-/* neon badges behind title and dates */
+
+.exp-top{
+  display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;
+}
+
+/* NEON text (no boxes) for job title + dates */
 .exp-top h3{
   margin:0;
-  display:inline-block;
-  padding:6px 12px;
-  border-radius:12px;
-  color:#fff;
-  background:linear-gradient(135deg, rgba(0,255,136,.25), rgba(0,180,110,.18));
-  border:1px solid rgba(0,255,136,.45);
-  box-shadow:inset 0 0 22px rgba(0,255,136,.15), 0 6px 16px rgba(0,0,0,.35);
+  color:#b9ffe1; /* mint neon */
+  text-shadow:0 0 10px rgba(0,255,136,.55), 0 0 28px rgba(0,255,136,.22);
+  font-weight:900;
 }
 .exp-dates{
-  color:#eef3ff;
-  font-size:.9rem;
-  padding:4px 10px;
-  border-radius:10px;
-  background:linear-gradient(135deg, rgba(120,160,255,.26), rgba(160,130,255,.24));
-  border:1px solid rgba(140,160,255,.5);
-  box-shadow:inset 0 0 18px rgba(140,160,255,.18), 0 6px 14px rgba(0,0,0,.35);
+  color:#aecdff; /* blue neon */
+  text-shadow:0 0 10px rgba(120,160,255,.55), 0 0 26px rgba(120,160,255,.22);
+  font-weight:800;
 }
-.exp-org{font-weight:900; color:#ffffff; margin:12px 0 10px; text-shadow:0 1px 10px rgba(0,0,0,.45);}
+.exp-org{
+  font-weight:900; color:#ffffff; margin:12px 0 10px;
+  text-shadow:0 1px 10px rgba(0,0,0,.45);
+}
 .exp-card ul{margin:10px 0 0 18px; padding:0;}
 .exp-card li{margin:6px 0; text-shadow:0 1px 8px rgba(0,0,0,.4);}
 
-/* thicker, more prominent rims per card */
-.exp-green{ box-shadow: inset 0 0 0 3px rgba(0,255,136,.33), 0 0 24px rgba(0,255,136,.08), 0 16px 32px rgba(0,0,0,.55);}
-.exp-blue { box-shadow: inset 0 0 0 3px rgba(112,185,255,.36), 0 0 24px rgba(112,185,255,.08), 0 16px 32px rgba(0,0,0,.55);}
-.exp-purple{ box-shadow: inset 0 0 0 3px rgba(160,139,255,.38), 0 0 24px rgba(160,139,255,.08), 0 16px 32px rgba(0,0,0,.55);}
-.exp-amber{ box-shadow: inset 0 0 0 3px rgba(255,209,102,.38), 0 0 24px rgba(255,209,102,.08), 0 16px 32px rgba(0,0,0,.55);}
+/* thicker neon rims per variant */
+.exp-green{ box-shadow: inset 0 0 0 4px rgba(0,255,136,.35), 0 0 26px rgba(0,255,136,.10), 0 16px 32px rgba(0,0,0,.55); }
+.exp-blue { box-shadow: inset 0 0 0 4px rgba(112,185,255,.38), 0 0 26px rgba(112,185,255,.10), 0 16px 32px rgba(0,0,0,.55); }
+.exp-purple{ box-shadow: inset 0 0 0 4px rgba(160,139,255,.40), 0 0 26px rgba(160,139,255,.10), 0 16px 32px rgba(0,0,0,.55); }
+.exp-amber{ box-shadow: inset 0 0 0 4px rgba(255,209,102,.42), 0 0 26px rgba(255,209,102,.12), 0 16px 32px rgba(0,0,0,.55); }
 
 /* ===== CORE TECH ===== */
 .tech-stack{display:flex; justify-content:center; margin-top:46px;}
@@ -198,4 +220,5 @@ h1:hover,h2:hover,h3:hover{
   filter:drop-shadow(0 0 10px rgba(150,200,255,.5));
 }
 
+/* ===== FOOTER ===== */
 footer{text-align:center; padding:30px; color:var(--muted); font-size:.9rem;}
