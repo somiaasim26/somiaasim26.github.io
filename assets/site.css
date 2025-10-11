@@ -6,12 +6,12 @@
   --shadow:0 12px 28px rgba(0,0,0,.45);
   --maxW:1100px;
 
-  --green:#052f73;        /* heading accent (sharp green) */
-  --glow:rgba(0,221,255,.35);
+  --green:#00060f;        /* heading accent (sharp green) */
+  --glow:rgba(11,25,46,.34);
 
   /* chip/glass colors */
   --chip-blue1:#46556b;
-  --chip-blue2:#384b66;
+  --chip-blue2:#0d53b8;
 
   --urban:#413257;
   --flood:#614a82;
@@ -101,11 +101,11 @@ h1:hover,h2:hover,h3:hover{
   box-shadow:0 6px 18px rgba(0,0,0,.35);
   border:1px solid rgba(255,255,255,.15);
 }
-.tag-urban{background:rgba(57,255,20,.85);}
-.tag-flood{background:rgba(0,128,255,.85); color:#eaf5ff;}
-.tag-risk{background:rgba(157,0,255,.85); color:#fff;}
-.tag-carto{background:rgba(255,110,199,.9);}
-.tag-auto{background:rgba(255,215,0,.9);}
+.tag-urban{background:rgba(60,47,71,.85);}
+.tag-flood{background:rgba(108,84,128,.85); color:#faf7fc;}
+.tag-risk{background:rgba(76,61,87,.85); color:#faf7fc;}
+.tag-carto{background:rgba(44,23,59,.9);}
+.tag-auto{background:rgba(32,13,46,.9);}
 
 .about-grid{display:grid; grid-template-columns:260px 1fr; gap:32px; margin-top:24px; align-items:start;}
 @media(max-width:900px){.about-grid{grid-template-columns:1fr;}}
