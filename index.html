@@ -11,24 +11,35 @@
 </head>
 
 <body>
-<header>
+<!-- TOP HEADER (pfp + name/role + tabs) -->
+<header class="topbar">
   <div class="nav-wrap">
-    <div class="brand">SOMIA ASIM</div>
+    <div class="brandpack">
+      <img class="mini-pfp" src="assets/Somia.jpg" alt="Somia Asim"/>
+      <div class="brand-meta">
+        <div class="brand-name">Somia Asim</div>
+        <div class="brand-role">Research Associate</div>
+      </div>
+    </div>
+
     <nav>
       <a href="#about" class="active">About</a>
       <a href="#experience">Experience</a>
       <a href="#cv">CV</a>
-      <a href="#blog">Blogs / Publications</a>
       <a href="#gallery">Gallery</a>
+      <a href="#blog">Blog / Publications</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="about">
-  <h1 class="fade-in">GIS/RS &amp; Data Analyst</h1>
-  <p class="techline fade-in">ESRI Package • QGIS • Python/HTML/CSS/JS • Google Earth Engine • R</p>
-  <div class="tags fade-in">
+<!-- HERO / ABOUT -->
+<section id="about" class="hero fade-in">
+  <h1 class="title duo">Hi, I’m <span>Somia</span>.</h1>
+  <p class="subtitle">GIS/RS &amp; Data Analyst focused on urban change, flood exposure, and policy-driven spatial insights.</p>
+
+  <p class="techline">ArcGIS • QGIS • Google Earth Engine • Python • R • PostgreSQL</p>
+
+  <div class="tags">
     <span class="tag">Urban Change</span>
     <span class="tag">Flood Analysis</span>
     <span class="tag">Risk Mapping</span>
@@ -36,8 +47,7 @@
     <span class="tag">Automation / Dashboards</span>
   </div>
 
-  <!-- Column layout -->
-  <div class="about-grid fade-in">
+  <div class="about-grid">
     <div class="about-left">
       <img class="pfp" src="assets/Somia.jpg" alt="Somia Asim portrait" />
       <div class="contact-box">
@@ -46,21 +56,22 @@
         <a href="https://www.linkedin.com/in/somia-asim-35688617a" target="_blank">LinkedIn</a>
       </div>
     </div>
+
     <div class="about-right glass">
-      <h2>About Me</h2>
-      <p>I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My journey into geospatial research began during my undergraduate studies at the University of the Punjab, where I developed an interest in spatial analysis, cartography, and environmental data interpretation.</p>
-      <p>I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS Officer. Currently, I’m part of the Lahore University of Management Sciences (LUMS), where I first served as a Research Assistant and now work as a Research Associate, contributing to data-driven projects at the intersection of environment, policy, and urban systems.</p>
-      <p>My expertise lies in spatial data management, statistical and geospatial analysis, and machine learning applications using ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL. I’m passionate about automating analytical workflows, developing dashboards, and visualizing complex datasets.</p>
+      <h2 class="section-title duo">About Me</h2>
+      <p>I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My geospatial journey began during my undergraduate studies at the University of the Punjab, where I developed a lasting interest in spatial analysis, cartography, and environmental data interpretation.</p>
+      <p>I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS Officer. Currently, at the Lahore University of Management Sciences (LUMS), I’ve served as a Research Assistant and now as a Research Associate, contributing to data-driven projects at the intersection of environment, policy, and urban systems.</p>
+      <p>My expertise spans spatial data management, statistical and geospatial analysis, and ML for Earth observation using ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL. I’m passionate about automating analytical workflows, building dashboards, and visualizing complex datasets.</p>
     </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience" class="section">
-  <h2 class="section-title fade-in">Experience <span class="years-chip">2+ years</span></h2>
+  <h2 class="section-title duo fade-in">Experience <span class="years-chip">2+ years</span></h2>
 
   <div class="exp-grid">
-    <article class="exp-card zoom-in">
+    <article class="exp-card exp-green zoom-in">
       <div class="exp-top">
         <h3>Research Associate</h3><span class="exp-dates">2024 — Present</span>
       </div>
@@ -72,7 +83,7 @@
       </ul>
     </article>
 
-    <article class="exp-card zoom-in">
+    <article class="exp-card exp-blue zoom-in">
       <div class="exp-top">
         <h3>Research Assistant</h3><span class="exp-dates">2023 — 2024</span>
       </div>
@@ -83,7 +94,7 @@
       </ul>
     </article>
 
-    <article class="exp-card zoom-in">
+    <article class="exp-card exp-purple zoom-in">
       <div class="exp-top">
         <h3>GIS Officer</h3><span class="exp-dates">2022 — 2023</span>
       </div>
@@ -94,7 +105,7 @@
       </ul>
     </article>
 
-    <article class="exp-card zoom-in">
+    <article class="exp-card exp-amber zoom-in">
       <div class="exp-top">
         <h3>GIS Associate</h3><span class="exp-dates">2021 — 2022</span>
       </div>
@@ -106,44 +117,75 @@
     </article>
   </div>
 
-  <!-- TECH STACK under experience -->
+  <!-- CORE TECHNOLOGIES (compact card) -->
   <div class="tech-stack fade-in">
-    <h3>Technical Stack</h3>
-    <p>A collection of tools and platforms used across geospatial analytics and data science projects.</p>
-    <div class="skills-grid">
-      <img src="assets/logo/python.svg" alt="Python" class="skill-icon">
-      <img src="assets/logo/r.svg" alt="R">
-      <img src="assets/logo/javascript.svg" alt="JS">
-      <img src="assets/logo/html.svg" alt="HTML">
-      <img src="assets/logo/css.svg" alt="CSS">
-      <img src="assets/logo/arcgis.svg" alt="ArcGIS">
-      <img src="assets/logo/qgis.svg" alt="QGIS">
-      <img src="assets/logo/gee.svg" alt="GEE">
-      <img src="assets/logo/arcgispro.png" alt="ArcGIS Pro">
-      <img src="assets/logo/postgresql.svg" alt="PostgreSQL">
-      <img src="assets/logo/mysql.svg" alt="MySQL">
-      <img src="assets/logo/mongodb.svg" alt="MongoDB">
-      <img src="assets/logo/supabase.png" alt="Supabase">
-      <img src="assets/logo/google-cloud.svg" alt="Google Cloud">
-      <img src="assets/logo/aws.svg" alt="AWS">
-      <img src="assets/logo/github.svg" alt="GitHub">
-      <img src="assets/logo/streamlit.png" alt="Streamlit">
-      <img src="assets/logo/msoffice.svg" alt="MS Office">
+    <div class="tech-card glass">
+      <h3 class="section-subtitle duo">Core Technologies</h3>
+      <p class="muted">Tools and platforms I use to deliver reproducible geospatial and data science work.</p>
+      <div class="skills-grid">
+        <img src="assets/logo/python.svg" alt="Python" class="skill-icon">
+        <img src="assets/logo/r.svg" alt="R">
+        <img src="assets/logo/javascript.svg" alt="JavaScript">
+        <img src="assets/logo/html.svg" alt="HTML">
+        <img src="assets/logo/css.svg" alt="CSS">
+        <img src="assets/logo/arcgis.svg" alt="ArcGIS">
+        <img src="assets/logo/qgis.svg" alt="QGIS">
+        <img src="assets/logo/gee.svg" alt="GEE">
+        <img src="assets/logo/arcgispro.png" alt="ArcGIS Pro">
+        <img src="assets/logo/postgresql.svg" alt="PostgreSQL">
+        <img src="assets/logo/mysql.svg" alt="MySQL">
+        <img src="assets/logo/mongodb.svg" alt="MongoDB">
+        <img src="assets/logo/supabase.png" alt="Supabase">
+        <img src="assets/logo/google-cloud.svg" alt="Google Cloud">
+        <img src="assets/logo/aws.svg" alt="AWS">
+        <img src="assets/logo/github.svg" alt="GitHub">
+        <img src="assets/logo/streamlit.png" alt="Streamlit">
+        <img src="assets/logo/msoffice.svg" alt="MS Office">
+      </div>
     </div>
   </div>
+</section>
+
+<!-- PLACEHOLDERS FOR NAV LINKS -->
+<section id="cv" class="section">
+  <h2 class="section-title duo fade-in">CV</h2>
+  <p class="muted fade-in">Add a downloadable PDF or timeline here.</p>
+</section>
+
+<section id="gallery" class="section">
+  <h2 class="section-title duo fade-in">Gallery</h2>
+  <p class="muted fade-in">A curated set of project visuals and maps.</p>
+</section>
+
+<section id="blog" class="section">
+  <h2 class="section-title duo fade-in">Blog / Publications</h2>
+  <p class="muted fade-in">Short write-ups, case studies, and links to publications.</p>
 </section>
 
 <footer>© Somia Asim</footer>
 
 <script>
+  // smooth section highlight
+  const navLinks = document.querySelectorAll('nav a');
+  const sections = [...navLinks].map(a => document.querySelector(a.getAttribute('href')));
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY + 140;
+    sections.forEach((sec, i) => {
+      if (sec && y >= sec.offsetTop && y < sec.offsetTop + sec.offsetHeight) {
+        navLinks.forEach(n => n.classList.remove('active'));
+        navLinks[i].classList.add('active');
+      }
+    });
+  });
+
   // fade + zoom reveal
-  const fadeItems = document.querySelectorAll('.fade-in, .zoom-in');
+  const revealItems = document.querySelectorAll('.fade-in, .zoom-in');
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) e.target.classList.add('in');
     });
-  }, { threshold: 0.2 });
-  fadeItems.forEach(el => io.observe(el));
+  }, { threshold: 0.16 });
+  revealItems.forEach(el => io.observe(el));
 </script>
 </body>
 </html>
