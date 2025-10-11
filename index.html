@@ -11,13 +11,12 @@
 </head>
 
 <body>
-<header>
+<header class="nav">
   <div class="nav-wrap">
     <div class="brand">SOMIA ASIM</div>
     <nav>
       <a href="#about" class="active">About</a>
       <a href="#experience">Experience</a>
-      <a href="#stack">Technical Stack</a>
       <a href="#cv">CV</a>
       <a href="#blog">Blogs / Publications</a>
       <a href="#gallery">Gallery</a>
@@ -26,58 +25,50 @@
 </header>
 
 <!-- HERO -->
-<div class="hero">
-  <h1>GIS/RS &amp; Data Analyst</h1>
-  <div class="techline">ESRI Package • QGIS • Python/HTML/CSS/JS • Google Earth Engine • R</div>
-  <div class="tags">
+<section class="hero" id="about">
+  <h1 class="reveal-up">GIS/RS &amp; Data Analyst</h1>
+  <p class="techline reveal-up" style="--d:80ms">
+    ESRI Package • QGIS • Python/HTML/CSS/JS • Google Earth Engine • R
+  </p>
+  <div class="tags reveal-up" style="--d:140ms">
     <span class="tag">Urban Change</span>
     <span class="tag">Flood Analysis</span>
     <span class="tag">Risk Mapping</span>
     <span class="tag">Cartography</span>
     <span class="tag">Automation / Dashboards</span>
   </div>
-</div>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-grid">
-    <div>
-      <img src="assets/Somia.jpg" alt="Somia Asim portrait" class="pfp"/>
+  <!-- single-column about like the ref site -->
+  <div class="about-card glass reveal-up" style="--d:220ms">
+    <img class="pfp" src="assets/Somia.jpg" alt="Somia Asim portrait" />
+    <div class="about-body">
+      <h2>About Me</h2>
+      <p>I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My journey into geospatial research began during my undergraduate studies at the University of the Punjab, where I developed an interest in spatial analysis, cartography, and environmental data interpretation.</p>
+      <p>I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS Officer. Currently, I’m part of the Lahore University of Management Sciences (LUMS), where I first served as a Research Assistant and now work as a Research Associate, contributing to data-driven projects at the intersection of environment, policy, and urban systems.</p>
+      <p>My expertise lies in spatial data management, statistical and geospatial analysis, and machine learning applications with ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL. I love automating analytical workflows, developing dashboards, and visualizing complex datasets.</p>
+
       <div class="contact-box">
         <strong>Contact</strong>
         <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a>
         <a href="https://www.linkedin.com/in/somia-asim-35688617a" target="_blank">LinkedIn</a>
       </div>
     </div>
-
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My journey into geospatial research began during my undergraduate studies at the University of the Punjab, where I developed an interest in spatial analysis, cartography, and environmental data interpretation.</p>
-      <p>I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS Officer. Currently, I’m part of the Lahore University of Management Sciences (LUMS), where I first served as a Research Assistant and now work as a Research Associate, contributing to data-driven projects at the intersection of environment, policy, and urban systems.</p>
-      <p>My expertise lies in spatial data management, statistical and geospatial analysis, and machine learning applications. I’m skilled in tools such as ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL, and have a keen interest in automating analytical workflows, developing dashboards, and visualizing complex datasets.</p>
-      <p>I’m passionate about exploring how geospatial intelligence and data analytics can be used to support sustainable development, environmental planning, and informed decision-making.</p>
-    </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="section glass-wrap">
-  <header class="section-head">
-    <h2 class="section-title">Experience
-      <span class="years-chip">2+ years</span>
-    </h2>
-  </header>
+<section id="experience" class="section">
+  <h2 class="section-title reveal-up">Experience <span class="years-chip">2+ years</span></h2>
 
   <div class="exp-grid">
-    <article class="exp-card">
+    <article class="exp-card tilt reveal-up">
       <div class="exp-top">
-        <h3>Research Associate</h3>
-        <span class="exp-dates">2024 — Present</span>
+        <h3>Research Associate</h3><span class="exp-dates">2024 — Present</span>
       </div>
       <div class="exp-org">Lahore University of Management Sciences (LUMS)</div>
       <ul class="exp-points">
         <li>Quantified urban growth, exposure, and flood risk using <b>GEE</b>, <b>Python</b>, and <b>R</b>.</li>
-        <li>Built reproducible pipelines and automation for geospatial analytics and reporting.</li>
+        <li>Built reproducible pipelines and automation for geospatial analytics & reporting.</li>
         <li>Coordinated with government/policy partners for data-driven insights.</li>
       </ul>
       <div class="chips">
@@ -85,14 +76,13 @@
       </div>
     </article>
 
-    <article class="exp-card">
+    <article class="exp-card tilt reveal-up" style="--d:80ms">
       <div class="exp-top">
-        <h3>Research Assistant</h3>
-        <span class="exp-dates">2023 — 2024</span>
+        <h3>Research Assistant</h3><span class="exp-dates">2023 — 2024</span>
       </div>
       <div class="exp-org">LUMS</div>
       <ul class="exp-points">
-        <li>Processed multi-temporal imagery for <b>urban change</b> &amp; LULC.</li>
+        <li>Processed multi-temporal imagery for <b>urban change</b> & LULC.</li>
         <li>Supported policy briefs with clean maps and visual summaries.</li>
         <li>Contributed to peer-reviewed outputs and internal reports.</li>
       </ul>
@@ -101,15 +91,14 @@
       </div>
     </article>
 
-    <article class="exp-card">
+    <article class="exp-card tilt reveal-up" style="--d:140ms">
       <div class="exp-top">
-        <h3>GIS Officer</h3>
-        <span class="exp-dates">2022 — 2023</span>
+        <h3>GIS Officer</h3><span class="exp-dates">2022 — 2023</span>
       </div>
       <div class="exp-org">WWF-Pakistan</div>
       <ul class="exp-points">
-        <li>Led mapping for flood analytics &amp; conservation planning.</li>
-        <li>Standardized map templates; trained teammates on QA/QC workflows.</li>
+        <li>Led mapping for flood analytics & conservation planning.</li>
+        <li>Standardized map templates and trained teammates on QA/QC workflows.</li>
         <li>Published cartographic products for public communication.</li>
       </ul>
       <div class="chips">
@@ -117,10 +106,9 @@
       </div>
     </article>
 
-    <article class="exp-card">
+    <article class="exp-card tilt reveal-up" style="--d:200ms">
       <div class="exp-top">
-        <h3>GIS Associate</h3>
-        <span class="exp-dates">2021 — 2022</span>
+        <h3>GIS Associate</h3><span class="exp-dates">2021 — 2022</span>
       </div>
       <div class="exp-org">WWF-Pakistan</div>
       <ul class="exp-points">
@@ -132,18 +120,9 @@
       </div>
     </article>
   </div>
-</section>
 
-<!-- TECHNICAL STACK -->
-<section id="stack" class="section glass-wrap">
-  <header class="section-head">
-    <h2 class="section-title">Technical Stack</h2>
-    <p class="section-sub">
-      A collection of languages, platforms, and tools I’ve used across geospatial analytics and data-science projects.
-    </p>
-  </header>
-
-  <div class="skills-belts glass">
+  <!-- SKILLS under experience (no separate tab) -->
+  <div class="skills-belts glass reveal-up" style="--d:240ms">
     <div class="belt-row belt-a">
       <div class="skill-pill"><img src="assets/logo/python.svg" alt=""></div>
       <div class="skill-pill"><img src="assets/logo/r.svg" alt=""></div>
@@ -155,7 +134,6 @@
       <div class="skill-pill"><img src="assets/logo/gee.svg" alt=""></div>
       <div class="skill-pill"><img src="assets/logo/arcgispro.png" alt=""></div>
     </div>
-
     <div class="belt-row belt-b">
       <div class="skill-pill"><img src="assets/logo/postgresql.svg" alt=""></div>
       <div class="skill-pill"><img src="assets/logo/mysql.svg" alt=""></div>
@@ -172,15 +150,38 @@
 
 <footer>© Somia Asim</footer>
 
+<!-- Animations: reveal + parallax tilt + start/stop belts -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+  // reveal on scroll
+  const rev = document.querySelectorAll('.reveal-up');
+  const io1 = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io1.unobserve(e.target); }
+    });
+  },{threshold:.12});
+  rev.forEach(el=>io1.observe(el));
+
+  // gentle parallax tilt on cards
+  const cards = document.querySelectorAll('.tilt');
+  const damp = (a,b=10)=>a/b;
+  cards.forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - (r.left + r.width/2)) / (r.width/2);
+      const y = (e.clientY - (r.top + r.height/2)) / (r.height/2);
+      card.style.transform = `rotateX(${damp(-y,8)}deg) rotateY(${damp(x,8)}deg) translateY(-2px)`;
+    });
+    card.addEventListener('mouseleave',()=>card.style.transform = '');
+  });
+
+  // start/stop belts when visible
   const belts = document.querySelector('.skills-belts');
-  if(!belts) return;
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => belts.classList.toggle('play', e.isIntersecting));
-  }, { threshold: 0.1 });
-  io.observe(belts);
-});
+  if(belts){
+    const io2 = new IntersectionObserver(es=>{
+      es.forEach(e=>belts.classList.toggle('play', e.isIntersecting));
+    },{threshold:.1});
+    io2.observe(belts);
+  }
 </script>
 </body>
 </html>
