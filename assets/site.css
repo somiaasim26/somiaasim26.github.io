@@ -194,28 +194,49 @@ h1,h2,h3{
 .exp-purple{ box-shadow: inset 0 0 0 4px rgba(160,139,255,.40), 0 0 26px rgba(160,139,255,.10), 0 16px 32px rgba(0,0,0,.55); }
 
 /* Tools = INSIDE the card, but styled as a detached floating footer */
-.exp-card .exp-tools{
-  margin:16px -6px -6px;           /* creates a visual gap from content */
-  padding:12px 14px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.15);
-  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,.20));
-  backdrop-filter: blur(10px);
-  color:#eaf0ff;
-  box-shadow:0 12px 28px rgba(0,0,0,.45);
-  font-size:.94rem; line-height:1.45;
+/* Experience cards arranged naturally */
+.exp-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+  gap:36px;
 }
-.exp-card .exp-tools b{color:#fff; margin-right:8px;}
-.exp-card .exp-tools .chip{
+
+/* Each item (card + tools below it) */
+.exp-item{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+/* Tools now outside card as separate glassy boxes */
+.exp-tools-card{
+  padding:14px 18px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(16,20,28,.55);
+  backdrop-filter:blur(10px);
+  box-shadow:0 8px 22px rgba(0,0,0,.55);
+  color:#f5f8ff;
+  font-size:.95rem;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.exp-tools-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 34px rgba(0,0,0,.6);
+}
+.exp-tools-card b{color:#fff; margin-right:8px;}
+.exp-tools-card .chip{
   display:inline-block;
   margin:5px 6px 0 0;
   padding:6px 10px;
   border-radius:999px;
-  background:linear-gradient(135deg, var(--chip-gray1), var(--chip-gray2));
-  border:1px solid rgba(255,255,255,.16);
-  color:#f5f7ff;
+  background:linear-gradient(135deg, rgba(255,255,255,.08), rgba(0,0,0,.2));
+  border:1px solid rgba(255,255,255,.18);
+  color:#e9ecff;
   font-weight:700;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
 }
+
 
 /* ===== CORE TECHNOLOGIES ===== */
 .tech-stack{display:flex; justify-content:center; margin-top:46px;}
