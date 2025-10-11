@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<header class="nav">
+<header>
   <div class="nav-wrap">
     <div class="brand">SOMIA ASIM</div>
     <nav>
@@ -26,11 +26,9 @@
 
 <!-- HERO -->
 <section class="hero" id="about">
-  <h1 class="reveal-up">GIS/RS &amp; Data Analyst</h1>
-  <p class="techline reveal-up" style="--d:80ms">
-    ESRI Package • QGIS • Python/HTML/CSS/JS • Google Earth Engine • R
-  </p>
-  <div class="tags reveal-up" style="--d:140ms">
+  <h1 class="fade-in">GIS/RS &amp; Data Analyst</h1>
+  <p class="techline fade-in">ESRI Package • QGIS • Python/HTML/CSS/JS • Google Earth Engine • R</p>
+  <div class="tags fade-in">
     <span class="tag">Urban Change</span>
     <span class="tag">Flood Analysis</span>
     <span class="tag">Risk Mapping</span>
@@ -38,150 +36,114 @@
     <span class="tag">Automation / Dashboards</span>
   </div>
 
-  <!-- single-column about like the ref site -->
-  <div class="about-card glass reveal-up" style="--d:220ms">
-    <img class="pfp" src="assets/Somia.jpg" alt="Somia Asim portrait" />
-    <div class="about-body">
-      <h2>About Me</h2>
-      <p>I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My journey into geospatial research began during my undergraduate studies at the University of the Punjab, where I developed an interest in spatial analysis, cartography, and environmental data interpretation.</p>
-      <p>I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS Officer. Currently, I’m part of the Lahore University of Management Sciences (LUMS), where I first served as a Research Assistant and now work as a Research Associate, contributing to data-driven projects at the intersection of environment, policy, and urban systems.</p>
-      <p>My expertise lies in spatial data management, statistical and geospatial analysis, and machine learning applications with ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL. I love automating analytical workflows, developing dashboards, and visualizing complex datasets.</p>
-
+  <!-- Column layout -->
+  <div class="about-grid fade-in">
+    <div class="about-left">
+      <img class="pfp" src="assets/Somia.jpg" alt="Somia Asim portrait" />
       <div class="contact-box">
         <strong>Contact</strong>
         <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a>
         <a href="https://www.linkedin.com/in/somia-asim-35688617a" target="_blank">LinkedIn</a>
       </div>
     </div>
+    <div class="about-right glass">
+      <h2>About Me</h2>
+      <p>I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My journey into geospatial research began during my undergraduate studies at the University of the Punjab, where I developed an interest in spatial analysis, cartography, and environmental data interpretation.</p>
+      <p>I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS Officer. Currently, I’m part of the Lahore University of Management Sciences (LUMS), where I first served as a Research Assistant and now work as a Research Associate, contributing to data-driven projects at the intersection of environment, policy, and urban systems.</p>
+      <p>My expertise lies in spatial data management, statistical and geospatial analysis, and machine learning applications using ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL. I’m passionate about automating analytical workflows, developing dashboards, and visualizing complex datasets.</p>
+    </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience" class="section">
-  <h2 class="section-title reveal-up">Experience <span class="years-chip">2+ years</span></h2>
+  <h2 class="section-title fade-in">Experience <span class="years-chip">2+ years</span></h2>
 
   <div class="exp-grid">
-    <article class="exp-card tilt reveal-up">
+    <article class="exp-card zoom-in">
       <div class="exp-top">
         <h3>Research Associate</h3><span class="exp-dates">2024 — Present</span>
       </div>
       <div class="exp-org">Lahore University of Management Sciences (LUMS)</div>
-      <ul class="exp-points">
-        <li>Quantified urban growth, exposure, and flood risk using <b>GEE</b>, <b>Python</b>, and <b>R</b>.</li>
-        <li>Built reproducible pipelines and automation for geospatial analytics & reporting.</li>
-        <li>Coordinated with government/policy partners for data-driven insights.</li>
+      <ul>
+        <li>Quantified urban growth and flood exposure using <b>GEE</b>, <b>Python</b>, and <b>R</b>.</li>
+        <li>Built reproducible analytics pipelines and dashboards.</li>
+        <li>Coordinated with policy teams for data-driven insights.</li>
       </ul>
-      <div class="chips">
-        <span>GEE</span><span>Python</span><span>R</span><span>Risk Mapping</span><span>Dashboards</span>
-      </div>
     </article>
 
-    <article class="exp-card tilt reveal-up" style="--d:80ms">
+    <article class="exp-card zoom-in">
       <div class="exp-top">
         <h3>Research Assistant</h3><span class="exp-dates">2023 — 2024</span>
       </div>
       <div class="exp-org">LUMS</div>
-      <ul class="exp-points">
-        <li>Processed multi-temporal imagery for <b>urban change</b> & LULC.</li>
-        <li>Supported policy briefs with clean maps and visual summaries.</li>
-        <li>Contributed to peer-reviewed outputs and internal reports.</li>
+      <ul>
+        <li>Processed multi-temporal imagery for <b>urban change</b> and <b>LULC</b>.</li>
+        <li>Developed clear cartographic outputs for policy briefs.</li>
       </ul>
-      <div class="chips">
-        <span>Remote Sensing</span><span>Cartography</span><span>Classification</span>
-      </div>
     </article>
 
-    <article class="exp-card tilt reveal-up" style="--d:140ms">
+    <article class="exp-card zoom-in">
       <div class="exp-top">
         <h3>GIS Officer</h3><span class="exp-dates">2022 — 2023</span>
       </div>
       <div class="exp-org">WWF-Pakistan</div>
-      <ul class="exp-points">
-        <li>Led mapping for flood analytics & conservation planning.</li>
-        <li>Standardized map templates and trained teammates on QA/QC workflows.</li>
-        <li>Published cartographic products for public communication.</li>
+      <ul>
+        <li>Led flood and conservation analytics using <b>ArcGIS</b>.</li>
+        <li>Standardized map templates and QA/QC workflows.</li>
       </ul>
-      <div class="chips">
-        <span>ArcGIS</span><span>Remote Sensing</span><span>QA/QC</span>
-      </div>
     </article>
 
-    <article class="exp-card tilt reveal-up" style="--d:200ms">
+    <article class="exp-card zoom-in">
       <div class="exp-top">
         <h3>GIS Associate</h3><span class="exp-dates">2021 — 2022</span>
       </div>
       <div class="exp-org">WWF-Pakistan</div>
-      <ul class="exp-points">
-        <li>Produced LULC layers from Landsat/Sentinel and validated accuracy.</li>
-        <li>Built project atlases; automated repetitive cartography tasks.</li>
+      <ul>
+        <li>Produced <b>LULC</b> layers from Landsat/Sentinel data.</li>
+        <li>Built project atlases and automated mapping tasks.</li>
       </ul>
-      <div class="chips">
-        <span>Remote Sensing</span><span>LULC</span><span>Automation</span>
-      </div>
     </article>
   </div>
 
-  <!-- SKILLS under experience (no separate tab) -->
-  <div class="skills-belts glass reveal-up" style="--d:240ms">
-    <div class="belt-row belt-a">
-      <div class="skill-pill"><img src="assets/logo/python.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/r.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/javascript.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/html.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/css.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/arcgis.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/qgis.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/gee.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/arcgispro.png" alt=""></div>
-    </div>
-    <div class="belt-row belt-b">
-      <div class="skill-pill"><img src="assets/logo/postgresql.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/mysql.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/mongodb.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/supabase.png" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/google-cloud.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/aws.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/github.svg" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/streamlit.png" alt=""></div>
-      <div class="skill-pill"><img src="assets/logo/msoffice.svg" alt=""></div>
+  <!-- TECH STACK under experience -->
+  <div class="tech-stack fade-in">
+    <h3>Technical Stack</h3>
+    <p>A collection of tools and platforms used across geospatial analytics and data science projects.</p>
+    <div class="skills-grid">
+      <img src="assets/logo/python.svg" alt="Python" class="skill-icon">
+      <img src="assets/logo/r.svg" alt="R">
+      <img src="assets/logo/javascript.svg" alt="JS">
+      <img src="assets/logo/html.svg" alt="HTML">
+      <img src="assets/logo/css.svg" alt="CSS">
+      <img src="assets/logo/arcgis.svg" alt="ArcGIS">
+      <img src="assets/logo/qgis.svg" alt="QGIS">
+      <img src="assets/logo/gee.svg" alt="GEE">
+      <img src="assets/logo/arcgispro.png" alt="ArcGIS Pro">
+      <img src="assets/logo/postgresql.svg" alt="PostgreSQL">
+      <img src="assets/logo/mysql.svg" alt="MySQL">
+      <img src="assets/logo/mongodb.svg" alt="MongoDB">
+      <img src="assets/logo/supabase.png" alt="Supabase">
+      <img src="assets/logo/google-cloud.svg" alt="Google Cloud">
+      <img src="assets/logo/aws.svg" alt="AWS">
+      <img src="assets/logo/github.svg" alt="GitHub">
+      <img src="assets/logo/streamlit.png" alt="Streamlit">
+      <img src="assets/logo/msoffice.svg" alt="MS Office">
     </div>
   </div>
 </section>
 
 <footer>© Somia Asim</footer>
 
-<!-- Animations: reveal + parallax tilt + start/stop belts -->
 <script>
-  // reveal on scroll
-  const rev = document.querySelectorAll('.reveal-up');
-  const io1 = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('in'); io1.unobserve(e.target); }
+  // fade + zoom reveal
+  const fadeItems = document.querySelectorAll('.fade-in, .zoom-in');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('in');
     });
-  },{threshold:.12});
-  rev.forEach(el=>io1.observe(el));
-
-  // gentle parallax tilt on cards
-  const cards = document.querySelectorAll('.tilt');
-  const damp = (a,b=10)=>a/b;
-  cards.forEach(card=>{
-    card.addEventListener('mousemove',e=>{
-      const r = card.getBoundingClientRect();
-      const x = (e.clientX - (r.left + r.width/2)) / (r.width/2);
-      const y = (e.clientY - (r.top + r.height/2)) / (r.height/2);
-      card.style.transform = `rotateX(${damp(-y,8)}deg) rotateY(${damp(x,8)}deg) translateY(-2px)`;
-    });
-    card.addEventListener('mouseleave',()=>card.style.transform = '');
-  });
-
-  // start/stop belts when visible
-  const belts = document.querySelector('.skills-belts');
-  if(belts){
-    const io2 = new IntersectionObserver(es=>{
-      es.forEach(e=>belts.classList.toggle('play', e.isIntersecting));
-    },{threshold:.1});
-    io2.observe(belts);
-  }
+  }, { threshold: 0.2 });
+  fadeItems.forEach(el => io.observe(el));
 </script>
 </body>
 </html>
