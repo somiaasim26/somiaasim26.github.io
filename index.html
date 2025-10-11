@@ -9,8 +9,8 @@
   <style>
     /* quick hide for inactive tabs */
     section.tab-content { display: none; }
-    section.tab-content.active { display: block; animation: fadeIn .6s ease; }
-    @keyframes fadeIn { from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:translateY(0);} }
+    section.tab-content.active { display: block; animation: fadeIn .5s ease; }
+    @keyframes fadeIn { from {opacity:30; transform:translateY(10px);} to {opacity:1; transform:translateY(0);} }
   </style>
 </head>
 
@@ -42,8 +42,7 @@
     <h1 class="title">Hi, I’m Somia,</h1>
     <h1 class="title">GIS/RS &amp; Data Analyst.</h1>
     <p class="subtitle bigline">
-      I analyze spatial, statistical, and environmental data to uncover insights that drive research,
-      innovation, and sustainability.
+      I analyze spatial, statistical, and environmental data to uncover insights that drive research, innovation, and sustainability.
     </p>
   </div>
 
@@ -71,7 +70,7 @@
 
     <div class="about-right glass">
       <h2 class="section-title">About Me</h2>
-      <p>I’m a GIS/RS and Data Analyst with a strong academic background in Geography. My geospatial journey began during my undergraduate studies at the University of the Punjab, where I developed a lasting interest in spatial analysis, cartography, and environmental data interpretation.</p>
+      <p>I’m a geographer and data professional. My journey began during my undergraduate studies at the University of the Punjab, where I developed a lasting interest in spatial analysis, cartography, and environmental data interpretation.</p>
       <p>I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS Officer. Currently, at the Lahore University of Management Sciences (LUMS), I’ve served as a Research Assistant and now as a Research Associate, contributing to data-driven projects at the intersection of environment, policy, and urban systems.</p>
       <p>My expertise spans spatial data management, statistical and geospatial analysis, and ML for Earth observation using ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL. I’m passionate about automating analytical workflows, building dashboards, and visualizing complex datasets.</p>
     </div>
@@ -89,54 +88,60 @@
 
     <article class="exp-card exp-green">
       <div class="exp-top">
-        <h3>Research Associate</h3><span class="exp-dates">2024 — Present</span>
+        <h3>Research Associate</h3><span class="exp-dates">Present</span>
       </div>
-      <div class="exp-org">Lahore University of Management Sciences (LUMS)</div>
+      <div class="exp-org">
+        Lahore University of Management Sciences (LUMS)
+      </div>
       <ul>
-        <li>Quantified urban growth and flood exposure using <b>GEE</b>, <b>Python</b>, and <b>R</b>.</li>
-        <li>Built reproducible analytics pipelines and dashboards.</li>
-        <li>Coordinated with policy teams for data-driven insights.</li>
+        <li>Analyzed large datasets to map restaurant registration and compliance patterns.</li>
+        <li>Applied clustering and spatial models to identify market zones for policy targeting.</li>
+        <li>Developed an interactive dashboard for real-time monitoring and analytics.</li>
       </ul>
+      <div class="exp-tools">
+        <b>Tools:</b> Python · PostgreSQL · Streamlit · ArcGIS · Google Earth Engine
+      </div>
     </article>
 
     <article class="exp-card exp-blue">
       <div class="exp-top">
         <h3>Research Assistant</h3><span class="exp-dates">2023 — 2024</span>
       </div>
-      <div class="exp-org">LUMS</div>
+      <div class="exp-org">Lahore University of Management Sciences (LUMS)</div>
       <ul>
-        <li>Processed multi-temporal imagery for <b>urban change</b> and <b>LULC</b>.</li>
-        <li>Developed clear cartographic outputs for policy briefs.</li>
+        <li>Conducted flood extent and impact analysis using <b>NOAA satellite imagery</b> to quantify inundated areas and affected settlements.</li>
+        <li>Performed <b>flood risk and hazard modeling</b> to assess vulnerable zones and exposure levels.</li>
+        <li>Utilized <b>Mapbox</b> and <b>GIS-based routing</b> to identify disrupted road networks and accessibility issues.</li>
       </ul>
+      <div class="exp-tools">
+        <b>Tools:</b> Google Earth Engine · ArcGIS · Mapbox · Python · NOAA Flood Fraction Data
+      </div>
     </article>
 
     <article class="exp-card exp-purple">
       <div class="exp-top">
-        <h3>GIS Officer</h3><span class="exp-dates">2022 — 2023</span>
+        <h3>GIS Associate & Officer</h3>
+        <span class="exp-dates">2021 — 2023</span>
       </div>
-      <div class="exp-org">WWF-Pakistan</div>
+      <div class="exp-org">Richard Garstang Conservation GIS Lab | WWF-Pakistan</div>
       <ul>
-        <li>Led flood and conservation analytics using <b>ArcGIS</b>.</li>
-        <li>Standardized map templates and QA/QC workflows.</li>
+        <li>Conducted <b>Land Use/Land Cover (LULC) classification</b> of Lahore District (1990–2020) using <b>Google Earth Engine</b> and <b>ArcGIS</b>.</li>
+        <li>Created animations and Story Maps visualizing <b>urban growth</b> and <b>Indus River Dolphin conservation</b> efforts.</li>
+        <li>Performed <b>flood extent and temporal change analysis</b> in Manchar and Hammal Lake regions using satellite imagery.</li>
+        <li>Developed <b>interactive maps and dashboards</b> for plantation monitoring and environmental reporting.</li>
+        <li>Authored geospatial content, training material, and manuals for organizational capacity building.</li>
       </ul>
+      <div class="exp-tools">
+        <b>Tools:</b> Google Earth Engine · ArcGIS · QGIS · Mapbox · Landsat · MaxEnt · Python
+      </div>
     </article>
 
-    <article class="exp-card exp-amber">
-      <div class="exp-top">
-        <h3>GIS Associate</h3><span class="exp-dates">2021 — 2022</span>
-      </div>
-      <div class="exp-org">WWF-Pakistan</div>
-      <ul>
-        <li>Produced <b>LULC</b> layers from Landsat/Sentinel data.</li>
-        <li>Built project atlases and automated mapping tasks.</li>
-      </ul>
-    </article>
   </div>
 
   <div class="tech-stack">
     <div class="tech-card glass">
       <h3 class="section-subtitle heading-strong">Core Technologies</h3>
-      <p class="muted">Tools and platforms I use to deliver reproducible geospatial and data science work.</p>
+      <p class="muted">Tools and platforms used to design, analyze, and visualize complex geospatial and statistical data. My workflow integrates <b>GIS</b>, <b>remote sensing</b>, and <b>data science</b> techniques to produce reproducible, scalable, and automation-ready solutions for research and environmental analysis.</p>
       <div class="skills-grid">
         <img src="assets/logo/python.svg" alt="Python">
         <img src="assets/logo/r.svg" alt="R">
@@ -166,7 +171,7 @@
   <h2 class="section-title">CV</h2>
   <p class="subtitle">Add a downloadable PDF or timeline here.</p>
   <!-- optional CV button -->
-  <!-- <a class="techline" href="assets/Somia_Asim_CV.pdf" download>Download CV (PDF)</a> -->
+  <a class="techline" href="assets/Somia_Asim_CV.pdf" download>Download CV (PDF)</a>
 </section>
 
 <!-- ===== GALLERY ===== -->
