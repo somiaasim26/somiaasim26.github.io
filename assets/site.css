@@ -28,7 +28,7 @@ body::before{
   content:"";
   position:fixed; inset:0; z-index:-2;
   background:url('Background_1.jpg') center/cover fixed no-repeat;
-  filter:blur(2.8px) brightness(.9) saturate(1.05);
+  filter:blur(6px) brightness(.9) saturate(1.05);
   transform:scale(1.02);
 }
 body::after{
