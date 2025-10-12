@@ -18,27 +18,22 @@
 <!-- ===== HEADER ===== -->
 <header class="topbar">
   <div class="nav-wrap">
-    <div class="brand">
-      <img src="assets/favicon.png" alt="SA" class="brand-logo">
-      <div class="brand-text">
-        <h1>SOMIA ASIM</h1>
-        <p>Research Associate</p>
+    <div class="brandpack">
+      <img class="brand-icon" src="assets/favicon.png" alt="SA"/>
+      <div class="brand-meta">
+        <div class="brand-name">SOMIA ASIM</div>
+        <div class="brand-role">Research Associate</div>
       </div>
     </div>
-
-    <nav class="main-nav">
-      <a href="#about" class="active">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#blog">Blog / Publications</a>
+    <nav>
+      <a href="#about" class="active" onclick="showTab(event,'about')">About</a>
+      <a href="#experience" onclick="showTab(event,'experience')">Experience</a>
+      <a href="#cv" onclick="showTab(event,'cv')">CV</a>
+      <a href="#gallery" onclick="showTab(event,'gallery')">Gallery</a>
+      <a href="#blog" onclick="showTab(event,'blog')">Blog / Publications</a>
     </nav>
-
-    <a href="assets/Somia_Asim_CV.pdf" download class="cv-btn">
-      Resume →
-    </a>
   </div>
 </header>
-
 
 <!-- ===== ABOUT / HERO ===== -->
 <section id="about" class="tab-content active hero">
