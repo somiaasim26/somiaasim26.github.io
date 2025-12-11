@@ -243,21 +243,24 @@ footer{ text-align:center; padding:40px; color:var(--muted); font-size:.9rem; bo
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 180px; /* Fixed height to match other images */
+  height: 180px; /* Same height as your other images */
   background: rgba(255, 255, 255, 0.03);
-  color: #ff5f5f; /* Soft red for PDF */
+  color: #ff5f5f; /* Soft red color for PDF */
   font-weight: 700;
   transition: background 0.3s;
   border-bottom: 1px solid var(--edge);
 }
+
 .card:hover .pdf-placeholder {
   background: rgba(255, 255, 255, 0.08);
 }
+
 .pdf-icon {
   font-size: 3rem;
   margin-bottom: 8px;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
 }
+
 .pdf-label {
   font-size: 0.9rem;
   color: var(--muted);
