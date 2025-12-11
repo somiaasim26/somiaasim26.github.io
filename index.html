@@ -53,7 +53,6 @@
   </div>
 
   <div class="about-grid">
-    
     <div class="contact-bar">
       <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a>
       <span class="separator">|</span>
@@ -235,9 +234,6 @@
       </figcaption>
     </figure>
 
-
-
-    
     <h3 class="gallery-section">With LUMS</h3>
     <figure class="card" data-cat="lums">
       <a href="assets/visuals/badin-flooded-fraction.jpg" data-caption="Flood mapping of Badin District using NOAA/GEE data.">
@@ -264,7 +260,17 @@
     <figure class="card" data-cat="wwf"><a href="assets/visuals/lahore-change-animated.gif"><img src="assets/visuals/lahore-change-animated.gif"></a><figcaption><b>Animated Growth</b><p>GIF storytelling.</p></figcaption></figure>
     <figure class="card" data-cat="wwf"><a href="assets/visuals/lake-manchar-analysis.jpg"><img src="assets/visuals/lake-manchar-analysis.jpg"></a><figcaption><b>Manchar Lake</b><p>Flood extent analysis.</p></figcaption></figure>
 
+    <h2 class="gallery-main">GOOD MEMORIES</h2>
+    <figure class="card" data-cat="memories"><a href="assets/gallery/gis-day-wwf-1.jpg"><img src="assets/gallery/gis-day-wwf-1.jpg"></a><figcaption><b>GIS Day WWF</b></figcaption></figure>
+    <figure class="card" data-cat="memories"><a href="assets/gallery/wwf-team.jpg"><img src="assets/gallery/wwf-team.jpg"></a><figcaption><b>WWF Team</b></figcaption></figure>
+    <figure class="card" data-cat="pu"><a href="assets/gallery/batch-2018-2022.jpg"><img src="assets/gallery/batch-2018-2022.jpg"></a><figcaption><b>PU Graduation</b></figcaption></figure>
+    <figure class="card" data-cat="pu"><a href="assets/gallery/geo-awareness-walk-1.jpg"><img src="assets/gallery/geo-awareness-walk-1.jpg"></a><figcaption><b>Geo Awareness</b></figcaption></figure>
     
+    <h2 class="gallery-main">ART & HOBBIES</h2>
+    <figure class="card" data-cat="art"><a href="assets/gallery/cloud-woman.jpg"><img src="assets/gallery/cloud-woman.jpg"></a><figcaption><b>Cloud Woman</b></figcaption></figure>
+    <figure class="card" data-cat="art"><a href="assets/gallery/dual-tone-portrait.jpg"><img src="assets/gallery/dual-tone-portrait.jpg"></a><figcaption><b>Dual Tone</b></figcaption></figure>
+    <figure class="card" data-cat="art"><a href="assets/gallery/floral-portrait.jpg"><img src="assets/gallery/floral-portrait.jpg"></a><figcaption><b>Floral Portrait</b></figcaption></figure>
+
   </div>
 
   <div id="lightbox" class="lightbox" aria-hidden="true">
@@ -304,24 +310,36 @@ function showTab(evt, id){
   let imgs = []; let currentIndex = 0;
 
   function openLightbox(anchor){
-    imgs = Array.from(grid.querySelectorAll('a[href]'));
+    // FILTER: Exclude PDF links from the image slideshow
+    imgs = Array.from(grid.querySelectorAll('a[href]:not([href$=".pdf"])'));
+    
     currentIndex = imgs.indexOf(anchor);
     if(currentIndex === -1) currentIndex = 0;
     showCurrent();
     lb.setAttribute('aria-hidden','false');
     document.body.style.overflow = 'hidden';
   }
+
   function showCurrent(){
+    if (imgs.length === 0) return;
     const a = imgs[currentIndex];
     lbImg.src = a.href;
     lbCap.textContent = a.dataset.caption || a.nextElementSibling?.querySelector('b')?.textContent || '';
   }
+  
   function closeLightbox(){ lb.setAttribute('aria-hidden','true'); lbImg.src=''; document.body.style.overflow=''; }
 
   grid.addEventListener('click', e => {
     const a = e.target.closest('a[href]');
+    
+    // CRITICAL FIX: If link is a PDF, do NOT open lightbox. Let browser handle it (new tab).
+    if(a && a.href.toLowerCase().endsWith('.pdf')) {
+      return; 
+    }
+
     if(a) { e.preventDefault(); openLightbox(a); }
   });
+
   if(btnClose) btnClose.addEventListener('click', closeLightbox);
   if(btnPrev) btnPrev.addEventListener('click', () => { currentIndex = (currentIndex - 1 + imgs.length) % imgs.length; showCurrent(); });
   if(btnNext) btnNext.addEventListener('click', () => { currentIndex = (currentIndex + 1) % imgs.length; showCurrent(); });
