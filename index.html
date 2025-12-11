@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Somia Asim — Research Associate & GIS Analyst</title>
+  <title>Somia Asim — Website</title>
   <link rel="icon" type="image/png" href="assets/favicon.png"/>
   <link rel="stylesheet" href="assets/site.css"/>
   <style>
     /* quick hide for inactive tabs */
     section.tab-content { display: none; }
-    section.tab-content.active { display: block; animation: fadeIn .4s ease; }
-    @keyframes fadeIn { from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:translateY(0);} }
+    section.tab-content.active { display: block; animation: fadeIn .5s ease; }
+    @keyframes fadeIn { from {opacity:.3; transform:translateY(10px);} to {opacity:1; transform:translateY(0);} }
   </style>
 </head>
 
 <body>
+<!-- ===== HEADER ===== -->
 <header class="topbar">
   <div class="nav-wrap">
     <div class="brandpack">
@@ -29,40 +30,44 @@
       <a href="#about" class="active" onclick="showTab(event,'about')">About</a>
       <a href="#experience" onclick="showTab(event,'experience')">Experience</a>
       <a href="#gallery" onclick="showTab(event,'gallery')">Gallery</a>
-      <a class="cv-btn" href="assets/Somia_Asim_CV.pdf" download>Download CV</a>
+      <a href="#blog" onclick="showTab(event,'blog')">Blog / Publications</a>
+      <!-- Download CV button (replaces CV tab) -->
+      <a class="cv-btn" href="assets/Somia_Asim_CV.pdf" download>Download CV →</a>
     </nav>
   </div>
 </header>
 
+<!-- ===== ABOUT / HERO ===== -->
 <section id="about" class="tab-content active hero">
-  <div class="hero-box">
-    <h1 class="title">Hi, I’m Somia.</h1>
-    <h2 class="section-title" style="color:var(--muted); margin-bottom: 20px;">GIS/RS &amp; Data Analyst.</h2>
+  <div class="hero-box glassbox lift">
+    <h1 class="title">Hi, I’m Somia,</h1>
+    <h1 class="title">GIS/RS &amp; Data Analyst.</h1>
     <p class="subtitle bigline">
       I analyze spatial, statistical, and environmental data to uncover insights that drive research, innovation, and sustainability.
     </p>
   </div>
 
-  <div class="techline">ESRI Package • QGIS • Google Earth Engine • Python • R • PostgreSQL</div>
-  
+  <p class="techline">ESRI Package • QGIS • Google Earth Engine • Python • R • PostgreSQL</p>
   <div class="tags">
-    <span class="tag">Urban Change</span>
-    <span class="tag">Flood Analysis</span>
-    <span class="tag">Risk Mapping</span>
-    <span class="tag">Cartography</span>
-    <span class="tag">Automation / Dashboards</span>
+    <span class="tag tag-urban">Urban Change</span>
+    <span class="tag tag-flood">Flood Analysis</span>
+    <span class="tag tag-risk">Risk Mapping</span>
+    <span class="tag tag-carto">Cartography</span>
+    <span class="tag tag-auto">Automation / Dashboards</span>
   </div>
 
   <div class="about-grid">
-    <div class="about-right glass">
-      
-      <div class="contact-strip">
-        <span>📍 Lahore, Pakistan</span>
+    <div class="about-left">
+      <img class="pfp" src="assets/Somia.jpg" alt="Somia Asim portrait"/>
+      <div class="contact-box glass">
+        <strong>Contact</strong>
         <a href="mailto:somiaasim26@gmail.com">somiaasim26@gmail.com</a>
-        <a href="https://www.linkedin.com/in/somia-asim-35688617a" target="_blank">LinkedIn Profile</a>
+        <a href="https://www.linkedin.com/in/somia-asim-35688617a" target="_blank">LinkedIn</a>
       </div>
+    </div>
 
-      <h2 class="section-subtitle">Biography</h2>
+    <div class="about-right glass">
+      <h2 class="section-title">About Me</h2>
       <p>I’m a geographer and data professional. My journey began during my undergraduate studies at the University of the Punjab, where I developed a lasting interest in spatial analysis, cartography, and environmental data interpretation.</p>
       <p>I started my professional career at WWF-Pakistan, progressing through roles as GIS Intern, GIS Associate, and GIS Officer. Currently, at the Lahore University of Management Sciences (LUMS), I’ve served as a Research Assistant and now as a Research Associate, contributing to data-driven projects at the intersection of environment, policy, and urban systems.</p>
       <p>My expertise spans spatial data management, statistical and geospatial analysis, and ML for Earth observation using ArcGIS, QGIS, Google Earth Engine, Python, R, and PostgreSQL. I’m passionate about automating analytical workflows, building dashboards, and visualizing complex datasets.</p>
@@ -70,16 +75,17 @@
   </div>
 </section>
 
+<!-- ===== EXPERIENCE ===== -->
 <section id="experience" class="tab-content section">
-  <div class="section-head">
+  <div class="section-head glassbox lift">
     <h2 class="section-title">Experience <span class="years-chip">2+ years</span></h2>
-    <p class="subtitle">A timeline of my professional roles and research contributions.</p>
   </div>
 
   <div class="exp-grid">
 
+    <!-- ITEM 1 -->
     <div class="exp-item">
-      <article class="exp-card">
+      <article class="exp-card exp-green">
         <div class="exp-top">
           <h3>Research Associate</h3><span class="exp-dates">Present</span>
         </div>
@@ -97,54 +103,59 @@
         <span class="chip">PostgreSQL</span>
         <span class="chip">Streamlit</span>
         <span class="chip">ArcGIS</span>
+        <span class="chip">Google Earth Engine</span>
         <span class="chip">QGIS</span>
       </div>
     </div>
 
+    <!-- ITEM 2 -->
     <div class="exp-item">
-      <article class="exp-card">
+      <article class="exp-card exp-blue">
         <div class="exp-top">
           <h3>Research Assistant</h3><span class="exp-dates">2023 — 2024</span>
         </div>
         <div class="exp-org">Lahore University of Management Sciences (LUMS)</div>
         <ul>
-          <li>Conducted flood extent and impact analysis using <b>NOAA satellite imagery</b> to quantify inundated areas.</li>
+          <li>Conducted flood extent and impact analysis using <b>NOAA satellite imagery</b> to quantify inundated areas and affected settlements.</li>
           <li>Performed <b>flood risk and hazard modeling</b> to assess vulnerable zones and exposure levels.</li>
-          <li>Utilized <b>Mapbox</b> and <b>GIS-based routing</b> to identify disrupted road networks.</li>
+          <li>Utilized <b>Mapbox</b> and <b>GIS-based routing</b> to identify disrupted road networks and accessibility issues.</li>
         </ul>
       </article>
 
       <div class="exp-tools-card">
         <b>Tools:</b>
-        <span class="chip">GEE</span>
+        <span class="chip">Google Earth Engine</span>
         <span class="chip">ArcGIS</span>
         <span class="chip">Mapbox</span>
-        <span class="chip">NOAA Flood Data</span>
-        <span class="chip">Arcpy</span>
+        <span class="chip">NOAA Flood Fraction Data</span>
+        <span class="chip">Arcpy - Python</span>
       </div>
     </div>
 
+    <!-- ITEM 3 -->
     <div class="exp-item">
-      <article class="exp-card">
+      <article class="exp-card exp-purple">
         <div class="exp-top">
           <h3>GIS Associate &amp; Officer</h3>
           <span class="exp-dates">2021 — 2023</span>
         </div>
         <div class="exp-org">Richard Garstang Conservation GIS Lab | WWF-Pakistan</div>
         <ul>
-          <li>Conducted <b>LULC classification</b> of Lahore District (1990–2020) using GEE and ArcGIS.</li>
-          <li>Created animations and Story Maps visualizing <b>urban growth</b> and conservation efforts.</li>
-          <li>Performed <b>flood extent analysis</b> in Manchar and Hammal Lake regions.</li>
-          <li>Developed <b>interactive maps</b> for plantation monitoring.</li>
+          <li>Conducted <b>Land Use/Land Cover (LULC) classification</b> of Lahore District (1990–2020) using <b>Google Earth Engine</b> and <b>ArcGIS</b>.</li>
+          <li>Created animations and Story Maps visualizing <b>urban growth</b> and <b>Indus River Dolphin conservation</b> efforts.</li>
+          <li>Performed <b>flood extent and temporal change analysis</b> in Manchar and Hammal Lake regions using satellite imagery.</li>
+          <li>Developed <b>interactive maps and dashboards</b> for plantation monitoring and environmental reporting.</li>
+          <li>Authored geospatial content, training material, and manuals for organizational capacity building.</li>
         </ul>
       </article>
 
       <div class="exp-tools-card">
         <b>Tools:</b>
-        <span class="chip">GEE</span>
-        <span class="chip">ArcGIS Pro</span>
+        <span class="chip">Google Earth Engine</span>
+        <span class="chip">ArcGIS</span>
         <span class="chip">QGIS</span>
-        <span class="chip">Remote Sensing</span>
+        <span class="chip">ArcGIS Pro</span>
+        <span class="chip">Landsat/Sentinel/Modis</span>
         <span class="chip">MaxEnt</span>
       </div>
     </div>
@@ -153,87 +164,261 @@
 
   <div class="tech-stack">
     <div class="tech-card glass">
-      <h3 class="section-subtitle">Core Technologies</h3>
-      <p class="subtitle" style="margin: 0 auto;">Tools and platforms used to design, analyze, and visualize complex geospatial and statistical data.</p>
+      <h3 class="section-subtitle heading-strong">Core Technologies</h3>
+      <p class="muted">Tools and platforms used to design, analyze, and visualize complex geospatial and statistical data.</p>
       <div class="skills-grid">
         <img src="assets/logo/python.svg" alt="Python">
         <img src="assets/logo/r.svg" alt="R">
         <img src="assets/logo/javascript.svg" alt="JavaScript">
+        <img src="assets/logo/html.svg" alt="HTML">
+        <img src="assets/logo/css.svg" alt="CSS">
         <img src="assets/logo/arcgis.svg" alt="ArcGIS">
         <img src="assets/logo/qgis.svg" alt="QGIS">
         <img src="assets/logo/gee.svg" alt="GEE">
         <img src="assets/logo/arcgispro.png" alt="ArcGIS Pro">
         <img src="assets/logo/postgresql.svg" alt="PostgreSQL">
+        <img src="assets/logo/mysql.svg" alt="MySQL">
+        <img src="assets/logo/mongodb.svg" alt="MongoDB">
+        <img src="assets/logo/supabase.png" alt="Supabase">
         <img src="assets/logo/google-cloud.svg" alt="Google Cloud">
+        <img src="assets/logo/aws.svg" alt="AWS">
         <img src="assets/logo/github.svg" alt="GitHub">
         <img src="assets/logo/streamlit.png" alt="Streamlit">
+        <img src="assets/logo/msoffice.svg" alt="MS Office">
       </div>
     </div>
   </div>
 </section>
 
+<!-- (CV section can stay for deep links, but is no longer in the navbar) -->
+<section id="cv" class="tab-content section">
+  <h2 class="section-title">CV</h2>
+  <p class="subtitle">Add a downloadable PDF or timeline here.</p>
+  <a class="techline" href="assets/Somia_Asim_CV.pdf" download>Download CV (PDF)</a>
+</section>
+
+<!-- ===== GALLERY ===== -->
 <section id="gallery" class="tab-content section">
-  <div class="gallery-head">
+  <div class="gallery-head glassbox lift">
     <div class="gallery-title-row">
       <div>
         <h2 class="section-title">Photo Gallery</h2>
-        <p class="subtitle">A curated showcase of my work, field visits, and art.</p>
+        <p class="subtitle">A curated showcase of my work, memories, environmental efforts, and art — spanning my journey with LUMS, WWF, PU, and beyond.</p>
       </div>
       <div class="gallery-stats">
         <div class="stat"><span id="g-count">0</span><small>Photos</small></div>
+        <div class="stat"><span id="g-sections">0</span><small>Sections</small></div>
+        <div class="stat"><span id="g-updated">—</span><small>Last Updated</small></div>
       </div>
     </div>
   </div>
 
   <div class="masonry" id="masonry">
-    <h2 class="gallery-main">Professional Work</h2>
-    
-    <figure class="card">
+    <!-- ========= MY WORK ========= -->
+    <h2 class="gallery-main">MY WORK</h2>
+
+    <!-- LUMS -->
+    <h3 class="gallery-section">With LUMS</h3>
+    <figure class="card" data-cat="lums">
       <a href="assets/visuals/badin-flooded-fraction.jpg" data-caption="Flood mapping of Badin District using NOAA/GEE data.">
-        <img src="assets/visuals/badin-flooded-fraction.jpg" alt="Badin flood map">
+        <img src="assets/visuals/badin-flooded-fraction.jpg" alt="Badin flooded fraction">
       </a>
-      <figcaption><b>Badin Flood Mapping</b><p>Post-disaster assessment.</p></figcaption>
+      <figcaption>
+        <b>Badin Flood Mapping</b>
+        <p>Flood mapping of Badin District using NOAA/GEE layers for post-disaster assessment.</p>
+      </figcaption>
     </figure>
 
-    <figure class="card">
+    <figure class="card" data-cat="lums">
+      <a href="assets/visuals/pakistan-before-after-flood.jpg" data-caption="Pre- and post-flood satellite imagery comparison for Pakistan.">
+        <img src="assets/visuals/pakistan-before-after-flood.jpg" alt="Pakistan before-after flood">
+      </a>
+      <figcaption>
+        <b>Before & After Floods</b>
+        <p>Comparative satellite view to illustrate inundation and floodplain expansion.</p>
+      </figcaption>
+    </figure>
+
+    <figure class="card" data-cat="lums">
       <a href="assets/visuals/pakistan-flood-risk-map.jpg" data-caption="Nationwide flood hazard index map.">
-        <img src="assets/visuals/pakistan-flood-risk-map.jpg" alt="Flood Risk Map">
+        <img src="assets/visuals/pakistan-flood-risk-map.jpg" alt="Pakistan flood risk map">
       </a>
-      <figcaption><b>Flood Risk Map</b><p>Nationwide hazard index.</p></figcaption>
+      <figcaption>
+        <b>Pakistan Flood Risk Map</b>
+        <p>Nationwide flood hazard index prepared for risk communication and planning.</p>
+      </figcaption>
     </figure>
 
-    <figure class="card">
+    <!-- PRA / PDMA meetings -->
+    <figure class="card" data-cat="lums" data-group="lums-meetings">
+      <a href="assets/gallery/PRAmeeting1.jpg" data-caption="PRA project kickoff meeting with stakeholders.">
+        <img src="assets/gallery/PRAmeeting1.jpg" alt="PRA Meeting 1">
+      </a>
+      <figcaption><b>PRA Kickoff</b><p>Project initiation session and roadmap discussion.</p></figcaption>
+    </figure>
+
+    <figure class="card" data-cat="lums" data-group="lums-meetings">
+      <a href="assets/gallery/pra-meeting-2.jpg" data-caption="Follow-up PRA session with data strategy planning.">
+        <img src="assets/gallery/pra-meeting-2.jpg" alt="PRA Meeting 2">
+      </a>
+      <figcaption><b>PRA Meeting</b><p>Data strategy and compliance analytics discussions.</p></figcaption>
+    </figure>
+
+    <figure class="card" data-cat="lums" data-group="lums-meetings">
+      <a href="assets/gallery/pdma-meeting-1.jpg" data-caption="PDMA analytics discussion — flood exposure modeling.">
+        <img src="assets/gallery/pdma-meeting-1.jpg" alt="PDMA meeting 1">
+      </a>
+      <figcaption><b>PDMA Meeting</b><p>Flood exposure modeling and spatial risk coordination.</p></figcaption>
+    </figure>
+
+    <figure class="card" data-cat="lums" data-group="lums-meetings">
+      <a href="assets/gallery/pdma-meeting-2.jpg" data-caption="LUMS x PDMA collaboration review.">
+        <img src="assets/gallery/pdma-meeting-2.jpg" alt="PDMA meeting 2">
+      </a>
+      <figcaption><b>PDMA Coordination</b><p>Cross-departmental review of spatial methodologies.</p></figcaption>
+    </figure>
+
+    <figure class="card" data-cat="lums" data-group="lums-meetings">
+      <a href="assets/gallery/pdma-meeting-3.jpg" data-caption="Policy workshop with PDMA and academia.">
+        <img src="assets/gallery/pdma-meeting-3.jpg" alt="PDMA meeting 3">
+      </a>
+      <figcaption><b>Policy Workshop</b><p>Discussing analytical frameworks for flood policy design.</p></figcaption>
+    </figure>
+
+    <!-- WWF -->
+    <h3 class="gallery-section">With WWF</h3>
+
+    <figure class="card" data-cat="wwf">
+      <a href="assets/visuals/islamabad-change-analysis.jpeg" data-caption="Islamabad land change detection (1990–2020).">
+        <img src="assets/visuals/islamabad-change-analysis.jpeg" alt="Islamabad change analysis">
+      </a>
+      <figcaption><b>Islamabad Change Analysis</b><p>LULC classification using Landsat & Sentinel imagery.</p></figcaption>
+    </figure>
+
+    <figure class="card" data-cat="wwf">
       <a href="assets/visuals/lahore-change-analysis.jpg" data-caption="Urban growth visualization for Lahore.">
-        <img src="assets/visuals/lahore-change-analysis.jpg" alt="Lahore Urban Growth">
+        <img src="assets/visuals/lahore-change-analysis.jpg" alt="Lahore change analysis">
       </a>
-      <figcaption><b>Lahore Urban Growth</b><p>Temporal expansion mapping.</p></figcaption>
+      <figcaption><b>Lahore Urban Growth</b><p>Temporal growth mapping to highlight urban expansion.</p></figcaption>
     </figure>
 
-    <figure class="card">
-      <a href="assets/visuals/islamabad-change-analysis.jpeg" data-caption="Islamabad land change detection.">
-        <img src="assets/visuals/islamabad-change-analysis.jpeg" alt="Islamabad Change">
+    <figure class="card" data-cat="wwf">
+      <a href="assets/visuals/lahore-change-animated.gif" data-caption="Animated LULC transition — Lahore city.">
+        <img src="assets/visuals/lahore-change-animated.gif" alt="Lahore change animation">
       </a>
-      <figcaption><b>Islamabad LULC</b><p>Change detection 1990–2020.</p></figcaption>
+      <figcaption><b>Animated Growth</b><p>GIF-based storytelling for temporal urban expansion.</p></figcaption>
     </figure>
 
-    <h2 class="gallery-main">Memories & Art</h2>
-    
-    <figure class="card">
-      <a href="assets/gallery/gis-day-wwf-1.jpg" data-caption="GIS Day outreach at WWF.">
-        <img src="assets/gallery/gis-day-wwf-1.jpg" alt="GIS Day">
+    <figure class="card" data-cat="wwf">
+      <a href="assets/visuals/lake-manchar-analysis.jpg" data-caption="Flood extent and temporal change for Manchar Lake region.">
+        <img src="assets/visuals/lake-manchar-analysis.jpg" alt="Manchar lake analysis">
       </a>
-      <figcaption><b>GIS Day WWF</b><p>Public outreach event.</p></figcaption>
+      <figcaption><b>Manchar Lake Flood Analysis</b><p>Flood extent and change analysis using satellite imagery.</p></figcaption>
     </figure>
 
-    <figure class="card">
-      <a href="assets/gallery/cloud-woman.jpg">
-        <img src="assets/gallery/cloud-woman.jpg" alt="Art">
+    <!-- ========= MEMORIES ========= -->
+    <h2 class="gallery-main">GOOD MEMORIES</h2>
+
+    <h3 class="gallery-section">WWF</h3>
+    <figure class="card" data-cat="memories">
+      <a href="assets/gallery/gis-day-wwf-1.jpg" data-caption="WWF GIS Day outreach and team showcase.">
+        <img src="assets/gallery/gis-day-wwf-1.jpg" alt="GIS Day WWF">
       </a>
-      <figcaption><b>Digital Art</b><p>Cloud Woman.</p></figcaption>
+      <figcaption><b>GIS Day WWF</b><p>Public outreach event showcasing geospatial tools and maps.</p></figcaption>
     </figure>
+
+    <figure class="card" data-cat="memories">
+      <a href="assets/gallery/lahore-science-mela.jpg" data-caption="Participation in Lahore Science Mela.">
+        <img src="assets/gallery/lahore-science-mela.jpg" alt="Lahore Science Mela">
+      </a>
+      <figcaption><b>Lahore Science Mela</b><p>Showcasing environmental and mapping projects.</p></figcaption>
+    </figure>
+
+    <figure class="card" data-cat="memories">
+      <a href="assets/gallery/wwf-team.jpg" data-caption="WWF GIS Lab team group photo.">
+        <img src="assets/gallery/wwf-team.jpg" alt="WWF team">
+      </a>
+      <figcaption><b>WWF GIS Team</b><p>Team photograph from the Richard Garstang Conservation Lab.</p></figcaption>
+    </figure>
+
+    <figure class="card" data-cat="memories">
+      <a href="assets/gallery/wwf-team-2.jpg" data-caption="Another memory with WWF colleagues.">
+        <img src="assets/gallery/wwf-team-2.jpg" alt="WWF team 2">
+      </a>
+      <figcaption><b>WWF Team Moments</b><p>Snapshots of collaboration and fieldwork.</p></figcaption>
+    </figure>
+
+    <h3 class="gallery-section">LUMS</h3>
+    <figure class="card" data-cat="memories">
+      <a href="assets/gallery/chief-economist-meeting.jpg" data-caption="Meeting with Chief Economist regarding PRA analytics.">
+        <img src="assets/gallery/chief-economist-meeting.jpg" alt="Chief Economist meeting">
+      </a>
+      <figcaption><b>Chief Economist Meeting</b><p>Policy dialogue and project review under LUMS.</p></figcaption>
+    </figure>
+
+    <h3 class="gallery-section">PU</h3>
+    <figure class="card" data-cat="pu">
+      <a href="assets/gallery/batch-2018-2022.jpg" data-caption="Graduating batch of Geography, PU.">
+        <img src="assets/gallery/batch-2018-2022.jpg" alt="Batch 2018–2022">
+      </a>
+      <figcaption><b>PU Batch 2018–2022</b><p>Graduation memories and friendships built over years.</p></figcaption>
+    </figure>
+
+    <figure class="card" data-cat="pu" data-group="geo-walk">
+      <a href="assets/gallery/geo-awareness-walk-1.jpg" data-caption="Geo Awareness Walk 2021.">
+        <img src="assets/gallery/geo-awareness-walk-1.jpg" alt="Geo Awareness Walk">
+      </a>
+      <figcaption><b>Geo Awareness Walk</b><p>Annual walk promoting geospatial literacy.</p></figcaption>
+    </figure>
+    <figure class="card" data-cat="pu" data-group="geo-walk">
+      <a href="assets/gallery/geo-awareness-walk-2.jpg"><img src="assets/gallery/geo-awareness-walk-2.jpg"></a>
+    </figure>
+    <figure class="card" data-cat="pu" data-group="geo-walk">
+      <a href="assets/gallery/geo-awareness-walk-3.jpg"><img src="assets/gallery/geo-awareness-walk-3.jpg"></a>
+    </figure>
+    <figure class="card" data-cat="pu" data-group="geo-walk">
+      <a href="assets/gallery/geo-awareness-walk-4.jpg"><img src="assets/gallery/geo-awareness-walk-4.jpg"></a>
+    </figure>
+
+    <figure class="card" data-cat="pu">
+      <a href="assets/gallery/trip-salt-mines-1.jpg"><img src="assets/gallery/trip-salt-mines-1.jpg"></a>
+      <figcaption><b>Salt Mines Field Trip</b><p>Exploring geological formations during field visit.</p></figcaption>
+    </figure>
+    <figure class="card" data-cat="pu">
+      <a href="assets/gallery/with-sir-adeel.jpg"><img src="assets/gallery/with-sir-adeel.jpg"></a>
+      <figcaption><b>With Sir Adeel</b><p>A cherished mentor moment at PU.</p></figcaption>
+    </figure>
+
+    <!-- ========= ENVIRONMENTAL ========= -->
+    <h2 class="gallery-main">ENVIRONMENTAL EFFORTS / INDIVIDUAL WORK</h2>
+    <figure class="card" data-cat="efforts">
+      <a href="assets/visuals/plantation-drive.jpg"><img src="assets/visuals/plantation-drive.jpg"></a>
+      <figcaption><b>Plantation Drive</b><p>Organized local plantation campaign for green cover restoration.</p></figcaption>
+    </figure>
+    <figure class="card" data-cat="efforts">
+      <a href="assets/visuals/madagascar-map.jpg"><img src="assets/visuals/madagascar-map.jpg"></a>
+      <figcaption><b>Madagascar Map</b><p>Thematic map design on biodiversity distribution.</p></figcaption>
+    </figure>
+    <figure class="card" data-cat="efforts">
+      <a href="assets/visuals/chromite-faceted.gif"><img src="assets/visuals/chromite-faceted.gif"></a>
+      <figcaption><b>Chromite Faceted</b><p>Animated geological visualization.</p></figcaption>
+    </figure>
+
+    <!-- ========= HOBBIES ========= -->
+    <h2 class="gallery-main">HOBBIES — MY ARTWORK</h2>
+    <figure class="card" data-cat="art"><a href="assets/gallery/cloud-woman.jpg"><img src="assets/gallery/cloud-woman.jpg"></a><figcaption><b>Cloud Woman</b><p>Digital art exploring surreal tones.</p></figcaption></figure>
+    <figure class="card" data-cat="art"><a href="assets/gallery/dual-tone-portrait.jpg"><img src="assets/gallery/dual-tone-portrait.jpg"></a><figcaption><b>Dual Tone Portrait</b><p>Study of light and color contrast.</p></figcaption></figure>
+    <figure class="card" data-cat="art"><a href="assets/gallery/floral-portrait.jpg"><img src="assets/gallery/floral-portrait.jpg"></a><figcaption><b>Floral Portrait</b><p>Botanical illustration merged with human form.</p></figcaption></figure>
+    <figure class="card" data-cat="art"><a href="assets/gallery/hijabi-portrait.jpg"><img src="assets/gallery/hijabi-portrait.jpg"></a><figcaption><b>Hijabi Portrait</b><p>Minimalist portrait emphasizing strength.</p></figcaption></figure>
+    <figure class="card" data-cat="art"><a href="assets/gallery/luffy-fanart.jpg"><img src="assets/gallery/luffy-fanart.jpg"></a><figcaption><b>Luffy Fanart</b><p>One Piece inspired sketch.</p></figcaption></figure>
+    <figure class="card" data-cat="art"><a href="assets/gallery/minimal-face.jpg"><img src="assets/gallery/minimal-face.jpg"></a><figcaption><b>Minimal Face</b><p>Exploration of form through line simplicity.</p></figcaption></figure>
+    <figure class="card" data-cat="art"><a href="assets/gallery/mischief-friend.jpg"><img src="assets/gallery/mischief-friend.jpg"></a><figcaption><b>Mischief Friend</b><p>Playful expressive sketch.</p></figcaption></figure>
+    <figure class="card" data-cat="art"><a href="assets/gallery/ocean-swash.png"><img src="assets/gallery/ocean-swash.png"></a><figcaption><b>Ocean Swash</b><p>Textural water dynamics study.</p></figcaption></figure>
+    <figure class="card" data-cat="art"><a href="assets/gallery/vintage-lady.jpg"><img src="assets/gallery/vintage-lady.jpg"></a><figcaption><b>Vintage Lady</b><p>Retro-style digital artwork.</p></figcaption></figure>
 
   </div>
 
+  <!-- Lightbox -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <button class="lightbox-prev" aria-label="Previous">&#10094;</button>
     <img id="lightbox-img" alt="Expanded">
@@ -243,8 +428,9 @@
   </div>
 </section>
 
-<footer>© 2025 Somia Asim — Built for Research & Data Science</footer>
+<footer>© Somia Asim</footer>
 
+<!-- ===== JS TAB SWITCHER ===== -->
 <script>
 function showTab(evt, id){
   evt.preventDefault();
@@ -254,66 +440,81 @@ function showTab(evt, id){
   if (evt.target.matches('nav a')) evt.target.classList.add('active');
   window.scrollTo({top:0, behavior:'smooth'});
 }
+</script>
 
+<!-- GALLERY JS (lightbox + counters + optional filters) -->
+<script>
 (function(){
   const grid = document.getElementById('masonry');
   if(!grid) return;
-  
-  // Count photos
-  const cards = grid.querySelectorAll('figure.card');
-  const countEl = document.getElementById('g-count');
-  if(countEl) countEl.textContent = cards.length;
 
-  // Lightbox Logic
+  const cards = grid.querySelectorAll('figure.card');
+  const sections = grid.querySelectorAll('h3.gallery-section');
+  const c = id => document.getElementById(id);
+  c('g-count') && (c('g-count').textContent = cards.length);
+  c('g-sections') && (c('g-sections').textContent = sections.length);
+  c('g-updated') && (c('g-updated').textContent = new Date().toLocaleDateString());
+
+  const pills = document.querySelectorAll('.gallery-filters .pill');
+  if (pills.length) {
+    pills.forEach(p => p.addEventListener('click', () => {
+      pills.forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+      const f = p.dataset.filter;
+      cards.forEach(card => {
+        card.style.display = (f === 'all' || card.dataset.cat === f) ? '' : 'none';
+      });
+    }));
+  }
+
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightbox-img');
   const lbCap = document.getElementById('lightbox-cap');
-  const btnClose = lb.querySelector('.lightbox-close');
-  const btnPrev  = lb.querySelector('.lightbox-prev');
-  const btnNext  = lb.querySelector('.lightbox-next');
-  let imgs = [];
+  const btnClose = lb?.querySelector('.lightbox-close');
+  const btnPrev  = lb?.querySelector('.lightbox-prev');
+  const btnNext  = lb?.querySelector('.lightbox-next');
+
+  let groupEls = [];
   let currentIndex = 0;
 
   function openLightbox(anchor){
-    // gather all images currently visible
-    imgs = Array.from(grid.querySelectorAll('a[href]'));
-    currentIndex = imgs.indexOf(anchor);
+    const fig = anchor.closest('figure.card');
+    const group = fig?.dataset.group;
+    groupEls = group
+      ? Array.from(grid.querySelectorAll(`figure.card[data-group="${group}"] a[href]`))
+      : [anchor];
+    currentIndex = group ? groupEls.indexOf(anchor) : 0;
     showCurrent();
     lb.setAttribute('aria-hidden','false');
     document.body.style.overflow = 'hidden';
   }
-
   function showCurrent(){
-    if(currentIndex < 0) currentIndex = imgs.length - 1;
-    if(currentIndex >= imgs.length) currentIndex = 0;
-    const a = imgs[currentIndex];
-    lbImg.src = a.href;
-    lbCap.textContent = a.dataset.caption || a.nextElementSibling?.querySelector('b')?.textContent || '';
+    const a = groupEls[currentIndex];
+    const href = a.getAttribute('href');
+    const cap  = a.dataset.caption || a.parentElement?.nextElementSibling?.querySelector('p')?.textContent || '';
+    lbImg.src = href; lbCap.textContent = cap;
   }
-
-  function closeLightbox(){ 
-    lb.setAttribute('aria-hidden','true'); 
-    lbImg.src=''; 
-    document.body.style.overflow=''; 
-  }
+  function closeLightbox(){ lb.setAttribute('aria-hidden','true'); lbImg.src=''; document.body.style.overflow=''; }
+  function prev(){ currentIndex = (currentIndex - 1 + groupEls.length) % groupEls.length; showCurrent(); }
+  function next(){ currentIndex = (currentIndex + 1) % groupEls.length; showCurrent(); }
 
   grid.addEventListener('click', e => {
     const a = e.target.closest('a[href]');
-    if(a) { e.preventDefault(); openLightbox(a); }
+    if (!a) return;
+    e.preventDefault(); openLightbox(a);
   });
-
-  btnClose.addEventListener('click', closeLightbox);
-  btnPrev.addEventListener('click', () => { currentIndex--; showCurrent(); });
-  btnNext.addEventListener('click', () => { currentIndex++; showCurrent(); });
-  lb.addEventListener('click', e => { if(e.target === lb) closeLightbox(); });
+  btnClose?.addEventListener('click', closeLightbox);
+  btnPrev?.addEventListener('click', prev);
+  btnNext?.addEventListener('click', next);
+  lb?.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
   document.addEventListener('keydown', e => {
-    if(lb.getAttribute('aria-hidden') === 'false'){
-      if(e.key === 'Escape') closeLightbox();
-      if(e.key === 'ArrowLeft') { currentIndex--; showCurrent(); }
-      if(e.key === 'ArrowRight') { currentIndex++; showCurrent(); }
-    }
+    if (lb?.getAttribute('aria-hidden') === 'true') return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
   });
 })();
 </script>
+
 </body>
 </html>
