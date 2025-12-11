@@ -151,31 +151,59 @@ h1,h2,h3{
 .tag-auto{ background:linear-gradient(135deg, rgba(255,210,90,.95), rgba(200,150,20,.92)); color:#201200;}
 
 /* CHANGED: Centered vertical layout */
+/* ===== ABOUT LAYOUT ===== */
 .about-grid {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  margin-top: 24px;
+  align-items: center; /* Centers the content */
+  gap: 30px;
+  margin-top: 40px;
+}
+/* About Text Styling */
+.about-text {
+  max-width: 900px; /* Prevents text from being too wide to read */
+  width: 100%;
+  text-align: left; /* Keep text aligned left for readability */
+  padding: 40px;
 }
 
 /* REMOVED: .pfp style is no longer needed */
-.glass{
-  background:rgba(16,20,28,.52);
-  padding:18px 20px; border-radius:14px;
-  backdrop-filter: blur(8px);
-  border:1px solid var(--edge);
+/* Ensure the glass effect looks good on the solid background */
+.glass {
+  background: rgba(30, 41, 59, 0.7); /* Slightly lighter than body bg */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
 }
 /* CHANGED: Contact box is now a horizontal bar */
-.contact-box {
+/* New Contact Bar Style - Clean and Professional */
+.contact-bar {
   display: flex;
-  gap: 20px;
-  justify-content: center;
   align-items: center;
-  margin-top: 0;
+  justify-content: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05); /* Very subtle background */
+  padding: 10px 24px;
+  border-radius: 50px; /* Pill shape */
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.contact-box strong { margin-right: 5px; }
-.contact-box a { margin-top: 0; margin-left: 10px; }
+
+.contact-bar a {
+  color: #fff; /* White text for better readability */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.contact-bar a:hover {
+  color: #78a3ff; /* Light blue on hover */
+}
+
+.contact-bar .separator {
+  color: rgba(255, 255, 255, 0.3);
+}
 /* ===== EXPERIENCE ===== */
 .exp-grid{
   display:grid;
