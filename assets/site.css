@@ -22,10 +22,13 @@
 html,body{
   margin:0; padding:0;
   font-family:"Segoe UI", Roboto, sans-serif;
-  background:url('Background_1.jpg') center/cover fixed no-repeat;
+  /* CHANGED: Solid dark color instead of image */
+  background: #0f172a; 
   color:var(--text);
   overflow-x:hidden;
 }
+
+/* REMOVED: body::before and body::after blocks entirely */
 
 /* background blur + darken overlay */
 body::before{
@@ -147,22 +150,32 @@ h1,h2,h3{
 .tag-carto{background:linear-gradient(135deg, rgba(255,120,180,.94), rgba(170,30,120,.92));}
 .tag-auto{ background:linear-gradient(135deg, rgba(255,210,90,.95), rgba(200,150,20,.92)); color:#201200;}
 
-.about-grid{display:grid; grid-template-columns:260px 1fr; gap:32px; margin-top:24px; align-items:start;}
-@media(max-width:900px){.about-grid{grid-template-columns:1fr;}}
-.pfp{
-  width:240px; height:240px; border-radius:50%;
-  border:4px solid white; box-shadow:var(--shadow); object-fit:cover;
+/* CHANGED: Centered vertical layout */
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 24px;
 }
+
+/* REMOVED: .pfp style is no longer needed */
 .glass{
   background:rgba(16,20,28,.52);
   padding:18px 20px; border-radius:14px;
   backdrop-filter: blur(8px);
   border:1px solid var(--edge);
 }
-.contact-box{margin-top:12px;}
-.contact-box a{color:#b9d4ff; display:block; text-decoration:none; margin-top:4px;}
-.contact-box a:hover{text-decoration:underline;}
-
+/* CHANGED: Contact box is now a horizontal bar */
+.contact-box {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+.contact-box strong { margin-right: 5px; }
+.contact-box a { margin-top: 0; margin-left: 10px; }
 /* ===== EXPERIENCE ===== */
 .exp-grid{
   display:grid;
@@ -416,8 +429,11 @@ footer{text-align:center; padding:30px; color:var(--muted); font-size:.9rem;}
 
   .about-grid{ grid-template-columns:1fr; gap:14px; }
   .about-left img.pfp{ width:80%; margin:0 auto; display:block; border-radius:50%; }
-  .about-right{ padding:16px; font-size:.95rem; }
-
+   /* CHANGED: Added max-width to keep text readable/same size as before */
+  .about-right {
+  width: 100%;
+  max-width: 850px; 
+}
   .exp-grid{ display:flex; flex-direction:column; gap:16px; }
   .exp-card{ padding:14px; }
   .exp-card h3{ font-size:1.1rem; }
