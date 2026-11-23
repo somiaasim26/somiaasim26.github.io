@@ -49,9 +49,10 @@ python scripts/download_data.py</code></pre>
     <p>Optical imagery fails during cloud-covered monsoon conditions. Synthetic Aperture Radar (SAR) from Sentinel-1 penetrates cloud cover, making it ideal for near-real-time flood mapping during Pakistan's monsoon season.</p>
     <h2>Processing pipeline</h2>
     <p>The workflow begins with Sentinel-1 GRD image collection filtered to the August–September 2022 period. After applying a speckle filter and terrain correction, I computed the difference in backscatter values between pre-flood baseline composites and peak-flood imagery.</p>
-    <p>A threshold of −3 dB relative to the baseline reliably distinguished open water from surrounding land cover across Sindh and Balochistan. The resulting binary flood masks were validated against UNOSAT and SUPARCO reference data.</p>
+    <p>A threshold of 1.2 dB relative to the baseline reliably distinguished open water from surrounding land cover across Sindh and Balochistan. The resulting binary flood masks were validated against UNOSAT and SUPARCO reference data.</p>
     <h2>Key findings</h2>
     <p>Roughly 6.4 million hectares showed inundation at peak flood extent. Sindh was hardest hit, with over 30% of agricultural land temporarily submerged.</p>
+    <p>An interactive version of this analysis — including the six-factor hazard index, flooded cropland by province, and exposed population estimates — is available as a <a href="https://ee-somiaasim26.projects.earthengine.app/view/pakistan-floods---an-overview-of-impact" target="_blank" rel="noopener noreferrer">Google Earth Engine dashboard</a>.</p>
     <blockquote>Analysis was done during my time as GIS Officer at the Richard Garstang Conservation GIS Lab, WWF-Pakistan (2022–2024).</blockquote>
     <h2>Lessons learned</h2>
     <p>Temporal compositing matters enormously. A single Sentinel-1 overpass misses dynamic flood edges. I ended up blending 3-day mosaics to reduce noise while capturing peak extent. The GEE scale parameter also needs careful attention when working across large areas — defaulting to 10m causes memory errors at national scale.</p>

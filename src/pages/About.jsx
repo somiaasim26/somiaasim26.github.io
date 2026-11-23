@@ -45,7 +45,7 @@ export default function About() {
               {/* Floating badge */}
               <div className="absolute -bottom-4 -right-4 bg-white border border-blue-100 rounded-2xl shadow-xl shadow-blue-100/50 px-4 py-3">
                 <div className="font-mono text-xs text-slate-400 mb-0.5">Currently at</div>
-                <div className="font-display font-bold text-sm text-slate-800">MHRC · LUMS</div>
+                <div className="font-display font-bold text-sm text-slate-800">MHRC · LUMS · GSAL</div>
               </div>
             </div>
 
@@ -73,7 +73,7 @@ export default function About() {
 			</p>
 
 			<p className="text-slate-500 font-light leading-relaxed">
-			  I started at <strong className="text-slate-700 font-medium">WWF-Pakistan</strong> as a GIS intern, worked up to GIS Officer, and now work as a <strong className="text-slate-700 font-medium">Research Associate at MHRC, Lahore University of Management and Sciences (LUMS)</strong>.
+			  I started at <strong className="text-slate-700 font-medium">WWF-Pakistan</strong> as a GIS intern, worked up to GIS Officer, and now work as a <strong className="text-slate-700 font-medium">Research Associate at MHRC, Lahore University of Management and Sciences (LUMS)</strong>, while also volunteering as a researcher at the <strong className="text-slate-700 font-medium">GeoScape Analytics Lab (GSAL), University of the Punjab</strong>.
 			</p>
 
 			<p className="text-slate-500 font-light leading-relaxed">
@@ -89,7 +89,7 @@ export default function About() {
               </div>
               <ul className="space-y-2">
                 {[
-                  'Satellite image processing (Sentinel, Landsat, MODIS)',
+                  'Satellite image processing (Sentinel, Landsat, MODIS, VIIRS)',
                   'Flood inundation & risk modelling',
                   'LULC classification & change detection',
                   'Spatial clustering (HDBSCAN) & statistical analysis',

@@ -1,11 +1,27 @@
 export const experience = [
   {
+    title: 'Volunteer Researcher',
+    org: 'GeoScape Analytics Lab (GSAL) · University of the Punjab',
+    period: 'May 2026 → Present',
+    badge: 'now',
+    desc: 'Wrote and pitched the lab\'s National Geographic Society grant proposal (submitted). Co-author of a GRACE groundwater downscaling review currently under journal review. Contributed to a Lahore dasymetric population mapping paper and bivariate climate maps.',
+    tools: ['GEE', 'ArcGIS Pro', 'R', 'Python', 'GRACE', 'Dasymetric Mapping'],
+  },
+  {
     title: 'Research Associate',
     org: 'MHRC · LUMS',
     period: 'Dec 2024 → Present',
     badge: 'now',
-    desc: 'Conducting advanced spatial analysis, machine learning modeling, and data engineering for economic policy research. Key work includes processing over 15k market records in Python (pandas, geopandas), building interactive Streamlit dashboards backed by PostgreSQL for real-time compliance monitoring, and executing advanced spatial clustering (HDBSCAN, OPTICS) to optimize enforcement strategies. Directly responsible for engineering automated survey pipelines and creating publication-quality GIS visualizations for government stakeholders and international donors.',
+    desc: 'Spatial data infrastructure for a multi-year tax-compliance programme on Lahore restaurants with the Punjab Revenue Authority. Designed a PostgreSQL spatial database reconciling about 41,000 records into a deduplicated, geocoded frame of 14,337 active restaurants; built Python (Playwright) scraping and cross-source record linkage (fuzzy matching, union-find); defined local markets with HDBSCAN and OPTICS and mapped compliance across about 570 commercial clusters; built an interactive geospatial compliance dashboard for government stakeholders and contributed to a prototype enforcement dashboard; produced maps and figures for the IGC report, brief and blog.',
     tools: ['Python', 'geopandas', 'PostgreSQL', 'ArcGIS Pro', 'GEE', 'Streamlit', 'HDBSCAN', 'rapidfuzz'],
+  },
+  {
+    title: 'Course Developer & Instructor',
+    org: 'Udemy · with Zain Ul Abdin',
+    period: 'In Development',
+    badge: 'build',
+    desc: '7 Days of Vibe-Coding Interactive Maps with AI — an in-development Udemy course built around Indus Pulse, an interactive story of the 2022 Pakistan floods. Launch planned December 2026.',
+    tools: ['JavaScript', 'GEE', 'Leaflet', 'AI-assisted Coding', 'Curriculum Design'],
   },
   {
   title: 'Visiting Faculty (Geography) - Part Time',
@@ -20,13 +36,13 @@ export const experience = [
   org: 'MHRC · LUMS',
   period: 'Mar – Nov 2024',
   badge: 'past',
-  desc: 'Generated pixel-level 2022 flood inundation maps in Google Earth Engine by fusing high-frequency supply chain data with Sentinel/Landsat imagery. Built an agricultural supply network disruption model using MapBox OSM APIs to analyze ~8,000 market routes, creating spatial risk profiles and publication-quality maps for working papers, conferences, and policy briefs.',
-  tools: ['Google Earth Engine', 'ArcGIS Pro', 'Mapbox OSM APIs', 'Sentinel/Landsat', 'Python'],
+  desc: 'Generated pixel-level 2022 flood inundation maps in Google Earth Engine using NOAA/VIIRS flood detection (375 m, near-daily) processed into region-level flood intensity. Built an agricultural supply network disruption model using MapBox OSM APIs to analyze ~8,000 market routes, creating spatial risk profiles and publication-quality maps for working papers and policy briefs.',
+  tools: ['Google Earth Engine', 'ArcGIS Pro', 'Mapbox OSM APIs', 'NOAA VIIRS', 'Python'],
   },
   {
     title: 'GIS Officer',
     org: 'Richard Garstang Conservation GIS Lab · WWF-Pakistan',
-    period: 'Jul 2023 – Mar 2024',
+    period: 'Jul 2023 – Feb 2024',
     badge: 'past',
     desc: 'LULC classification and multi-decade change detection for Lahore District (1990–2020). Produced animated time-lapse maps of urban growth featured in DAWN and SAMAA News. Developed interactive ArcGIS Online web maps and a Story Map on Indus River Dolphin conservation submitted to ESRI Story Map Competition 2023.',
     tools: ['GEE JS API', 'ArcGIS Pro', 'QGIS', 'ArcGIS Online', 'Landsat', 'MODIS'],
@@ -36,19 +52,19 @@ export const experience = [
     org: 'Richard Garstang Conservation GIS Lab · WWF-Pakistan',
     period: 'Sep 2022 – Jun 2023',
     badge: 'past',
-    desc: 'Mapped pre- and post-flood conditions in Manchar and Hammal Lake regions using Landsat series. Produced 1,000+ ArcMap maps for WWF-Pakistan\'s Organic Cotton Project across Baluchistan. Performed hydrological modelling, canal delineation, and developed a GEE & MaxEnt capacity-building manual for universities.',
-    tools: ['ArcGIS', 'GEE', 'MaxEnt', 'QGIS', 'Landsat'],
+    desc: 'On own initiative, mapped Sentinel-1 flood extent at the 2022 monsoon peak across Manchar and Hammal Lake regions. Ran Earth Engine drought-monitoring exercises using vegetation and water indices (VCI, TCI, NDWI) for staff training. Produced 1,000+ ArcMap maps for WWF-Pakistan\'s Organic Cotton Project across Baluchistan. Performed hydrological modelling, canal delineation, and developed a GEE & MaxEnt capacity-building manual for universities.',
+    tools: ['ArcGIS', 'GEE', 'MaxEnt', 'QGIS', 'Sentinel-1', 'Drought Indices'],
   },
 ]
 
 export const skills = [
   {
     category: 'GIS Platforms',
-    items: ['ArcGIS Pro', 'QGIS', 'Google Earth Engine', 'ArcGIS Online', 'ArcMap', 'TUFLOW'],
+    items: ['ArcGIS Pro', 'QGIS', 'Google Earth Engine', 'ArcGIS Online', 'ArcMap'],
   },
   {
     category: 'Remote Sensing',
-    items: ['Sentinel-1/2', 'Landsat Series', 'MODIS', 'SAR Analysis', 'LULC Classification', 'Change Detection'],
+    items: ['Sentinel-1/2', 'Landsat Series', 'MODIS', 'NOAA VIIRS', 'SAR Analysis', 'LULC Classification', 'Change Detection', 'Drought indices (VCI, TCI, VHI, DSI)'],
   },
   {
     category: 'Programming',
@@ -64,18 +80,33 @@ export const skills = [
   },
   {
     category: 'Viz & Web Mapping',
-    items: ['Streamlit', 'Mapbox GL', 'React', 'Leaflet', 'MS Office'],
+    items: ['Streamlit', 'Mapbox GL', 'React', 'Leaflet', 'D3.js', 'ArcGIS StoryMaps', 'MS Office'],
   },
 ]
 
 export const projects = [
   {
+    id: 20,
+    cat: 'flood',
+    title: 'Pakistan Floods: An Overview of Impact',
+    desc: 'An interactive Google Earth Engine app mapping the 2022 monsoon floods from Sentinel-1 radar, with a six-factor hazard index and flooded cropland and exposed population by province; built during the 2022 floods.',
+    img: './assets/maps/FloodAnalysis2022_FloodExtent_Manchar.jpg',
+    link: 'https://ee-somiaasim26.projects.earthengine.app/view/pakistan-floods---an-overview-of-impact',
+    badge: 'Flood · Sentinel-1 · SAR · GEE',
+    org: 'Personal',
+    gallery: [
+      './assets/maps/FloodAnalysis2022_FloodExtent_Manchar.jpg',
+      './assets/maps/FloodAnalysis2022_Cropland_PrePost.jpg',
+      './assets/maps/FloodAnalysis2022_FloodHazard.jpg',
+    ],
+  },
+  {
     id: 1,
     cat: 'flood',
     title: 'Pakistan Flood Risk Map',
-    desc: 'Nationwide flood hazard index and vulnerability modeling developed from Sentinel imagery.',
+    desc: 'Nationwide flood hazard index built from JRC Global Surface Water, SRTM elevation, Topographic Position Index, and Landsat NDVI/NDWI.',
     img: './assets/maps/pakistan-flood-risk-map.jpg',
-    badge: 'Flood · Risk Mapping · Sentinel1 · GEE',
+    badge: 'Flood · Risk Mapping · Landsat · GEE',
     org: 'MHRC/LUMS',
   },
   {
@@ -196,15 +227,6 @@ export const projects = [
     org: 'Research',
   },
   {
-    id: 15,
-    cat: 'flood',
-    title: 'TUFLOW Hydrodynamic Flood Model — Woongoolba',
-    desc: 'Catchment-scale hydrodynamic flood inundation and tidal boundary analysis for the Woongoolba coastal locality in the City of Gold Coast, Queensland.',
-    img: './assets/maps/Tuflow_Analysis_W3.jpg',
-    badge: 'Flood · Hydrodynamic Modeling · TUFLOW · Analysis',
-    org: 'Research',
-  },
-  {
   id: 16,
   cat: 'analysis',
   title: 'Hydrological Delineation of Panjgur District',
@@ -212,10 +234,47 @@ export const projects = [
   img: './assets/maps/Panjgur_Hydrology.jpg',
   badge: 'Hydrology · Delineation · Watershed Analysis',
   org: 'Research',
-  }
+  },
+  {
+  id: 17,
+  cat: 'analysis',
+  title: 'Pakistan VPD & Evapotranspiration Patterns',
+  desc: 'Bivariate map of Vapor Pressure Deficit and Actual Evapotranspiration across Pakistan based on 4 years of TerraClimate data (2019–2022), revealing atmospheric drought stress zones from Himalayan forests to Indus Delta mangroves.',
+  img: './assets/maps/BIVARIATEMAP_VPD_AET_updated.jpg',
+  badge: 'Analysis · Bivariate · TerraClimate · AET · VPD',
+  org: 'GSAL',
+  },
+  {
+  id: 18,
+  cat: 'analysis',
+  title: 'Pakistan Temperature & Precipitation Patterns',
+  desc: 'Bivariate map of mean temperature and precipitation patterns across Pakistan based on 4 years of TerraClimate data (2019–2022), distinguishing glacial highland zones, monsoon belts, and arid desert regions.',
+  img: './assets/maps/BIVARIATEMAP_TEMP_PREC_updated.jpg',
+  badge: 'Analysis · Bivariate · TerraClimate · Temperature · Precipitation',
+  org: 'GSAL',
+  },
+  {
+  id: 19,
+  cat: 'interactive',
+  title: 'Kowloon // Night Grid',
+  desc: 'Interactive 3D night visualization of Kowloon, Hong Kong — real building footprints and heights rendered as a glowing cyberpunk grid with bloom, radar sweep, city pulse, and window-light effects.',
+  img: null,
+  link: './assets/maps/Kowloon_HongKong-NightGrid.html',
+  badge: 'Interactive · 3D · WebGL · City Viz',
+  org: 'Personal',
+  },
 ];
 
 export const blogPosts = [
+  {
+    id: 'kowloon-nightgrid',
+    title: 'How I built a cinematic 3D city visualization of Kowloon from OpenStreetMap data',
+    excerpt: 'A step-by-step breakdown of the pipeline I used to turn raw OSM building footprints and road networks into a glowing, self-contained WebGL night grid — no server, no build step, just one HTML file.',
+    date: '2025-07-07',
+    tags: ['Three.js', 'OSM', 'Python', 'WebGL', 'City Viz'],
+    readTime: '7 min',
+    cover: './assets/maps/Kowloon_HongKong-NightGrid_Thumbnail.jpg',
+  },
   {
     id: 'gee-flood-mapping',
     title: 'How I mapped the 2022 Pakistan floods with Google Earth Engine',
@@ -225,7 +284,6 @@ export const blogPosts = [
     readTime: '8 min',
     cover: './assets/maps/lake-manchar-analysis.jpg',
   },
-  
 ]
 
 export const likes = [
@@ -262,6 +320,7 @@ export const likes = [
     { label: 'WWF Team Gathering', img: './assets/photos/wwf-team.jpg' },
     { label: 'Geography Awareness Walk I', img: './assets/photos/geo-awareness-walk-2.jpg' },
     { label: 'Geography Awareness Walk II', img: './assets/photos/geo-awareness-walk-4.jpg' },
+    { label: 'Neighbourhood Plantation Drive', img: './assets/photos/plantation-drive.jpg', caption: 'Started in 2024 by asking neighbours to plant one tree each in their own backyards; self-funded; the trees are growing well.' },
   ],
   },
   {
