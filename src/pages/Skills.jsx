@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
 import { skills } from '../data/content'
+import { focusAreas } from '../data/research'
 
 const colors = ['blue', 'sky', 'indigo', 'cyan', 'violet', 'blue']
 
@@ -23,7 +24,19 @@ export default function Skills() {
           </h1>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mb-10">
+          <div className="section-label">Focus areas</div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {focusAreas.map(f => (
+              <div key={f.title} className="card p-5 backdrop-blur-sm">
+                <h4 className="font-display font-semibold text-slate-800 mb-1.5">{f.title}</h4>
+                <p className="text-sm text-slate-500 font-light">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-5">
           {skills.map(({ category, items }, gi) => (
             <motion.div
               key={category}
@@ -68,7 +81,7 @@ export default function Skills() {
           <div className="section-label">Also</div>
           <div className="grid sm:grid-cols-3 gap-4">
             {[
-              { label: 'Research & Writing', desc: 'Academic papers, policy briefs, technical documentation.' },
+              { label: 'Research & Writing', desc: 'Policy briefs, working papers, reports and technical documentation.' },
               { label: 'Cartographic Design', desc: 'Publication-quality maps, visual storytelling, story maps.' },
               { label: 'Teaching & Outreach', desc: 'GEE & MaxEnt training manuals, GIS Day events, science melas.' },
             ].map(({ label, desc }) => (

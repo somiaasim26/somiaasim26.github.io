@@ -33,8 +33,7 @@ export default function Contact() {
       <div className="max-w-4xl mx-auto px-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mb-10"
         >
@@ -63,8 +62,7 @@ export default function Contact() {
         {/* Form — full width */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
         >
           <form ref={formRef} onSubmit={handleSubmit} className="card p-7 space-y-5 backdrop-blur-sm">

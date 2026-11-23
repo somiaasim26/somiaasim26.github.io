@@ -7,6 +7,7 @@ import { projects } from '../data/content'
 const filters = [
   { key: 'all',         label: 'All'         },
   { key: 'flood',       label: 'Flood'       },
+  { key: 'drought',     label: 'Drought'     },
   { key: 'lulc',        label: 'LULC'        },
   { key: 'analysis',    label: 'Analysis'    },
   { key: 'cartography', label: 'Cartography' },
@@ -63,7 +64,9 @@ export default function Work() {
   const [lb, setLb] = useState(null)
   const [lbIdx, setLbIdx] = useState(0)
 
-  const filtered = active === 'all' ? projects : projects.filter(p => p.cat === active)
+  const featured = projects.filter(p => p.featured)
+  const rest = projects.filter(p => !p.featured)
+  const filtered = active === 'all' ? rest : rest.filter(p => p.cat === active)
 
   function handleCardClick(p) {
     if (p.link && !p.img) {
@@ -95,6 +98,36 @@ export default function Work() {
             </span>
           </h1>
         </motion.div>
+
+        {/* Featured live apps */}
+        <div className="mb-10">
+          <div className="section-label">Featured · live apps</div>
+          <div className="grid md:grid-cols-2 gap-5">
+            {featured.map(p => (
+              <div key={p.id} className="card overflow-hidden backdrop-blur-sm flex flex-col">
+                <div className="relative cursor-pointer" onClick={() => handleCardClick(p)}>
+                  <img src={p.img} alt={p.title} loading="lazy" className="w-full aspect-video object-cover object-top" />
+                  <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-widest bg-blue-600 text-white px-2.5 py-1 rounded-full">Featured</span>
+                </div>
+                <div className="p-5 flex flex-col flex-1">
+                  <div className="font-mono text-[10px] text-blue-500 uppercase tracking-widest mb-2">{p.badge}</div>
+                  <h3 className="font-display text-lg font-extrabold text-slate-900 leading-snug">{p.title}</h3>
+                  <p className="mt-2 text-sm text-slate-500 font-light leading-relaxed flex-1">{p.desc}</p>
+                  <div className="mt-4 flex flex-wrap items-center gap-4">
+                    <a href={p.link} target="_blank" rel="noopener noreferrer"
+                       className="btn-primary inline-flex items-center gap-1.5 text-sm">
+                      {p.linkLabel || 'Open app'} <ExternalLink size={14} />
+                    </a>
+                    <button type="button" onClick={() => handleCardClick(p)}
+                            className="font-mono text-xs text-blue-500 hover:text-blue-700">
+                      View screenshots
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Filters */}
         <div className="flex flex-wrap gap-2 mb-8">
@@ -191,7 +224,7 @@ export default function Work() {
                         onClick={e => e.stopPropagation()}
                         className="font-mono text-xs text-blue-500 flex items-center gap-1 hover:text-blue-700"
                       >
-                        Open app <ExternalLink size={10} />
+                        {p.linkLabel || 'Open app'} <ExternalLink size={10} />
                       </a>
                     )}
                   </div>
@@ -232,12 +265,25 @@ export default function Work() {
                   <X size={24} />
                 </button>
                 <div className="relative">
-                  <img
-                    key={lbIdx}
-                    src={imgs[lbIdx]}
-                    alt={lb.title}
-                    className="w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
-                  />
+                  {lb.video ? (
+                    <video
+                      src={lb.video}
+                      poster={imgs[0]}
+                      controls
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl bg-black"
+                    />
+                  ) : (
+                    <img
+                      key={lbIdx}
+                      src={imgs[lbIdx]}
+                      alt={lb.title}
+                      className="w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
+                    />
+                  )}
                   {hasPrev && (
                     <button
                       onClick={e => { e.stopPropagation(); setLbIdx(i => i - 1) }}
@@ -264,7 +310,7 @@ export default function Work() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 mt-3 font-mono text-xs text-blue-400 hover:text-blue-300 transition-colors"
                     >
-                      Open interactive app <ExternalLink size={11} />
+                      {lb.linkLabel || 'Open interactive app'} <ExternalLink size={11} />
                     </a>
                   )}
                 </div>

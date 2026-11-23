@@ -16,7 +16,7 @@ export default function Likes() {
   return (
     <PageWrapper>
       <div className="max-w-5xl mx-auto px-5">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-12">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-12">
           <div className="section-label">What I Like</div>
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
             Beyond the{' '}
@@ -32,8 +32,7 @@ export default function Likes() {
         {/* Quick interest chips */}
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.15 }}
           className="flex flex-wrap gap-3 mb-14"
         >
@@ -41,8 +40,7 @@ export default function Likes() {
             <motion.div
               key={label}
               initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.04 }}
               whileHover={{ y: -3, scale: 1.05 }}
               className="card px-4 py-2.5 flex items-center gap-2 cursor-default"
@@ -122,18 +120,19 @@ export default function Likes() {
         </motion.section>
 
         {/* Quote */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="card p-8 text-center mt-8"
-          style={{ background: 'linear-gradient(135deg,#EFF6FF,#DBEAFE)' }}
-        >
-          <p className="font-display text-xl font-bold text-slate-800 leading-relaxed">
-            "The world is a book, and those who do not travel read only one page."
-          </p>
-          <p className="mt-3 font-mono text-xs text-blue-500 tracking-wider">— Saint Augustine</p>
-        </motion.div>
+        {/* A little quote */}
+		<motion.div
+		  initial={{ opacity: 0, y: 20 }}
+		  whileInView={{ opacity: 1, y: 0 }}
+		  viewport={{ once: true }}
+		  className="card p-8 text-center mt-8"
+		  style={{ background: 'linear-gradient(135deg,#EFF6FF,#DBEAFE)' }}
+		>
+		  <p className="font-display text-xl font-bold text-slate-800 leading-relaxed">
+			"Study the science of art. Study the art of science. Develop your senses—learn how to see. Realize that everything connects to everything else."
+		  </p>
+		  <p className="mt-3 font-mono text-xs text-blue-500 tracking-wider">— Leonardo da Vinci</p>
+		</motion.div>
       </div>
 
       {/* Lightbox */}

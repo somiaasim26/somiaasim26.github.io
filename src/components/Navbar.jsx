@@ -7,9 +7,11 @@ const links = [
   { to: '/',           label: 'Home'       },
   { to: '/about',      label: 'About'      },
   { to: '/experience', label: 'Experience' },
+  { to: '/research',   label: 'Research'   },
   { to: '/skills',     label: 'Skills'     },
   { to: '/work',       label: 'Work'       },
   { to: '/blog',       label: 'Blog'       },
+  { to: '/community',  label: 'Community'  },
   { to: '/likes',      label: 'Likes'      },
   { to: '/contact',    label: 'Contact'    },
 ]

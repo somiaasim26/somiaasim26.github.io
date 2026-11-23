@@ -6,6 +6,8 @@ import Footer from './components/Footer'
 import Home       from './pages/Home'
 import About      from './pages/About'
 import Experience from './pages/Experience'
+import Community from './pages/Community'
+import Research   from './pages/Research'
 import Skills     from './pages/Skills'
 import Work       from './pages/Work'
 import Blog       from './pages/Blog'
@@ -21,10 +23,12 @@ function AnimatedRoutes() {
         <Route path="/"           element={<Home />} />
         <Route path="/about"      element={<About />} />
         <Route path="/experience" element={<Experience />} />
+        <Route path="/research"   element={<Research />} />
         <Route path="/skills"     element={<Skills />} />
         <Route path="/work"       element={<Work />} />
         <Route path="/blog"       element={<Blog />} />
         <Route path="/blog/:id"   element={<BlogPost />} />
+        <Route path="/community"  element={<Community />} />
         <Route path="/likes"      element={<Likes />} />
         <Route path="/contact"    element={<Contact />} />
       </Routes>

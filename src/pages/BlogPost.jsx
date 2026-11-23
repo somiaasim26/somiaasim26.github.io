@@ -53,7 +53,7 @@ python scripts/download_data.py</code></pre>
     <h2>Key findings</h2>
     <p>Roughly 6.4 million hectares showed inundation at peak flood extent. Sindh was hardest hit, with over 30% of agricultural land temporarily submerged.</p>
     <p>An interactive version of this analysis — including the six-factor hazard index, flooded cropland by province, and exposed population estimates — is available as a <a href="https://ee-somiaasim26.projects.earthengine.app/view/pakistan-floods---an-overview-of-impact" target="_blank" rel="noopener noreferrer">Google Earth Engine dashboard</a>.</p>
-    <blockquote>Analysis was done during my time as GIS Officer at the Richard Garstang Conservation GIS Lab, WWF-Pakistan (2022–2024).</blockquote>
+    <blockquote>Analysis was done during my time at the Richard Garstang Conservation GIS Lab, WWF-Pakistan (2022–2024).</blockquote>
     <h2>Lessons learned</h2>
     <p>Temporal compositing matters enormously. A single Sentinel-1 overpass misses dynamic flood edges. I ended up blending 3-day mosaics to reduce noise while capturing peak extent. The GEE scale parameter also needs careful attention when working across large areas — defaulting to 10m causes memory errors at national scale.</p>
   `,
