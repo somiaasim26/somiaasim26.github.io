@@ -1,8 +1,32 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Clock, Tag } from 'lucide-react'
+import { ArrowRight, Clock, FlaskConical } from 'lucide-react'
 import PageWrapper from '../components/PageWrapper'
 import { blogPosts } from '../data/content'
+
+const comingSoonPosts = [
+  {
+    id: 'agri-sat-nowcast',
+    title: "Can satellites nowcast Pakistan's agricultural growth?",
+    excerpt: 'Using MODIS NDVI time-series across Punjab and Sindh districts (FY2001–2026) to build a cropland-weighted agricultural signal — and testing whether it predicts World Bank GDP growth figures before official data are released.',
+    tags: ['Google Earth Engine', 'NDVI', 'Agriculture', 'Pakistan'],
+    status: 'Analysis complete · Writing in progress',
+  },
+  {
+    id: 'flood-to-drought',
+    title: 'From flood to thirst: Punjab and Sindh, 2025–26',
+    excerpt: 'The same districts that were submerged in 2022 are now facing drought stress. A district-level look at CHIRPS rainfall trends (1981–2025) and satellite-detected flood extents from UNOSAT, tracing the swing from extreme wet to extreme dry.',
+    tags: ['Flood Mapping', 'Drought', 'CHIRPS', 'Remote Sensing'],
+    status: 'Data collection · Early analysis',
+  },
+  {
+    id: 'smog-crop-burning',
+    title: 'Smoke signals: crop burning, wind, and the smog belt',
+    excerpt: "FIRMS VIIRS fire detections (2012–2026) linked to ERA5 wind trajectories and PM2.5 readings from Lahore and Delhi — examining how post-harvest burning drives transboundary air quality crises and what policy interventions have (and haven't) worked.",
+    tags: ['Air Quality', 'FIRMS', 'ERA5', 'Policy'],
+    status: 'Analysis complete · Draft in progress',
+  },
+]
 
 function formatDate(d) {
   return new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
@@ -14,8 +38,7 @@ export default function Blog() {
       <div className="max-w-4xl mx-auto px-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
@@ -35,8 +58,7 @@ export default function Blog() {
         {blogPosts[0] && (
           <motion.div
             initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="mb-8"
           >
@@ -117,6 +139,63 @@ export default function Blog() {
             </motion.div>
           ))}
         </div>
+
+        {/* Coming Soon */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="mt-16"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-blue-100" />
+            <div className="flex items-center gap-2 text-sm font-mono text-blue-400 font-medium">
+              <FlaskConical size={15} />
+              In the lab
+            </div>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-blue-100" />
+          </div>
+
+          <p className="text-center text-slate-400 text-sm font-light mb-8">
+            Research in progress — posts coming soon.
+          </p>
+
+          <div className="space-y-4">
+            {comingSoonPosts.map((post, i) => (
+              <motion.div
+                key={post.id}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <div className="card p-5 flex gap-5 items-start opacity-80 cursor-default select-none">
+                  <div className="w-24 h-20 sm:w-32 sm:h-24 rounded-xl bg-gradient-to-br from-blue-50 to-slate-100 shrink-0 flex items-center justify-center">
+                    <FlaskConical size={28} className="text-blue-200" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="font-mono text-xs bg-amber-50 text-amber-500 border border-amber-200 px-2 py-0.5 rounded-full">
+                        Coming Soon
+                      </span>
+                      <span className="font-mono text-xs text-slate-400">{post.status}</span>
+                    </div>
+                    <h3 className="font-display font-bold text-slate-700 mb-1 leading-snug">
+                      {post.title}
+                    </h3>
+                    <p className="text-xs text-slate-400 font-light line-clamp-2">{post.excerpt}</p>
+                    <div className="flex flex-wrap gap-1 mt-2">
+                      {post.tags.map(t => (
+                        <span key={t} className="font-mono text-xs bg-slate-50 text-slate-400 px-2 py-0.5 rounded">{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </PageWrapper>
   )
